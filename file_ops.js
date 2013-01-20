@@ -1,21 +1,21 @@
+// For this code to work you currently have to mount or link the host's local drive to
+// "/media/customerdrive"
+
 // Declaring variables from Node.js to manipulate the local file system and resources
 var exec = require('child_process').exec;
 var fs = require('fs');
 
-/*
- * Main function for what will be the "Suspicious File Scan" feature of the program
- * Currently this will search for all files of and "executable type" modified within
- * a certain user-specific time frame. Later it should evolve into a full heuristic 
- * scan looking for things like randomly generated file names, executables in
- * unusual places, etc.
-*/
-function file_scan(){
-	/*
-	 * findFiles will execute the built-in Linux "find" command and assign itself as 
-	 * a variable so we can keep an eye on it and access the "full_file_list" only 
-	 * when it's done with its search.
-	*/
-	var findFiles = exec("find /media/customerdrive/ -type f > full_file_list");
+// Main function for what will be the "Suspicious File Scan" feature of the program
+// Currently this will search for all files of and "executable type" modified within
+// a certain user-specific time frame. Later it should evolve into a full heuristic 
+// scan looking for things like randomly generated file names, executables in
+// unusual places, etc.
+function file_scan(daysToScan){
+	// findFiles will execute the built-in Linux "find" command and assign itself as 
+	// a variable so we can keep an eye on it and access the "full_file_list" only 
+	// when it's done with its search.
+	 
+	var findFiles = exec("find /media/customerdrive/ -type f -mtime -" + daysToScan + " > full_file_list");
 	// Declaring Arrays to hold the strings referencing the executable files for later examination
 	var exeFiles = new Array();
 	var dllFiles = new Array();
@@ -50,4 +50,6 @@ function file_scan(){
 	});
 }
 
-file_scan();
+// Just manually triggering the "file_scan" function for testing purposes the variable is the amount of days 
+// to scan back for suspicious files
+file_scan(10);
