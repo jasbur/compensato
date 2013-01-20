@@ -4,6 +4,7 @@
 //Declaring variables from Node.js to manipulate the local file system and resources
 var exec = require('child_process').exec;
 var fs = require('fs');
+var logic = require('./logic');
 
 //Main function for what will be the "Suspicious File Scan" feature of the program
 //Currently this will search for all files of and "executable type" modified within
@@ -30,27 +31,11 @@ function fileScan(daysToScan){
 		fs.unlink("./fullFileList");
 		
 		//Assemble an array of only executable file types
-		var executableFiles = checkForExtensions(lines, extensions);
+		var executableFiles = logic.checkForExtensions(lines, extensions);
 		
 		//Temporary code to make sure everything is working for now
 		console.log(executableFiles.length + " executable files");
 	});
-}
-
-//Checks to see which lines in the provided array match the given extension
-//then returns an array of them
-function checkForExtensions(lines, extensions){
-	returnArray = new Array();
-	
-	for(l in lines){
-		for (e in extensions){
-			if(lines[l].indexOf(extensions[e]) > -1){
-				returnArray.push(lines[l]);
-			}
-		}
-	}
-	
-	return returnArray;
 }
 
 //Just manually triggering the "file_scan" function for testing purposes the variable is the amount of days 
