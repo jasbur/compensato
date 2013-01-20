@@ -1,6 +1,3 @@
-//For this code to work you currently have to mount or link the host's local drive to
-//"/media/customerdrive"
-
 //Declaring variables from Node.js to manipulate the local file system and resources
 var exec = require('child_process').exec;
 var fs = require('fs');
