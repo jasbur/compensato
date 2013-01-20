@@ -30,7 +30,7 @@ function fileScan(daysToScan){
 		var lines = fullFileList.split("\n");
 		
 		// Delete the fullFileList from the local file system
-		fs.unlink(fullFileList);
+		fs.unlink("./fullFileList");
 		
 		// Check each line for one of the executable types and push it into its appropriate array if found
 		for(l in lines){
