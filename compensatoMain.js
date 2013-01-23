@@ -26,7 +26,7 @@ process.stdin.on('data', function (text) {
     	process.stdin.on('data', function(daysToScan){
     		output.clearScreen();
     		console.log("Beginning scan for executable files modified within " + daysToScan.replace(/[\n]/, '') + " days");
-    		fileOps.fileScan(30);
+    		fileOps.fileScan(daysToScan.replace(/[\n]/, ''));
     	});
     	break;
     case "q\n":
