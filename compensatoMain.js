@@ -4,7 +4,6 @@ var fileOps = require('./file_ops');
 var output = require('./output');
 
 output.clearScreen();
-
 console.log("Welcome to Compensato!");
 console.log();
 console.log("Now, let's fix this computer. Choose one of the options below:");
@@ -12,14 +11,23 @@ console.log();
 console.log("[1] Scan for suspicious files");
 console.log("[Q] Quit");
 
+//Collect answer for what to do and switch to the appropriate function
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
 process.stdin.on('data', function (text) {
     switch (text){
     case "1\n":
     	output.clearScreen();
-    	console.log("Scanning back 30 days for suspicious files...");
-    	fileOps.fileScan(30);
+    	console.log("How many days back would you like to scan?");
+    	
+    	//Collect how many days back to scan and do the scan
+    	process.stdin.resume();
+    	process.stdin.setEncoding('utf8');
+    	process.stdin.on('data', function(daysToScan){
+    		output.clearScreen();
+    		console.log("Beginning scan for executable files modified within " + daysToScan.replace(/[\n]/, '') + " days");
+    		fileOps.fileScan(30);
+    	});
     	break;
     case "q\n":
     	output.clearScreen();
