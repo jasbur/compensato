@@ -16,7 +16,10 @@ module.exports = {
 				//If the current line contains the current extension, write it to scan_log.txt
 				for (l in lines){					
 					if(lines[l].indexOf(extensions[e]) > -1){
-						fs.appendFileSync('./scan_log.txt', lines[l] + "\n");
+						
+						var fileMtime = getFileProperty(lines[l], "mtime");
+						
+						fs.appendFileSync('./scan_log.txt', fileMtime + " " + lines[l] + "\n");
 					}
 				}
 			}
@@ -31,4 +34,13 @@ function createScanLogHeader(extension){
 	fs.appendFileSync('./scan_log.txt', "***** Recently modified " + extension + " files *****\n");
 	fs.appendFileSync('./scan_log.txt', "****************************************\n");
 	fs.appendFileSync('./scan_log.txt', "\n");
+}
+
+function getFileProperty(path, prop){
+	var property = new Date();
+	fs.stat(path, function(err, stats){
+		property = stats.prop;
+	});
+	
+	return property;
 }
