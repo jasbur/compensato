@@ -7,15 +7,25 @@ module.exports = {
 		},
 
 		createScanLog: function(lines, extensions){
-			fs.writeFile('./scan_log.txt', "");
+			fs.writeFileSync('./scan_log.txt', "");
 			
-			for(l in lines){
-				for (e in extensions){
+			for(e in extensions){
+				createScanLogHeader(extensions[e]);
+				
+				for (l in lines){					
 					if(lines[l].indexOf(extensions[e]) > -1){
-						fs.appendFile('./scan_log.txt', lines[l] + "\n");
+						fs.appendFileSync('./scan_log.txt', lines[l] + "\n");
 					}
 				}
 			}
 		}
 		
 };
+
+function createScanLogHeader(extension){
+	fs.appendFileSync('./scan_log.txt', "\n");
+	fs.appendFileSync('./scan_log.txt', "****************************************\n");
+	fs.appendFileSync('./scan_log.txt', "***** Recently modified " + extension + " files *****\n");
+	fs.appendFileSync('./scan_log.txt', "****************************************\n");
+	fs.appendFileSync('./scan_log.txt', "\n");
+}
