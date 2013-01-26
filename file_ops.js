@@ -22,14 +22,10 @@ module.exports = {
 			fs.unlink("./fullFileList");
 			
 			console.log();
-			console.log("Creating sca_log.txt...");
-			output.creatScanLog(lines, extensions);
-			
-//			//Assemble an array of only executable file types
-//			var executableFiles = logic.checkForExtensions(lines, extensions);
-//			
-//			//Temporary code to make sure everything is working for now
-//			console.log(executableFiles.length + " executable files");
+			console.log("Creating scan_log.txt...");
+			output.createScanLog(lines, extensions);
+			console.log();
+			console.log("Scan log creation complete!");
 		});
 	}
 	

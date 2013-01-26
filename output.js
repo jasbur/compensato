@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 module.exports = {
 		
 		clearScreen: function(){
@@ -5,12 +7,12 @@ module.exports = {
 		},
 
 		createScanLog: function(lines, extensions){
-			fs.witeFile('./scan_log.txt', "");
+			fs.writeFile('./scan_log.txt', "");
 			
 			for(l in lines){
 				for (e in extensions){
 					if(lines[l].indexOf(extensions[e]) > -1){
-						fs.appendFile('./scan_log.txt', lines[l]);
+						fs.appendFile('./scan_log.txt', lines[l] + "\n");
 					}
 				}
 			}
