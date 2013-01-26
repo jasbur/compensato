@@ -25,7 +25,6 @@ process.stdin.on('data', function (text) {
     	process.stdin.setEncoding('utf8');
     	process.stdin.on('data', function(daysToScan){
     		output.clearScreen();
-    		console.log("Beginning scan for executable files modified within " + daysToScan.replace(/[\n]/, '') + " days");
     		fileOps.fileScan(daysToScan.replace(/[\n]/, ''));
     	});
     	break;
