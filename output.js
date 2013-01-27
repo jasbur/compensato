@@ -17,8 +17,7 @@ module.exports = {
 				for (l in lines){					
 					if(lines[l].indexOf(extensions[e]) > -1){
 						
-						var fileMtime = getFileProperty(lines[l], "mtime");
-						
+						var fileMtime = getFileProperty(lines[l], "mtime");						
 						fs.appendFileSync('./scan_log.txt', fileMtime + " " + lines[l] + "\n");
 					}
 				}
@@ -37,10 +36,7 @@ function createScanLogHeader(extension){
 }
 
 function getFileProperty(path, prop){
-	var property = new Date();
 	fs.stat(path, function(err, stats){
-		property = stats.prop;
+		return stats.prop;
 	});
-	
-	return property;
 }
