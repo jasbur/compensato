@@ -37,6 +37,6 @@ function createScanLogHeader(extension){
 
 function getFileProperty(path, prop, fn){
 	fs.stat(path, function(err, stats){
-		fn(path, stats.mtime);
+		fn(path, stats[prop]);
 	});
 }
