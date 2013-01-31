@@ -17,10 +17,19 @@ module.exports = {
 
 //Creates the header for each extension in scan_log.txt
 function createScanLogMain(lines, extensions, linesToWrite, fn){
+	var firstHeaderRun = {ran: false};
+	
 	for(e in extensions){
-		linesToWrite.push("\n");
-		linesToWrite.push("\n");
-		linesToWrite.push("\n");
+		
+		//If this is not the first header in the log add some new lines above it for padding
+		if (firstHeaderRun.ran == false){
+			firstHeaderRun.ran = true;
+		}else{
+			linesToWrite.push("\n");
+			linesToWrite.push("\n");
+			linesToWrite.push("\n");
+		}
+		
 		linesToWrite.push("****************************************\n");
 		linesToWrite.push("***** Recently modified " + extensions[e] + " files *****\n");
 		linesToWrite.push("****************************************\n");
