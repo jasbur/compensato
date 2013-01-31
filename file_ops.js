@@ -7,7 +7,7 @@ module.exports = {
 	//Scans for executable type files modified within the given time frame
 	fileScan: function(daysToScan){
 		//An array of "executable" file extensions
-		var extensions = [".bat", ".cmd", ".drv", ".exe", ".sys"];
+		var extensions = [".exe", ".sys", ".cmd", ".bat", ".drv"];
 		
 		//Use OS "find" command to do the searching and dump the output to fullFileList
 		console.log();

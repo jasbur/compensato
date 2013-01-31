@@ -20,6 +20,7 @@ function createScanLogMain(lines, extensions, linesToWrite, fn){
 	for(e in extensions){
 		linesToWrite.push("\n");
 		linesToWrite.push("\n");
+		linesToWrite.push("\n");
 		linesToWrite.push("****************************************\n");
 		linesToWrite.push("***** Recently modified " + extensions[e] + " files *****\n");
 		linesToWrite.push("****************************************\n");
