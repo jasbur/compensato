@@ -10,13 +10,13 @@ module.exports = {
 		createScanLog: function(lines, extensions){
 			var linesToWrite = new Array();
 			
-			createScanLogHeader(lines, extensions, linesToWrite);
+			createScanLogMain(lines, extensions, linesToWrite);
 		}
 		
 };
 
 //Creates the header for each extension in scan_log.txt
-function createScanLogHeader(lines, extensions, linesToWrite, fn){
+function createScanLogMain(lines, extensions, linesToWrite, fn){
 	for(e in extensions){
 		linesToWrite.push("\n");
 		linesToWrite.push("****************************************\n");
