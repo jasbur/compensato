@@ -32,18 +32,10 @@ function checkForValidFiles(lines, extension, linesToWrite){
 	//If the current line contains the current extension, write it to scan_log.txt
 	for (l in lines){					
 		if(lines[l].indexOf(extension) > -1){
-			getFileProperty(lines[l], "mtime", function(path, prop){
-				////////////////////
-			});
-			linesToWrite.push(lines[l] + "\n");
+			var fileStats = fs.statSync(lines[l]);
+			linesToWrite.push(fileStats.mtime + " " + " " + fileStats.ctime + " " + lines[l] + "\n");
 		}
 	}
-}
-
-function getFileProperty(path, prop, fn){
-	fs.stat(path, function(err, stats){
-		fn(path, stats[prop]);
-	});
 }
 
 function writeLinesToFile(linesToWrite){
