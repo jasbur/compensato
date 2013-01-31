@@ -19,9 +19,14 @@ module.exports = {
 function createScanLogMain(lines, extensions, linesToWrite, fn){
 	for(e in extensions){
 		linesToWrite.push("\n");
+		linesToWrite.push("\n");
 		linesToWrite.push("****************************************\n");
 		linesToWrite.push("***** Recently modified " + extensions[e] + " files *****\n");
 		linesToWrite.push("****************************************\n");
+		linesToWrite.push("\n");
+		linesToWrite.push("\n");
+		linesToWrite.push("             Date Modified             |                 Path\n");
+		linesToWrite.push("______________________________________________________________________________________________________\n");
 		linesToWrite.push("\n");
 		checkForValidFiles(lines, extensions[e], linesToWrite);
 	}
@@ -33,7 +38,7 @@ function checkForValidFiles(lines, extension, linesToWrite){
 	for (l in lines){					
 		if(lines[l].indexOf(extension) > -1){
 			var fileStats = fs.statSync(lines[l]);
-			linesToWrite.push(fileStats.mtime + " " + " " + fileStats.ctime + " " + lines[l] + "\n");
+			linesToWrite.push(fileStats.mtime + " " + " " + lines[l] + "\n");
 		}
 	}
 }
