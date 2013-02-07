@@ -1,0 +1,13 @@
+<%if @file_op_type == "file_scan"%>
+
+	<%=form_tag(:action => "file_scan", :method => "get") do%>
+		<%=label_tag(:scan_days, "Number of days to scan")%>
+		<%=text_field_tag(:scan_days)%>
+		<%=submit_tag("Begin scan...")%>
+	<%end%>
+
+<%elsif @file_op_type == "file_copy"%>
+
+	file copy
+
+<%end%>

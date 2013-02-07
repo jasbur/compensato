@@ -1,0 +1,9 @@
+<ul>
+	<%for log_line in @log_lines do%>
+		<li>
+			<%f = File.open(log_line.gsub("\n", ""))%>
+			<%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
+			<%f.close%>
+		</li>
+	<%end%>
+</ul>
