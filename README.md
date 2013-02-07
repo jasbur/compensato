@@ -1,13 +1,11 @@
 Compensato
 ==============
 
-This program requires Node.js to run. You can find installation instructions at https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+This program requires Ruby on Rails running on a Linux/Unix based system. Just enter the Compensato directory and run with:
 
-run using the command:
+rails s
 
-node compensatoMain.js
-
-from the project directory.
+Then navigate to 127.0.0.1:3000 or localhost:3000 in your browser of choice.
 
 ***************
 IMPORTANT!
