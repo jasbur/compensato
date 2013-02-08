@@ -34,4 +34,9 @@ class FileOpsController < ApplicationController
 		@log_lines = FileOp.file_scan_20(scan_days, @extensions)
 	end
 
+	def selected_files_log
+		@selected_paths = params[:selected_paths]
+		@extensions = params[:extensions].split
+	end
+
 end

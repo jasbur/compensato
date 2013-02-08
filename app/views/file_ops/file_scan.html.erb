@@ -1,15 +1,21 @@
-<ul>
+<%=form_tag(:action => "selected_files_log", :method => "get") do%>
+	<%=submit_tag("Select files")%>
 	<%for extension in @extensions%>
+		<hr>
 		<h3>.<%=extension.upcase%> files</h3>
 		<hr>
-		<%for log_line in @log_lines do%>
-			<%if log_line.include?(".#{extension}")%>
-				<li>
-					<%f = File.open(log_line.gsub("\n", ""))%>
-					<%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
-					<%f.close%>
-				</li>
+		<ul>
+			<%for log_line in @log_lines do%>
+				<%if log_line.include?(".#{extension}")%>
+					<li>
+						<%f = File.open(log_line.gsub("\n", ""))%>
+						<%= check_box_tag "selected_paths[]", log_line %> <%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
+						<%f.close%>
+					</li>
+				<%end%>
 			<%end%>
-		<%end%>
+		</ul>
 	<%end%>
-</ul>
+	<%=hidden_field_tag(:extensions, @extensions)%>
+	<%=submit_tag("Select files")%>
+<%end%>
