@@ -29,9 +29,9 @@ class FileOpsController < ApplicationController
 	end
 
 	def file_scan
-		extensions = ["exe", "sys"]
+		@extensions = ["exe", "sys"]
 		scan_days = params[:scan_days]
-		@log_lines = FileOp.file_scan_20(scan_days, extensions)
+		@log_lines = FileOp.file_scan_20(scan_days, @extensions)
 	end
 
 end

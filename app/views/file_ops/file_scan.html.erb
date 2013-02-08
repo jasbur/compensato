@@ -1,9 +1,15 @@
 <ul>
-	<%for log_line in @log_lines do%>
-		<li>
-			<%f = File.open(log_line.gsub("\n", ""))%>
-			<%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
-			<%f.close%>
-		</li>
+	<%for extension in @extensions%>
+		<h3>.<%=extension.upcase%> files</h3>
+		<hr>
+		<%for log_line in @log_lines do%>
+			<%if log_line.include?(".#{extension}")%>
+				<li>
+					<%f = File.open(log_line.gsub("\n", ""))%>
+					<%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
+					<%f.close%>
+				</li>
+			<%end%>
+		<%end%>
 	<%end%>
 </ul>
