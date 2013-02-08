@@ -1,0 +1,16 @@
+<%for extension in @extensions do%>
+	<hr>
+	<h3>.<%=extension.upcase%> files</h3>
+	<hr>
+	<ul>
+		<%for selected_path in @selected_paths%>
+			<%if selected_path.include?(".#{extension}")%>
+				<li>
+					<%f = File.open(selected_path)%>
+					<%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
+					<%f.close%>
+				</li>
+			<%end%>
+		<%end%>
+	</ul>
+<%end%>
