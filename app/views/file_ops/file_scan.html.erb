@@ -8,7 +8,7 @@
 			<%for log_line in @log_lines do%>
 				<%if log_line.include?(".#{extension}")%>
 					<li>
-						<%f = File.open(log_line.gsub("\n", ""))%>
+						<%f = File.open(log_line)%>
 						<%= check_box_tag "selected_paths[]", log_line %> <%=f.mtime%> | <%=f.path.gsub("/media/customerdrive", "")%>
 						<%f.close%>
 					</li>
