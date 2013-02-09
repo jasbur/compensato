@@ -37,6 +37,7 @@ class FileOpsController < ApplicationController
 	def selected_files_log
 		@selected_paths = params[:selected_paths]
 		@extensions = params[:extensions].split
+		FileOp.create_final_scan_log(@selected_paths, @extensions)
 	end
 
 end

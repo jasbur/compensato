@@ -147,4 +147,36 @@ def self.calculate_complete_percentage(completed, total)
 	return percent_complete
 end
 
+def self.create_final_scan_log(selected_paths, extensions)
+	file_paths = selected_paths
+	file_objects = Array.new
+	final_scan_log = File.open("/media/compensato_client/Compensato/scanlog_#{Time.now}.txt", "w+")
+
+	file_paths.each{|file_path|
+		file = File.open(file_path, "r")
+		file_objects << file
+	}
+
+	extensions.each{|extension|
+		final_scan_log.puts "######################################################"
+		final_scan_log.puts "####### .#{extension} files modified in the last XX days ######"
+		final_scan_log.puts "######################################################"
+		final_scan_log.puts
+		final_scan_log.puts "       Modified at:       |       Path:"
+		final_scan_log.puts "______________________________________________________"
+		final_scan_log.puts
+
+		file_objects.each{|file_object|
+			if file_object.path.include?(".#{extension}")
+				final_scan_log.puts "#{file_object.mtime} | #{file_object.path.gsub("/media/compensato_client", "")}"
+			end
+		}
+
+		final_scan_log.puts
+		final_scan_log.puts
+	}
+
+	final_scan_log.close
+end
+
 end
