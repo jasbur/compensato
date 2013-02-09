@@ -5,9 +5,9 @@
 			<li><%=label_tag(:scan_days, "Number of days to scan:")%></li>
 			<li><%=text_field_tag(:scan_days)%></li>
 			<li>
-				<%= check_box_tag "selected_extensions[]", "exe" %> .exe
-				<%= check_box_tag "selected_extensions[]", "cmd" %> .cmd
-				<%= check_box_tag "selected_extensions[]", "bat" %> .bat
+				<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
+				<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
+				<%= check_box_tag "selected_extensions[]", "bat", true %> .bat
 				<%= check_box_tag "selected_extensions[]", "sys" %> .sys
 				<%= check_box_tag "selected_extensions[]", "drv" %> .drv
 				<%= check_box_tag "selected_extensions[]", "dll" %> .dll
