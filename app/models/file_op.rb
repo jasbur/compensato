@@ -2,7 +2,7 @@ class FileOp < ActiveRecord::Base
   # attr_accessible :title, :body
 
 def self.file_scan_20(entered_scan_days, extensions)
-	# system "find /media/customerdrive/ -type f -mtime -#{entered_scan_days} > ./tmp/full_file_list"
+	system "find /media/compensato_client/ -type f -mtime -#{entered_scan_days} > ./tmp/full_file_list"
 	full_file_list = File.open("./tmp/full_file_list", "r")
 	lines_to_return = Array.new
 	
@@ -19,7 +19,7 @@ def self.file_scan_20(entered_scan_days, extensions)
 		print "  Scanning progress: #{percent_complete.round}% \r"
 	}
 	
-	# File.delete(full_file_list)
+	File.delete(full_file_list)
 	return lines_to_return
 end
 
