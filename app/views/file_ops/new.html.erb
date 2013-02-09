@@ -5,9 +5,9 @@
 		<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
 		<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
 		<%= check_box_tag "selected_extensions[]", "bat", true %> .bat
-		<%= check_box_tag "selected_extensions[]", "sys" %> .sys
-		<%= check_box_tag "selected_extensions[]", "drv" %> .drv
-		<%= check_box_tag "selected_extensions[]", "dll" %> .dll<br>
+		<%= check_box_tag "selected_extensions[]", "sys", true %> .sys
+		<%= check_box_tag "selected_extensions[]", "drv", true %> .drv
+		<%= check_box_tag "selected_extensions[]", "dll", true %> .dll<br>
 		<%=submit_tag("Begin scan...")%>
 	<%end%>
 
