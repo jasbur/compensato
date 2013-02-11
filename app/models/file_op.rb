@@ -13,10 +13,6 @@ def self.file_scan_20(entered_scan_days, extensions)
 		if check_for_garbage_file_names(line) == false and check_for_appropriate_file_type(line, extensions) == true
 			lines_to_return << line.chomp
 		end
-		
-		file_list_counter = file_list_counter + 1
-		percent_complete = calculate_complete_percentage(file_list_counter, total_number_of_files)
-		print "  Scanning progress: #{percent_complete.round}% \r"
 	}
 	
 	File.delete(full_file_list)
@@ -139,12 +135,6 @@ def self.check_for_appropriate_file_type(file_string, extensions)
 			return true
 		end
 	}
-end
-
-def self.calculate_complete_percentage(completed, total)
-	percent_complete = ((completed.to_f / total.to_f) * 100)
-	
-	return percent_complete
 end
 
 def self.create_final_scan_log(selected_paths, extensions)
