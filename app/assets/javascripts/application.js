@@ -13,3 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function file_scan_progress_indicator(){
+	var progress_out = "File scan is currently running";
+	document.getElementById("file_scan_progress_indicator").innerHTML = progress_out;
+	setInterval( function(){
+		progress_out = progress_out + ", and running"
+		document.getElementById("file_scan_progress_indicator").innerHTML = progress_out;
+	}, 2000)
+}

@@ -32,6 +32,7 @@ class FileOpsController < ApplicationController
 		@extensions = params[:selected_extensions]
 		scan_days = params[:scan_days]
 		@log_lines = FileOp.file_scan_20(scan_days, @extensions)
+		sleep 5
 	end
 
 	def selected_files_log
