@@ -32,13 +32,18 @@ class FileOpsController < ApplicationController
 		@extensions = params[:selected_extensions]
 		scan_days = params[:scan_days]
 		@log_lines = FileOp.file_scan_20(scan_days, @extensions)
-		sleep 5
 	end
 
 	def selected_files_log
 		@selected_paths = params[:selected_paths]
 		@extensions = params[:extensions].split
 		FileOp.create_final_scan_log(@selected_paths, @extensions)
+	end
+
+	def file_scan_progress
+		@current_path = Time.now
+		# @current_path = FileOp.last_line_in_file("./tmp/full_file_list")
+		render :layout => false
 	end
 
 end

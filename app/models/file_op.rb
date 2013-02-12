@@ -169,4 +169,9 @@ def self.create_final_scan_log(selected_paths, extensions)
 	final_scan_log.close
 end
 
+def self.last_line_in_file(file_path)
+	last_line = %x(tail -n 1 #{file_path})
+	return last_line
+end
+
 end

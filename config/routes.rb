@@ -7,6 +7,7 @@ RailsCompensato::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
     match 'file_ops/file_scan' => 'file_ops#file_scan'
     match 'file_ops/selected_files_log' => 'file_ops#selected_files_log'
+    match 'file_ops/file_scan_progress' => 'file_ops#file_scan_progress'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

@@ -2,7 +2,7 @@
 
 <%if @file_op_type == "file_scan"%>
 
-	<%=form_tag({:action => "file_scan", :method => "get"}, {:onsubmit => "file_scan_progress_indicator()"}) do%>
+	<%=form_tag(:action => "file_scan", :method => "get") do%>
 		<%=label_tag(:scan_days, "Number of days to scan:")%> <%=text_field_tag(:scan_days)%><br>
 		<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
 		<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
@@ -19,4 +19,6 @@
 
 <%end%>
 
-<span id="file_scan_progress_indicator"></span>
+<script type="text/javascript">file_scan_progress();</script>
+
+<div id="file_scan_progress"></div>
