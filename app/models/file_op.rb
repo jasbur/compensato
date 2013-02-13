@@ -6,9 +6,6 @@ def self.file_scan_20(entered_scan_days, extensions)
 	full_file_list = File.open("./tmp/full_file_list", "r")
 	lines_to_return = Array.new
 	
-	total_number_of_files = number_of_lines_in_file(full_file_list)
-	
-	file_list_counter = 0
 	full_file_list.each{|line|	
 		if check_for_garbage_file_names(line) == false and check_for_appropriate_file_type(line, extensions) == true
 			lines_to_return << line.chomp
@@ -106,16 +103,6 @@ def self.copy_user_data(copy_direction, customer_name)
 	end
 end
 
-def self.number_of_lines_in_file(file)
-	number_of_files = 0
-	file.each{|line|
-		number_of_files = number_of_files + 1
-	}
-	file.rewind
-	
-	return number_of_files
-end
-
 def self.check_for_garbage_file_names(file_string)
 	garbage_strings = [".pf", "Windows/assembly/GAC/Microsoft.DirectX", "/Windows/assembly/NativeImages", 
 						"/Windows/Microsoft.NET/assembly/GAC", "/Windows/winsxs/x86_microsoft"]
@@ -167,11 +154,6 @@ def self.create_final_scan_log(selected_paths, extensions)
 	}
 
 	final_scan_log.close
-end
-
-def self.last_line_in_file(file_path)
-	last_line = %x(tail -n 1 #{file_path})
-	return last_line
 end
 
 end

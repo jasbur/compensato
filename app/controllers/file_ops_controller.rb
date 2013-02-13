@@ -42,7 +42,6 @@ class FileOpsController < ApplicationController
 
 	def file_scan_progress
 		@current_path = Time.now
-		# @current_path = FileOp.last_line_in_file("./tmp/full_file_list")
 		render :layout => false
 	end
 
