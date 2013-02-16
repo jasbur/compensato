@@ -3,7 +3,8 @@ class FileOp < ActiveRecord::Base
 
 #Auto-mounts client drive by collecting "fdisk -l" output from system, then looking for the 
 #line that contains "NTFS" and then iterates through to find the line that has the most 
-#blocks which is most likely to be the main windows installation.
+#blocks which is most likely to be the main windows installation. After the drive is mounted
+#it then creates a "Compensato" folder on the client drive if it doesn't exist
 def self.mount_client_drive
 	fdisk_list = %x(fdisk -l).split("\n")
 	device_id = String.new
@@ -16,6 +17,10 @@ def self.mount_client_drive
 	}
 
 	system("mount #{device_id} /media/compensato_client")
+
+	if Dir.exist?("/media/compensato_client/Compensato") == false
+		Dir.mkdir("/media/compensato_client/Compensato")
+	end
 end
 
 #Uses the system's "find" command to create a list of files maching the modified time given 
