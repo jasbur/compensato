@@ -2,17 +2,17 @@ class FileOp < ActiveRecord::Base
   # attr_accessible :title, :body
 
 def self.file_scan_20(entered_scan_days, extensions)
-	system "find /media/compensato_client/ -type f -mtime -#{entered_scan_days} > ./tmp/full_file_list"
-	full_file_list = File.open("./tmp/full_file_list", "r")
+	initial_file_list = %x(find /media/compensato_client/ -type f -mtime -#{entered_scan_days})
+	full_file_list = initial_file_list.split
 	lines_to_return = Array.new
 	
 	full_file_list.each{|line|	
+		puts line
 		if check_for_garbage_file_names(line) == false and check_for_appropriate_file_type(line, extensions) == true
 			lines_to_return << line.chomp
 		end
 	}
 	
-	File.delete(full_file_list)
 	return lines_to_return
 end
 
