@@ -4,12 +4,10 @@ class FileOp < ActiveRecord::Base
 #Uses the system's "find" command to create a list of files maching the modified time given 
 #then filters them for unwanted files and to make sure they match the appropriate extensions
 def self.file_scan_20(entered_scan_days, extensions)
-	initial_file_list = %x(find /media/compensato_client/ -type f -mtime -#{entered_scan_days})
-	full_file_list = initial_file_list.split
+	full_file_list = %x(find /media/compensato_client/ -type f -mtime -#{entered_scan_days}).split("\n")
 	lines_to_return = Array.new
 	
 	full_file_list.each{|line|	
-		puts line
 		if check_for_garbage_file_names(line) == false and check_for_appropriate_file_type(line, extensions) == true
 			lines_to_return << line.chomp
 		end
