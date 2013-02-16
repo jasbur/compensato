@@ -1,6 +1,8 @@
 class FileOp < ActiveRecord::Base
   # attr_accessible :title, :body
 
+#Uses the system's "find" command to create a list of files maching the modified time given 
+#then filters them for unwanted files and to make sure they match the appropriate extensions
 def self.file_scan_20(entered_scan_days, extensions)
 	initial_file_list = %x(find /media/compensato_client/ -type f -mtime -#{entered_scan_days})
 	full_file_list = initial_file_list.split
