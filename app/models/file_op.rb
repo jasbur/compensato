@@ -27,6 +27,10 @@ def self.mount_client_drive
 	if Dir.exist?("/media/compensato_client/Compensato") == false
 		Dir.mkdir("/media/compensato_client/Compensato")
 	end
+
+	if Dir.exist?("/media/compensato_client/Compensato/Downloads") == false
+		Dir.mkdir("/media/compensato_client/Compensato/Downloads")
+	end
 end
 
 #Uses the system's "find" command to create a list of files maching the modified time given 
