@@ -10,6 +10,10 @@ def self.mount_client_drive
 	device_id = String.new
 	most_blocks = 0
 
+	if Dir.exist?("/media/compensato_client") == false
+		Dir.mkdir("/media/compensato_client")
+	end
+
 	if Dir.entries("/media/compensato_client").size <= 2
 		fdisk_list.each{|line|
 			if line.include?("NTFS") and line.split[-3].to_i > most_blocks
