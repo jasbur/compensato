@@ -184,4 +184,15 @@ def self.create_final_scan_log(selected_paths, extensions)
 	final_scan_log.close
 end
 
+#Isolates the dynamically geberated ComboFix URL from the download page by finding predicatable 
+#pattern in the source.
+def self.get_combofix_url
+	full_source = %x(curl -s -L http://www.bleepingcomputer.com/download/combofix/dl/12/)
+	start_index = full_source.index("<a href='http://download.bleepingcomputer.com/dl/") + 9
+	end_index = start_index + 132
+	isolated_link = full_source[start_index..end_index]
+
+	return isolated_link
+end
+
 end

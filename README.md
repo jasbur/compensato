@@ -8,3 +8,9 @@ This program requires Ruby on Rails 3.2 running on a Linux/Unix based system. Ju
 rails s
 
 Then navigate to 127.0.0.1:3000 or localhost:3000 in your browser of choice.
+
+Requirements:
+
+Ubuntu 12.10
+Rails 3.2.6
+curl 7.27.0
