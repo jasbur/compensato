@@ -1,6 +1,23 @@
 class FileOp < ActiveRecord::Base
   # attr_accessible :title, :body
 
+#Auto-mounts client drive by collecting "fdisk -l" output from system, then looking for the 
+#line that contains "NTFS" and then iterates through to find the line that has the most 
+#blocks which is most likely to be the main windows installation.
+def self.mount_client_drive
+	fdisk_list = %x(fdisk -l).split("\n")
+	device_id = String.new
+	most_blocks = 0
+
+	fdisk_list.each{|line|
+		if line.include?("NTFS") and line.split[-3].to_i > most_blocks
+			device_id = line[0..8]
+		end
+	}
+
+	system("mount #{device_id} /media/compensato_client")
+end
+
 #Uses the system's "find" command to create a list of files maching the modified time given 
 #then filters them for unwanted files and to make sure they match the appropriate extensions
 def self.file_scan_20(entered_scan_days, extensions)
