@@ -8,6 +8,7 @@ RailsCompensato::Application.routes.draw do
     match 'file_ops/file_scan' => 'file_ops#file_scan'
     match 'file_ops/selected_files_log' => 'file_ops#selected_files_log'
     match 'file_ops/file_scan_progress' => 'file_ops#file_scan_progress'
+    match 'downloads/fetch_downloads' => 'downloads#fetch_downloads'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -16,6 +17,7 @@ RailsCompensato::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
     resources :file_ops
+    resources :downloads
 
   # Sample resource route with options:
   #   resources :products do
