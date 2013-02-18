@@ -13,9 +13,8 @@ class Download < ActiveRecord::Base
 	end
 
 	def self.download_files_to_client(download_links)
-		download_links.each{|download_link|
-			file_name = download_link.split("/").last
-			system "curl -o /media/compensato_client/Compensato/Downloads/#{file_name} #{download_link}"
+		download_links.each{|key, value|
+			system "curl -o /media/compensato_client/Compensato/Downloads/#{key.gsub(" ", "_")}.exe #{value}"
 		}
 	end
 

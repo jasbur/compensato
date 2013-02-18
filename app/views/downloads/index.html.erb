@@ -1,9 +1,8 @@
 <%@page_title = "Downloads"%>
 
 <%=form_tag(:action => "fetch_downloads", :method => "get") do%>
-	<%= check_box_tag "download_links[]", "#{@combofix_url}", true %> ComboFix<br>
-	<%= check_box_tag "download_links[]", "http://support.kaspersky.com/downloads/utils/tdsskiller.exe", true %> TDSSKiller<br>
-	<%= check_box_tag "download_links[]", "http://ninite.com/malwarebytes/ninite.exe", true %> MalwareBytes<br>
-	<%= check_box_tag "download_links[]", "http://ninite.com/chrome/ninite.exe", true %> Google Chrome<br>
+	<%@file_links.each{|key, value|%>
+		<%=check_box_tag "download_links[]", "#{key}|#{value}"%> <%=key%></br>
+	<%}%>
 	<%=submit_tag("Download files")%>
 <%end%>
