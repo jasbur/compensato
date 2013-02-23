@@ -49,4 +49,8 @@ class FileOpsController < ApplicationController
 		render :layout => false
 	end
 
+	def copy_user_data
+		
+	end
+
 end
