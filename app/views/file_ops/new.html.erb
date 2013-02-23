@@ -15,7 +15,17 @@
 
 <%elsif @file_op_type == "file_copy"%>
 
-	file copy
+	<%@page_title = "Copy user data"%>
+
+	<%=form_tag(:action => "copy_user_data", :method => "get") do%>
+		<p>Select source directory:</p>
+		<p><%=text_field_tag(:source_directory)%></p>
+
+		<p>Select destination directory:</p>
+		<p><%=text_field_tag(:destination_directory)%></p>
+
+		<%=submit_tag("Start data copy")%>
+	<%end%>
 
 <%end%>
 

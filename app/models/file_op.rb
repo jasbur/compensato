@@ -48,8 +48,13 @@ class FileOp < ActiveRecord::Base
 		return lines_to_return
 	end
 
-	def self.copy_data(source_directory, target_directory)
+	def self.copy_data(source_directory, destination_directory)
+		spawn "cp -a #{source_directory} #{destination_directory}"
+	end
 
+	def self.get_directory_size(directory)
+		directory_size = %x(du -s #{directory}).split.first
+		return directory_size
 	end
 
 	def self.check_for_garbage_file_names(file_string)

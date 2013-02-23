@@ -50,7 +50,11 @@ class FileOpsController < ApplicationController
 	end
 
 	def copy_user_data
-		
+		source_directory = params[:source_directory]
+		destination_directory = params[:destination_directory]
+
+		FileOp.copy_data(source_directory, destination_directory)
+		@source_directory_size = FileOp.get_directory_size(source_directory)
 	end
 
 end
