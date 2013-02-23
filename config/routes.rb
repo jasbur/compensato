@@ -8,7 +8,9 @@ RailsCompensato::Application.routes.draw do
     match 'file_ops/file_scan' => 'file_ops#file_scan'
     match 'file_ops/selected_files_log' => 'file_ops#selected_files_log'
     match 'file_ops/file_scan_progress' => 'file_ops#file_scan_progress'
+    match 'file_ops/file_copy_progress' => 'file_ops#file_copy_progress'
     match 'file_ops/copy_user_data' => 'file_ops#copy_user_data'
+    match 'file_ops/kill_copy' => 'file_ops#kill_copy'
     match 'downloads/fetch_downloads' => 'downloads#fetch_downloads'
 
   # Sample of named route:

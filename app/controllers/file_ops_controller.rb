@@ -8,26 +8,6 @@ class FileOpsController < ApplicationController
 		@file_op_type = params[:fileOpType]
 	end
 
-	def create
-
-	end
-
-	def show
-
-	end
-
-	def edit
-		
-	end
-
-	def update
-		
-	end
-
-	def destroy
-		
-	end
-
 	#Triggers file scan with given paramters from "new" and displays a 
 	#sorted list of all files matching file scan parameters from "file_scan"
 	def file_scan
@@ -51,10 +31,19 @@ class FileOpsController < ApplicationController
 
 	def copy_user_data
 		source_directory = params[:source_directory]
-		destination_directory = params[:destination_directory]
+		@destination_directory = params[:destination_directory]
 
-		FileOp.copy_data(source_directory, destination_directory)
+		FileOp.copy_data(source_directory, @destination_directory)
 		@source_directory_size = FileOp.get_directory_size(source_directory)
+	end
+
+	def file_copy_progress
+		@destination_directory_size = FileOp.get_directory_size("/home/jasbur/tmp")
+		render :layout => false
+	end
+
+	def kill_copy
+		FileOp.kill_background_process("cp")
 	end
 
 end

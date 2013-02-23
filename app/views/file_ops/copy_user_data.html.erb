@@ -1,1 +1,9 @@
-Source Directory Size: <%=@source_directory_size%>K
+Source Directory Size: <%=(@source_directory_size.to_f / 1000000).round(2)%>GB
+
+<script type="text/javascript">file_copy_progress();</script>
+
+<div id="file_copy_progress">
+	Destination directory size: Please Wait...
+</div>
+
+<%=link_to "Cancel", :action => "kill_copy"%>

@@ -110,7 +110,7 @@ class FileOp < ActiveRecord::Base
 		final_scan_log.close
 	end
 
-	def kill_background_process(process)
+	def self.kill_background_process(process)
 		system "killall #{process}"
 	end
 

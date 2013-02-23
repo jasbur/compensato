@@ -19,3 +19,9 @@ function file_scan_progress(){
 		$('#file_scan_progress').load('/file_ops/file_scan_progress');
 	}, 1000);
 }
+
+function file_copy_progress(directory){
+	setInterval(function(directory){
+		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=/home/jasbur/tmp/test');
+	}, 10000);
+}
