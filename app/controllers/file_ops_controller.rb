@@ -35,8 +35,9 @@ class FileOpsController < ApplicationController
 
 	def file_copy_progress
 		@source_directory_size = params[:source_directory_size]
-		@destination_directory_size = FileOp.get_directory_size("/home/jasbur/tmp/test")
-		@destination_directory_files = FileOp.get_number_of_files("/home/jasbur/tmp/test")
+		destination_directory = params[:destination_directory]
+		@destination_directory_size = FileOp.get_directory_size(destination_directory)
+		@destination_directory_files = FileOp.get_number_of_files(destination_directory)
 		render :layout => false
 	end
 

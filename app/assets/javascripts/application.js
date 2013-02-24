@@ -15,7 +15,7 @@
 //= require_tree .
 
 function file_copy_progress(directory){
-	setInterval(function(directory){
-		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=/home/jasbur/tmp/test');
+	setInterval(function(){
+		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=' + directory);
 	}, 10000);
 }
