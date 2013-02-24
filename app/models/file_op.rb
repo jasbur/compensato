@@ -57,6 +57,11 @@ class FileOp < ActiveRecord::Base
 		return directory_size
 	end
 
+	def self.get_number_of_files(directory)
+		number_of_files = %x(find #{directory} -type f | wc -l)
+		return number_of_files
+	end
+
 	def self.check_for_garbage_file_names(file_string)
 		garbage_strings = [".pf", "Windows/assembly/GAC/Microsoft.DirectX", "/Windows/assembly/NativeImages", 
 							"/Windows/Microsoft.NET/assembly/GAC", "/Windows/winsxs/x86_microsoft"]
