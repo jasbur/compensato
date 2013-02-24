@@ -24,11 +24,6 @@ class FileOpsController < ApplicationController
 		FileOp.create_final_scan_log(@selected_paths, @extensions)
 	end
 
-	def file_scan_progress
-		@current_path = Time.now
-		render :layout => false
-	end
-
 	def copy_user_data
 		source_directory = params[:source_directory]
 		@destination_directory = params[:destination_directory]
