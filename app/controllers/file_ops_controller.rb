@@ -1,9 +1,12 @@
 class FileOpsController < ApplicationController
 
+	#Main index action for "file_ops"
 	def index
 		
 	end
 
+	#Hold the passed "@file_op_type" (what the user wnats to do) parameter to determine what to 
+	#display in the view
 	def new
 		@file_op_type = params[:fileOpType]
 	end
@@ -24,6 +27,7 @@ class FileOpsController < ApplicationController
 		FileOp.create_final_scan_log(@selected_paths, @extensions)
 	end
 
+	#Control the copying of data from the given directory to another specified directory
 	def copy_user_data
 		source_directory = params[:source_directory]
 		@destination_directory = params[:destination_directory]
@@ -34,6 +38,7 @@ class FileOpsController < ApplicationController
 		FileOp.copy_data(source_directory, @destination_directory)
 	end
 
+	#To be called periodically from /file_ops/copy_user_data to provide a status update of the file copy
 	def file_copy_progress
 		@source_directory_size = params[:source_directory_size]
 		destination_directory = params[:destination_directory]
@@ -44,6 +49,7 @@ class FileOpsController < ApplicationController
 		render :layout => false
 	end
 
+	#Kill all instances of the "cp" command running on the system to cancel the current copy operation
 	def kill_copy
 		FileOp.kill_background_process("cp")
 	end

@@ -1,5 +1,6 @@
 class DownloadsController < ApplicationController
 
+	#Main index for the "downloads" controller. Also generates download links to be selected in index view
 	def index
 		combofix_url = Download.get_combofix_url
 		@file_links = {
@@ -15,6 +16,7 @@ class DownloadsController < ApplicationController
 		}
 	end
 
+	#Process the selected downloads from /downloads/index
 	def fetch_downloads
 		pre_hash_download_links = params[:download_links]
 		download_links = Hash.new

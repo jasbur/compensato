@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
-	#Main display action, also auto-mounts client drive
+	#Main index for the "main" controller. Also auto-mounts client drive and collects general 
+	#system information
 	def index
 		FileOp.mount_client_drive
 		@system_stats = SystemInfo.get_system_stats
