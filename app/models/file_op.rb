@@ -97,7 +97,7 @@ class FileOp < ActiveRecord::Base
 	def self.create_final_scan_log(selected_paths, extensions)
 		file_paths = selected_paths
 		file_objects = Array.new
-		final_scan_log = File.open("/media/compensato_client/Compensato/scanlog_#{Time.now}.txt", "w+")
+		final_scan_log = File.open("/media/compensato_client/Compensato/scanlog_#{Time.now.to_s.gsub(":", "-")}.txt", "w+")
 
 		file_paths.each{|file_path|
 			file = File.open(file_path, "r")
