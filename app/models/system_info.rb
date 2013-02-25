@@ -1,5 +1,6 @@
 class SystemInfo < ActiveRecord::Base
   
+	#Gets the system information for the desired attributes and returns them as an ordered array of strings
 	def self.get_system_stats
 		system_stats = []
 		cpu_info = %x(cat /proc/cpuinfo).split("\n")
