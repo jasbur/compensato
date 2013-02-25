@@ -12,7 +12,7 @@
 <ul>
 	<li>CPU Model: <%=@system_stats[0]%></li>
 	<li>CPU Cores: <%=@system_stats[1]%></li>
-	<li>Memory: <%=@system_stats[2]%></li>
+	<li>Memory: <%=((@system_stats[2].to_f / 1024) / 1024).round(1)%></li>
 	<li>HD Capacity: <%=(@system_stats[3].to_f / 1000000).round(1)%>GB</li>
 	<li>HD Space Used: <%=(@system_stats[4].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>
 </ul>
