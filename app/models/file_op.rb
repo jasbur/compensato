@@ -48,20 +48,27 @@ class FileOp < ActiveRecord::Base
 		return lines_to_return
 	end
 
+	#Issue a simple "cp" command to copy data using the given directories
 	def self.copy_data(source_directory, destination_directory)
 		spawn "cp -a #{source_directory} #{destination_directory}"
 	end
 
+	#Get the directory size using the system's "du" (-s = silent) command
 	def self.get_directory_size(directory)
 		directory_size = %x(du -s #{directory}).split.first
 		return directory_size
 	end
 
+	#Gets the number of files in a directory and its sub-directories by using the system's 
+	#{}"find" (-type f = find all files only) command to find all files then pass them to the 
+	#{}"wc" (-l = return only the number of new lines generated) command wich generates a newline 
+	#for each one then counts it
 	def self.get_number_of_files(directory)
 		number_of_files = %x(find #{directory} -type f | wc -l)
 		return number_of_files
 	end
 
+	#Return "true" if the given string matches any of the "garbage strings"
 	def self.check_for_garbage_file_names(file_string)
 		garbage_strings = [".pf", "Windows/assembly/GAC/Microsoft.DirectX", "/Windows/assembly/NativeImages", 
 							"/Windows/Microsoft.NET/assembly/GAC", "/Windows/winsxs/x86_microsoft"]
@@ -75,6 +82,8 @@ class FileOp < ActiveRecord::Base
 		return false
 	end
 
+	#Checks the last 4 chracters to see if they contain any of the given file extensions by flipping 
+	#the string and checking the FIRST 4 chracters for the reverse of the given extensions.
 	def self.check_for_appropriate_file_type(file_string, extensions)
 		extensions.each{|e|
 			if file_string.reverse[0..4].downcase.include?("#{e.reverse}.")
@@ -83,6 +92,8 @@ class FileOp < ActiveRecord::Base
 		}
 	end
 
+	#Generates a simple text log to be saved on the client's computer conatainging the 
+	#technician-selected files only from the "file_scan" output
 	def self.create_final_scan_log(selected_paths, extensions)
 		file_paths = selected_paths
 		file_objects = Array.new
@@ -115,6 +126,7 @@ class FileOp < ActiveRecord::Base
 		final_scan_log.close
 	end
 
+	#Issues a simple "killall" command to kill all processes with the given process name.
 	def self.kill_background_process(process)
 		system "killall #{process}"
 	end

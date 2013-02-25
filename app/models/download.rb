@@ -12,6 +12,7 @@ class Download < ActiveRecord::Base
 		return isolated_link
 	end
 
+	#Iterate through provided hashes and execute the downloads using Curl
 	def self.download_files_to_client(download_links)
 		download_links.each{|key, value|
 			system "curl -o /media/compensato_client/Compensato/Downloads/#{key.gsub(" ", "_")}.exe #{value}"
