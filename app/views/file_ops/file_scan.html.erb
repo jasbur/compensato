@@ -1,5 +1,7 @@
 <%@page_title = "Scan Results"%>
 
+<%=@log_lines.size%>
+
 <%=form_tag(:action => "selected_files_log", :method => "get") do%>
 	<%=submit_tag("Select files")%>
 	<%for extension in @extensions%>

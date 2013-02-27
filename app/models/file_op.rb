@@ -86,7 +86,7 @@ class FileOp < ActiveRecord::Base
 	#the string and checking the FIRST 4 chracters for the reverse of the given extensions.
 	def self.check_for_appropriate_file_type(file_string, extensions)
 		extensions.each{|e|
-			if file_string.reverse[0..4].downcase.include?("#{e.reverse}.")
+			if file_string.split(".").last.downcase.include?("#{e}")
 				return true
 			end
 		}
