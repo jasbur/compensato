@@ -115,7 +115,10 @@ class FileOp < ActiveRecord::Base
 
 			file_objects.each{|file_object|
 				if file_object.path.include?(".#{extension}")
-					final_scan_log.puts "#{file_object.mtime} | #{file_object.path.gsub("/media/compensato_client", "")}"
+					formatted_path = file_object.path.gsub("/media/compensato_client", "")
+					formatted_path.gsub!("/", "\\")
+
+					final_scan_log.puts '#{file_object.mtime} | C:\\#{formatted_path}'
 				end
 			}
 
