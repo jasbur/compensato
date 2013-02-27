@@ -94,7 +94,7 @@ class FileOp < ActiveRecord::Base
 
 	#Generates a simple text log to be saved on the client's computer conatainging the 
 	#technician-selected files only from the "file_scan" output
-	def self.create_final_scan_log(selected_paths, extensions)
+	def self.create_final_scan_log(selected_paths, extensions, scan_days)
 		file_paths = selected_paths
 		file_objects = Array.new
 		final_scan_log = File.open("/media/compensato_client/Compensato/scanlog_#{Time.now.to_s.gsub(":", "-")}.txt", "w+")
@@ -106,7 +106,7 @@ class FileOp < ActiveRecord::Base
 
 		extensions.each{|extension|
 			final_scan_log.puts "######################################################"
-			final_scan_log.puts "####### .#{extension} files modified in the last XX days ######"
+			final_scan_log.puts "####### .#{extension} files modified in the last #{scan_days} days ######"
 			final_scan_log.puts "######################################################"
 			final_scan_log.puts
 			final_scan_log.puts "       Modified at:       |       Path:"

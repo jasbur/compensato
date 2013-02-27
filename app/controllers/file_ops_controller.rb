@@ -15,8 +15,8 @@ class FileOpsController < ApplicationController
 	#sorted list of all files matching file scan parameters from "file_scan"
 	def file_scan
 		@extensions = params[:selected_extensions]
-		scan_days = params[:scan_days]
-		@log_lines = FileOp.file_scan_20(scan_days, @extensions)
+		@scan_days = params[:scan_days]
+		@log_lines = FileOp.file_scan_20(@scan_days, @extensions)
 	end
 
 	#Catches the selected files from "selected_files_log" and saves a simple text log into 
@@ -24,7 +24,9 @@ class FileOpsController < ApplicationController
 	def selected_files_log
 		@selected_paths = params[:selected_paths]
 		@extensions = params[:extensions].split
-		FileOp.create_final_scan_log(@selected_paths, @extensions)
+		@scan_days = params[:scan_days]
+
+		FileOp.create_final_scan_log(@selected_paths, @extensions, @scan_days)
 	end
 
 	#Control the copying of data from the given directory to another specified directory
