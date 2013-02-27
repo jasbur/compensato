@@ -38,7 +38,8 @@ class SystemInfo < ActiveRecord::Base
 
 		drive_info.each{|line|
 			if line.include?("/media/compensato_client")
-				system_stats << line.split[3]
+				capacity = line.split[2].to_i + line.split[3].to_i
+				system_stats << capacity
 			end
 		}
 
