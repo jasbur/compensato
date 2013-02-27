@@ -55,7 +55,7 @@ class FileOp < ActiveRecord::Base
 
 	#Get the directory size using the system's "du" (-s = silent) command
 	def self.get_directory_size(directory)
-		directory_size = %x(du -s #{directory}).split.first
+		directory_size = %x(du -s #{Regexp::escape(directory)}).split.first
 		return directory_size
 	end
 
@@ -64,7 +64,7 @@ class FileOp < ActiveRecord::Base
 	#{}"wc" (-l = return only the number of new lines generated) command wich generates a newline 
 	#for each one then counts it
 	def self.get_number_of_files(directory)
-		number_of_files = %x(find #{directory} -type f | wc -l)
+		number_of_files = %x(find #{Regexp::escape(directory)} -type f | wc -l)
 		return number_of_files
 	end
 
