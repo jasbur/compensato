@@ -12,20 +12,26 @@ class FileOp < ActiveRecord::Base
 			Dir.mkdir("/media/compensato_client")
 		end
 
-		mount_iterations.each{|i|
-			unless client_drive_found == true
-				puts "************************** trying to mount #{i}"
-				if system "mount /dev/#{i} /media/compensato_client"
-					if File.exist?("/media/compensato_client/pagefile.sys") or File.exist?("/media/compensato_client/PAGEFILE.SYS")
-						client_drive_found = true
-					else
-						sleep 1
-						system "umount /media/compensato_client"
+		unless Dir.entries("/media/compensato_client").size > 2
+			mount_iterations.each{|i|
+				unless client_drive_found == true
+					if system "mount /dev/#{i} /media/compensato_client"
+						if File.exist?("/media/compensato_client/pagefile.sys") or File.exist?("/media/compensato_client/PAGEFILE.SYS")
+							client_drive_found = true
+						else
+							sleep 1
+							system "umount /media/compensato_client"
+						end
 					end
 				end
-			end
-		}
+			}
+		end
+		
+		create_client_folder_structure
+	end
 
+	#Creates default folder structure on client drive if it doesn't already exist
+	def self.create_client_folder_structure
 		if Dir.exist?("/media/compensato_client/Compensato") == false
 			Dir.mkdir("/media/compensato_client/Compensato")
 		end
