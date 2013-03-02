@@ -26,7 +26,7 @@ class FileOp < ActiveRecord::Base
 				end
 			}
 		end
-		
+
 		create_client_folder_structure
 	end
 
@@ -126,7 +126,7 @@ class FileOp < ActiveRecord::Base
 					formatted_path = file_object.path.gsub("/media/compensato_client", "")
 					formatted_path.gsub!("/", "\\")
 
-					final_scan_log.puts '#{file_object.mtime} | C:\\#{formatted_path}'
+					final_scan_log.puts "#{file_object.mtime} | C:#{formatted_path}"
 				end
 			}
 
