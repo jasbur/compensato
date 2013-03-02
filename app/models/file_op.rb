@@ -68,8 +68,8 @@ class FileOp < ActiveRecord::Base
 	end
 
 	#Gets the number of files in a directory and its sub-directories by using the system's 
-	#{}"find" (-type f = find all files only) command to find all files then pass them to the 
-	#{}"wc" (-l = return only the number of new lines generated) command wich generates a newline 
+	#"find" (-type f = find all files only) command to find all files then pass them to the 
+	#"wc" (-l = return only the number of new lines generated) command wich generates a newline 
 	#for each one then counts it
 	def self.get_number_of_files(directory)
 		number_of_files = %x(find #{Regexp::escape(directory)} -type f | wc -l)
