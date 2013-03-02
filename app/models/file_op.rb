@@ -1,28 +1,30 @@
 class FileOp < ActiveRecord::Base
   # attr_accessible :title, :body
 
-	#Auto-mounts client drive by collecting "fdisk -l" output from system, then looking for the 
-	#line that contains "NTFS" and then iterates through to find the line that has the most 
-	#blocks which is most likely to be the main windows installation. After the drive is mounted
-	#it then creates a "Compensato" folder on the client drive if it doesn't exist
+	#Auto-mounts the customer drive by iterating through "mount_iterations", mounting them, then 
+	#checking to see if the "pagefile.sys" exists. If it doesn't then it unmounts the drive and 
+	#continues to the next item in "mount_iterations"
 	def self.mount_client_drive
-		fdisk_list = %x(fdisk -l).split("\n")
-		device_id = String.new
-		most_blocks = 0
+		mount_iterations = ["sda1", "sda2", "sda3", "sda4", "sda5", "sda6", "sda7", "sda8", "sda9"]
+		client_drive_found = false
 
 		if Dir.exist?("/media/compensato_client") == false
 			Dir.mkdir("/media/compensato_client")
 		end
 
-		if Dir.entries("/media/compensato_client").size <= 2
-			fdisk_list.each{|line|
-				if line.include?("NTFS") and line.split[-3].to_i > most_blocks
-					device_id = line[0..8]
+		mount_iterations.each{|i|
+			unless client_drive_found == true
+				puts "************************** trying to mount #{i}"
+				if system "mount /dev/#{i} /media/compensato_client"
+					if File.exist?("/media/compensato_client/pagefile.sys") or File.exist?("/media/compensato_client/PAGEFILE.SYS")
+						client_drive_found = true
+					else
+						sleep 1
+						system "umount /media/compensato_client"
+					end
 				end
-			}
-
-			system("mount #{device_id} /media/compensato_client")
-		end
+			end
+		}
 
 		if Dir.exist?("/media/compensato_client/Compensato") == false
 			Dir.mkdir("/media/compensato_client/Compensato")
