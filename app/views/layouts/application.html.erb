@@ -7,10 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1><%=link_to "Compensato", :controller => "main", :action => "index"%></h1>
-	<h2><%=@page_title%></h2>
-	
-<%= yield %>
+	<header>
+		<h1><%=link_to "Compensato", :controller => "main", :action => "index"%></h1>
 
+		<ul>
+			<li><%= link_to "File Operations", :controller => "file_ops" %></li>
+			<li><%= link_to "Downloads", :controller => "downloads" %></li>
+		</ul>
+		</br>
+	</header>
+	
+	<%= yield %>
 </body>
 </html>
