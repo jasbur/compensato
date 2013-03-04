@@ -1,31 +1,33 @@
 <%@page_title = "New File Scan"%>
 
-<%if @file_op_type == "file_scan"%>
+<div id="fileOperation" class="mainAction">
+	<%if @file_op_type == "file_scan"%>
 
-	<%=form_tag(:action => "file_scan", :method => "get") do%>
-		<%=label_tag(:scan_days, "Number of days to scan:")%> <%=text_field_tag(:scan_days)%><br>
-		<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
-		<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
-		<%= check_box_tag "selected_extensions[]", "bat", true %> .bat
-		<%= check_box_tag "selected_extensions[]", "sys", true %> .sys
-		<%= check_box_tag "selected_extensions[]", "drv", true %> .drv
-		<%= check_box_tag "selected_extensions[]", "class", true %> .class
-		<%= check_box_tag "selected_extensions[]", "dll", true %> .dll<br>
-		<%=submit_tag("Begin scan...")%>
+		<%=form_tag(:action => "file_scan", :method => "get") do%>
+			<%=label_tag(:scan_days, "Number of days to scan:")%> <%=text_field_tag(:scan_days)%><br>
+			<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
+			<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
+			<%= check_box_tag "selected_extensions[]", "bat", true %> .bat
+			<%= check_box_tag "selected_extensions[]", "sys", true %> .sys
+			<%= check_box_tag "selected_extensions[]", "drv", true %> .drv
+			<%= check_box_tag "selected_extensions[]", "class", true %> .class
+			<%= check_box_tag "selected_extensions[]", "dll", true %> .dll<br>
+			<%=submit_tag("Begin scan...")%>
+		<%end%>
+
+	<%elsif @file_op_type == "file_copy"%>
+
+		<%@page_title = "Copy user data"%>
+
+		<%=form_tag(:action => "copy_user_data", :method => "get") do%>
+			<p>Select source directory:</p>
+			<p><%=text_field_tag(:source_directory)%></p>
+
+			<p>Select destination directory:</p>
+			<p><%=text_field_tag(:destination_directory)%></p>
+
+			<%=submit_tag("Start data copy")%>
+		<%end%>
+
 	<%end%>
-
-<%elsif @file_op_type == "file_copy"%>
-
-	<%@page_title = "Copy user data"%>
-
-	<%=form_tag(:action => "copy_user_data", :method => "get") do%>
-		<p>Select source directory:</p>
-		<p><%=text_field_tag(:source_directory)%></p>
-
-		<p>Select destination directory:</p>
-		<p><%=text_field_tag(:destination_directory)%></p>
-
-		<%=submit_tag("Start data copy")%>
-	<%end%>
-
-<%end%>
+</div>
