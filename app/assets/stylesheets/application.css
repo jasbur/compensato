@@ -48,7 +48,7 @@ header li{
 	font-size: 40px;
 }
 
-div#mainAction{
+.mainAction{
 	margin: 50px 0px 0px 20%;
 	padding: 10px;
 	background-color: #EE8585;
@@ -56,11 +56,11 @@ div#mainAction{
 	text-align: left;
 }
 
-div#mainAction a{
+.mainAction a{
 	color: #000000;
 }
 
-div#mainAction a:visited{
+.mainAction a:visited{
 	color: #000000;
 }
 

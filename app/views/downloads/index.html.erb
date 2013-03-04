@@ -1,6 +1,6 @@
 <%@page_title = "Downloads"%>
 
-<div id="mainAction">
+<div id="downloadChoices" class="mainAction">
 	<%=form_tag(:action => "fetch_downloads", :method => "get") do%>
 		<%@file_links.each{|key, value|%>
 			<%=check_box_tag "download_links[]", "#{key}|#{value}"%> <%=key%></br>
