@@ -1,22 +1,24 @@
 <%@page_title = "Selected Files Log for the last #{@scan_days} days"%>
 
-<h3>A copy of this scan log has been saved in the "Compensato" folder on the root of the client computer</h3>
+<div id="selectedFilesLog" class="fileListOutput">
+	<h3>A copy of this scan log has been saved in the "Compensato" folder on the root of the client computer</h3>
 
-<%=form_tag(:action => "selected_files_log", :method => "get") do%>
-	<%for extension in @extensions do%>
-		<hr>
-		<h4>.<%=extension.upcase%> files</h4>
-		<hr>
-		<ul>
-			<%for selected_path in @selected_paths%>
-				<%if selected_path.include?(".#{extension}")%>
-					<li>
-						<%f = File.open(selected_path)%>
-						<%=f.mtime%> | <%=f.path.gsub("/media/compensato_client", "")%>
-						<%f.close%>
-					</li>
+	<%=form_tag(:action => "selected_files_log", :method => "get") do%>
+		<%for extension in @extensions do%>
+			<hr>
+			<h4>.<%=extension.upcase%> files</h4>
+			<hr>
+			<ul>
+				<%for selected_path in @selected_paths%>
+					<%if selected_path.include?(".#{extension}")%>
+						<li>
+							<%f = File.open(selected_path)%>
+							<%=f.mtime%> | <%=f.path.gsub("/media/compensato_client", "")%>
+							<%f.close%>
+						</li>
+					<%end%>
 				<%end%>
-			<%end%>
-		</ul>
+			</ul>
+		<%end%>
 	<%end%>
-<%end%>
+</div>

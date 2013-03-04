@@ -35,7 +35,6 @@ a:visited{
 }
 
 header{
-
 }
 
 header ul{
@@ -65,5 +64,16 @@ header li{
 }
 
 .systemStatCat{
+	font-weight: bold;
+}
+
+.fileListOutput{
+	width: 2000px;
+	margin: 50px 0px 0px 0px;
+	font-size: 13px;
+}
+
+.fileListOutput li:hover{
+	background-color: #EE8585;
 	font-weight: bold;
 }
