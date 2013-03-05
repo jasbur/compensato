@@ -39,6 +39,14 @@ class FileOp < ActiveRecord::Base
 		if Dir.exist?("/media/compensato_client/Compensato/Downloads") == false
 			Dir.mkdir("/media/compensato_client/Compensato/Downloads")
 		end
+
+		if Dir.exist?("/media/compensato_client/Compensato/Quarantine") == false
+			Dir.mkdir("/media/compensato_client/Compensato/Quarantine")
+		end
+
+		if Dir.exist?("/media/compensato_client/Compensato/Customer_Data") == false
+			Dir.mkdir("/media/compensato_client/Compensato/Customer_Data")
+		end
 	end
 
 	#Uses the system's "find" command to create a list of files maching the modified time given 
