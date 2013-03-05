@@ -9,12 +9,10 @@
 			<h4>.<%=extension.upcase%> files</h4>
 			<hr>
 			<ul>
-				<%for selected_path in @selected_paths%>
-					<%if selected_path.include?(".#{extension}")%>
+				<%for selected_file_object in @selected_file_objects%>
+					<%if selected_file_object.path.include?(".#{extension}")%>
 						<li>
-							<%f = File.open(selected_path)%>
-							<%=f.mtime%> | <%=f.path.gsub("/media/compensato_client", "")%>
-							<%f.close%>
+							<%=selected_file_object.mtime%> | <%=selected_file_object.path.gsub("/media/compensato_client", "")%>
 						</li>
 					<%end%>
 				<%end%>

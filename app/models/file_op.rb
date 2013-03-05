@@ -108,6 +108,16 @@ class FileOp < ActiveRecord::Base
 		}
 	end
 
+	def self.create_file_object_array(paths)
+		file_objects = Array.new
+
+		paths.each{|path|
+			file_objects << File.open(path, "r")
+		}
+
+		return file_objects
+	end
+
 	#Generates a simple text log to be saved on the client's computer conatainging the 
 	#technician-selected files only from the "file_scan" output
 	def self.create_final_scan_log(selected_paths, extensions, scan_days)

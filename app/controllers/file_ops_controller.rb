@@ -22,11 +22,13 @@ class FileOpsController < ApplicationController
 	#Catches the selected files from "selected_files_log" and saves a simple text log into 
 	#/media/compensato_client/Compensato then isolates and sorts them for display
 	def selected_files_log
-		@selected_paths = params[:selected_paths]
+		selected_paths = params[:selected_paths]
 		@extensions = params[:extensions].split
 		@scan_days = params[:scan_days]
 
-		FileOp.create_final_scan_log(@selected_paths, @extensions, @scan_days)
+		@selected_file_objects = FileOp.create_file_object_array(selected_paths)
+		@selected_file_objects.sort! {|a,b| a.mtime <=> b.mtime}
+		FileOp.create_final_scan_log(selected_paths, @extensions, @scan_days)
 	end
 
 	#Control the copying of data from the given directory to another specified directory
