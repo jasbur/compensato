@@ -1,11 +1,13 @@
 <%@page_title = "Copying user data..."%>
 
-Source Directory Size: <%=(@source_directory_size.to_f / 1000000).round(2)%>GB in <%=@source_directory_files%> files
+<div id="fileCopyOutput" class="mainAction">
+	Source Directory Size: <%=(@source_directory_size.to_f / 1000000).round(2)%>GB in <%=@source_directory_files%> files
 
-<script type="text/javascript">file_copy_progress("<%=@destination_directory.gsub("\\ ", "%20")%>");</script>
+	<script type="text/javascript">file_copy_progress("<%=Regexp.escape(@destination_directory).gsub("\\ ", "%20")%>");</script>
 
-<div id="file_copy_progress">
-	Destination directory size: Please Wait...
+	<div id="file_copy_progress">
+		Destination directory size: Please Wait...
+	</div>
+
+	<%=link_to "Cancel", :action => "kill_copy"%>
 </div>
-
-<%=link_to "Cancel", :action => "kill_copy"%>

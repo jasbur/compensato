@@ -31,8 +31,8 @@ class FileOpsController < ApplicationController
 
 	#Control the copying of data from the given directory to another specified directory
 	def copy_user_data
-		source_directory = Regexp::escape(params[:source_directory])
-		@destination_directory = Regexp::escape(params[:destination_directory])
+		source_directory =params[:source_directory]
+		@destination_directory = params[:destination_directory]
 
 		@source_directory_size = FileOp.get_directory_size(source_directory)
 		@source_directory_files = FileOp.get_number_of_files(source_directory)

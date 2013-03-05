@@ -58,7 +58,7 @@ class FileOp < ActiveRecord::Base
 
 	#Issue a simple "cp" command to copy data using the given directories
 	def self.copy_data(source_directory, destination_directory)
-		spawn "cp -a #{source_directory} #{destination_directory}"
+		spawn "cp -a '#{source_directory}' '#{destination_directory}'"
 	end
 
 	#Get the directory size using the system's "du" (-s = silent) command
