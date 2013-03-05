@@ -120,15 +120,8 @@ class FileOp < ActiveRecord::Base
 
 	#Generates a simple text log to be saved on the client's computer conatainging the 
 	#technician-selected files only from the "file_scan" output
-	def self.create_final_scan_log(selected_paths, extensions, scan_days)
-		file_paths = selected_paths
-		file_objects = Array.new
+	def self.create_final_scan_log(file_objects, extensions, scan_days)
 		final_scan_log = File.open("/media/compensato_client/Compensato/scanlog_#{Time.now.to_s.gsub(":", "-")}.txt", "w+")
-
-		file_paths.each{|file_path|
-			file = File.open(file_path, "r")
-			file_objects << file
-		}
 
 		extensions.each{|extension|
 			final_scan_log.puts "######################################################"

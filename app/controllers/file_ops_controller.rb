@@ -28,7 +28,7 @@ class FileOpsController < ApplicationController
 
 		@selected_file_objects = FileOp.create_file_object_array(selected_paths)
 		@selected_file_objects.sort! {|a,b| a.mtime <=> b.mtime}
-		FileOp.create_final_scan_log(selected_paths, @extensions, @scan_days)
+		FileOp.create_final_scan_log(@selected_file_objects, @extensions, @scan_days)
 	end
 
 	#Control the copying of data from the given directory to another specified directory
