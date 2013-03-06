@@ -7,5 +7,6 @@
 		<li><span class="systemStatCat">Memory:</span> <%=((@system_stats[2].to_f / 1024) / 1024).round(1)%>GB</li>
 		<li><span class="systemStatCat">HD Capacity:</span> <%=(@system_stats[3].to_f / 1000000).round(1)%>GB</li>
 		<li><span class="systemStatCat">HD Space Used:</span> <%=(@system_stats[4].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>
+		<li><span class="systemStatCat">IP Address:</span> <%=@system_stats[5]%></li>
 	</ul>
 </div>

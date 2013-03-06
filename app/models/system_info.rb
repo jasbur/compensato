@@ -6,6 +6,7 @@ class SystemInfo < ActiveRecord::Base
 		cpu_info = %x(cat /proc/cpuinfo).split("\n")
 		mem_info = %x(cat /proc/meminfo).split("\n")
 		drive_info = %x(df).split("\n")
+		ip_info = %x(ifconfig).split("\n")
 		#This will be used to dectect duplicate entries when cat'ing /proc
 		detect_duplicate = 0
 
@@ -46,6 +47,15 @@ class SystemInfo < ActiveRecord::Base
 		drive_info.each{|line|
 			if line.include?("/media/compensato_client")
 				system_stats << line.split[2]
+			end
+		}
+
+		ip_info.each{|line|
+			if line.include?("inet addr:")
+				ip_address = line.split(" ")[1][5..-1]
+				unless ip_address.include?("127.0.0.1")
+					system_stats << ip_address
+				end
 			end
 		}
 
