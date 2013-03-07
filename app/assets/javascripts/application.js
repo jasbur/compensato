@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 
-function file_copy_progress(directory){
+function file_copy_progress(directory, source_directory_files){
 	setInterval(function(){
-		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=' + directory);
+		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=' + directory + '&source_directory_files=' + source_directory_files);
 	}, 10000);
 }

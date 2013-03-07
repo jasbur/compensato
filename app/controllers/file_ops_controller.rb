@@ -44,7 +44,7 @@ class FileOpsController < ApplicationController
 
 	#To be called periodically from /file_ops/copy_user_data to provide a status update of the file copy
 	def file_copy_progress
-		@source_directory_size = params[:source_directory_size]
+		@source_directory_files = params[:source_directory_files]
 		destination_directory = params[:destination_directory]
 
 		@destination_directory_size = FileOp.get_directory_size(destination_directory)
