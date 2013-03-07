@@ -5,17 +5,24 @@ class FileOp < ActiveRecord::Base
 	#checking to see if the "pagefile.sys" exists. If it doesn't then it unmounts the drive and 
 	#continues to the next item in "mount_iterations"
 	def self.mount_client_drive
-		mount_iterations = ["sda1", "sda2", "sda3", "sda4", "sda5", "sda6", "sda7", "sda8", "sda9"]
+		mount_iterations = Array.new
+		fdisk_output = %x(fdisk -l).split("\n")
 		client_drive_found = false
 
 		if Dir.exist?("/media/compensato_client") == false
 			Dir.mkdir("/media/compensato_client")
 		end
 
+		fdisk_output.each{|line|
+			if line.include?("NTFS")
+				mount_iterations << line.split[0]
+			end
+		}
+
 		unless Dir.entries("/media/compensato_client").size > 2
 			mount_iterations.each{|i|
 				unless client_drive_found == true
-					if system "mount /dev/#{i} /media/compensato_client"
+					if system "mount #{i} /media/compensato_client"
 						if File.exist?("/media/compensato_client/pagefile.sys") or File.exist?("/media/compensato_client/PAGEFILE.SYS")
 							client_drive_found = true
 						else
