@@ -98,6 +98,7 @@ class FileOp < ActiveRecord::Base
 		}
 	end
 
+	#Calculates the total size in bytes of the temp files on the client's system
 	def self.get_temp_files_size
 		user_directories = Dir.entries("/media/compensato_client/Documents\ and\ Settings")
 		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
@@ -161,6 +162,7 @@ class FileOp < ActiveRecord::Base
 		}
 	end
 
+	#Creates an array of File objects from an array of given paths in String form
 	def self.create_file_object_array(paths)
 		file_objects = Array.new
 
