@@ -77,3 +77,7 @@ header li{
 	background-color: #EE8585;
 	font-weight: bold;
 }
+
+div#footer{
+	margin:15px 0px 0px 85%;
+}
