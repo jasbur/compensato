@@ -18,5 +18,9 @@
 	</header>
 	
 	<%= yield %>
+
+	<div id="footer">
+		<%=link_to "Shutdown system", :controller => "main", :action => "system_shutdown"%>
+	</div>
 </body>
 </html>

@@ -8,4 +8,8 @@ class MainController < ApplicationController
 		@drive_percent_used = ((@system_stats[4].to_f / @system_stats[3].to_f) * 100).round
 	end
 
+	def system_shutdown
+		system "shutdown -h now"
+	end
+
 end

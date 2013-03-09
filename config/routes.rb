@@ -5,6 +5,7 @@ RailsCompensato::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+    match 'main/system_shutdown' => 'main#system_shutdown'
     match 'file_ops/file_scan' => 'file_ops#file_scan'
     match 'file_ops/selected_files_log' => 'file_ops#selected_files_log'
     match 'file_ops/file_copy_progress' => 'file_ops#file_copy_progress'
