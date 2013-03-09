@@ -9,6 +9,11 @@ class FileOpsController < ApplicationController
 	#display in the view
 	def new
 		@file_op_type = params[:fileOpType]
+		@temp_files_size = 0
+
+		if @file_op_type == "clean_temp_files"
+			@temp_files_size = FileOp.get_temp_files_size
+		end
 	end
 
 	#Triggers file scan with given paramters from "new" and displays a 

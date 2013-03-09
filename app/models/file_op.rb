@@ -98,6 +98,30 @@ class FileOp < ActiveRecord::Base
 		}
 	end
 
+	def self.get_temp_files_size
+		user_directories = Dir.entries("/media/compensato_client/Documents\ and\ Settings")
+		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
+		user_specific_temp_directories = ["Local Settings/Temp", "Local Settings/Temporary Internet Files"]
+		system_temp_directories = ["Windows/Temp"]
+		total_temp_files_size = 0
+		
+		user_directories = user_directories - garbage_directory_entries
+
+		user_directories.each{|user_directory|
+			user_specific_temp_directories.each{|user_specific_temp_directory|
+				this_dir_size = %x(du -s /media/compensato_client/Documents\\ and\\ Settings/#{Regexp.escape(user_directory)}/#{Regexp.escape(user_specific_temp_directory)}/)
+				total_temp_files_size = total_temp_files_size + this_dir_size.to_i
+			}
+		}
+
+		system_temp_directories.each{|system_temp_directory|
+			this_dir_size = %x(du -s /media/compensato_client/#{Regexp.escape(system_temp_directory)}/)
+			total_temp_files_size = total_temp_files_size + this_dir_size.to_i
+		}
+
+		return total_temp_files_size
+	end
+
 	#Get the directory size using the system's "du" (-s = silent) command
 	def self.get_directory_size(directory)
 		directory_size = %x(du -s #{Regexp::escape(directory)}).split.first
