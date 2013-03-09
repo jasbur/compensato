@@ -42,6 +42,10 @@ class FileOpsController < ApplicationController
 		FileOp.copy_data(source_directory, @destination_directory)
 	end
 
+	def clean_temp_files
+		FileOp.clean_temp_files
+	end
+
 	#To be called periodically from /file_ops/copy_user_data to provide a status update of the file copy
 	def file_copy_progress
 		@source_directory_files = params[:source_directory_files]

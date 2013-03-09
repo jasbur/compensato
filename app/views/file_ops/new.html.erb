@@ -29,5 +29,9 @@
 			<%=submit_tag("Start data copy")%>
 		<%end%>
 
+	<%elsif @file_op_type == "clean_temp_files"%>
+
+		<%=link_to "Click here to clean all temp files on the system", :action => "clean_temp_files"%>
+
 	<%end%>
 </div>
