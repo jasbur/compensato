@@ -76,6 +76,28 @@ class FileOp < ActiveRecord::Base
 		spawn "cp -a '#{source_directory}' '#{destination_directory}'"
 	end
 
+	#This process cleans disposable tmeorary files on the client's system. These disposable 
+	#direcotries are listed as two arrays, one for user specific driectories and another for 
+	#common system-wide directories
+	def self.clean_temp_files
+		user_directories = Dir.entries("/media/compensato_client/Documents\ and\ Settings")
+		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
+		user_specific_temp_directories = ["Local Settings/Temp", "Local Settings/Temporary Internet Files"]
+		system_temp_directories = ["Windows/Temp"]
+		
+		user_directories = user_directories - garbage_directory_entries
+
+		user_directories.each{|user_directory|
+			user_specific_temp_directories.each{|user_specific_temp_directory|
+				system "rm -rf /media/compensato_client/Documents\\ and\\ Settings/" + Regexp.escape(user_directory) + "/" + Regexp.escape(user_specific_temp_directory) + "/*"
+			}
+		}
+
+		system_temp_directories.each{|system_temp_directory|
+			system "rm -rf /media/compensato_client/" + Regexp.escape(system_temp_directory) + "/*"
+		}
+	end
+
 	#Get the directory size using the system's "du" (-s = silent) command
 	def self.get_directory_size(directory)
 		directory_size = %x(du -s #{Regexp::escape(directory)}).split.first
