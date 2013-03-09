@@ -13,6 +13,8 @@ class FileOpsController < ApplicationController
 
 		if @file_op_type == "clean_temp_files"
 			@temp_files_size = FileOp.get_temp_files_size
+		elsif @file_op_type == "edit_partitions"
+			spawn "gparted"
 		end
 	end
 
@@ -66,5 +68,4 @@ class FileOpsController < ApplicationController
 	def kill_copy
 		FileOp.kill_background_process("cp")
 	end
-
 end
