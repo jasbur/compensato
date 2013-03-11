@@ -49,6 +49,7 @@ class FileOpsController < ApplicationController
 		FileOp.copy_data(source_directory, @destination_directory)
 	end
 
+	#Cleans temp files from common locations on the client's drive
 	def clean_temp_files
 		FileOp.clean_temp_files
 	end
