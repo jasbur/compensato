@@ -138,6 +138,14 @@ class FileOp < ActiveRecord::Base
 		return total_temp_files_size
 	end
 
+	#Triggers a disk check by scheduling a "chkdsk" run on he next boot into Windows
+	def self.schedule_disk_check(device_id)
+		system "umount /media/compensato_client"
+		sleep 1
+		system "ntfsfix #{device_id}"
+		system "mount #{device_id} /media/compensato_client"
+	end
+
 	#Get the directory size using the system's "du" (-s = silent) command
 	def self.get_directory_size(directory)
 		directory_size = %x(du -s #{Regexp::escape(directory)}).split.first
