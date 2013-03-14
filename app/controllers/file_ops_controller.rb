@@ -41,6 +41,16 @@ class FileOpsController < ApplicationController
 		FileOp.create_final_scan_log(@selected_file_objects, @extensions, @scan_days)
 	end
 
+	#Produces a log showing files of all types modified for the provided date range
+	def all_files_modified_on_date
+		start_date = params[:start_date]
+		end_date = params[:end_date]
+
+		file_paths = FileOp.find_all_files_on_date(start_date, end_date)
+		@file_objects = FileOp.create_file_object_array(file_paths)
+		@file_objects.sort! {|a,b| a.mtime <=> b.mtime}
+	end
+
 	#Control the copying of data from the given directory to another specified directory
 	def copy_user_data
 		source_directory =params[:source_directory]

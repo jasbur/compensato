@@ -86,6 +86,20 @@ class FileOp < ActiveRecord::Base
 		return lines_to_return
 	end
 
+	#Uses the systems 'find' command to find all files in a given date range and returns an 
+	#array of their paths
+	def self.find_all_files_on_date(start_date, end_date)
+		system "touch tmp/start_search -d #{start_date}"
+		system "touch tmp/end_search -d #{end_date}"
+
+		file_paths = %x(find /media/compensato_client/ -type f -newer tmp/start_search -not -newer tmp/end_search).split("\n")
+
+		system "rm tmp/start_search"
+		system "rm tmp/end_search"
+
+		return file_paths
+	end
+
 	#Issue a simple "cp" command to copy data using the given directories
 	def self.copy_data(source_directory, destination_directory)
 		spawn "cp -a '#{source_directory}' '#{destination_directory}'"

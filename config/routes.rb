@@ -12,6 +12,7 @@ RailsCompensato::Application.routes.draw do
     match 'file_ops/copy_user_data' => 'file_ops#copy_user_data'
     match 'file_ops/kill_copy' => 'file_ops#kill_copy'
     match 'file_ops/clean_temp_files' => 'file_ops#clean_temp_files'
+    match 'file_ops/all_files_modified_on_date' => 'file_ops#all_files_modified_on_date'
     match 'downloads/fetch_downloads' => 'downloads#fetch_downloads'
 
   # Sample of named route:

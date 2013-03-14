@@ -1,0 +1,9 @@
+<div id="allFilesModifiedOnDate" class="fileListOutput">
+	<ul>
+		<%@file_objects.each{|file_object|%>
+
+			<li><%=file_object.mtime%> | <%=file_object.path.gsub("/media/compensato_client", "")%></li>
+
+		<%}%>
+	</ul>
+</div>
