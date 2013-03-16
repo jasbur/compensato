@@ -2,7 +2,7 @@ class SystemInfo < ActiveRecord::Base
   
 	#Gets the system information for the desired attributes and returns them as an ordered array of strings
 	def self.get_system_stats
-		system_stats = []
+		system_stats = Hash.new
 		cpu_info = %x(cat /proc/cpuinfo).split("\n")
 		mem_info = %x(cat /proc/meminfo).split("\n")
 		drive_info = %x(df).split("\n")
@@ -14,7 +14,7 @@ class SystemInfo < ActiveRecord::Base
 		cpu_info.each{|line|
 			if line.include?("model name")
 				if detect_duplicate == 0
-					system_stats << line[13..-1]
+					system_stats.merge!(:cpu_model => line[13..-1])
 					detect_duplicate = 1
 				end
 			end
@@ -25,7 +25,7 @@ class SystemInfo < ActiveRecord::Base
 		cpu_info.each{|line|
 			if line.include?("cpu cores")
 				if detect_duplicate == 0
-					system_stats << line.split[3]
+					system_stats.merge!(:cpu_cores => line.split[3])
 					detect_duplicate = 1
 				end
 			end
@@ -33,29 +33,27 @@ class SystemInfo < ActiveRecord::Base
 
 		mem_info.each{|line|
 			if line.include?("MemTotal")
-				system_stats << line.split[1]
+				system_stats.merge!(:mem_total => line.split[1])
 			end
 		}
 
 		drive_info.each{|line|
 			if line.include?("/media/compensato_client")
 				capacity = line.split[2].to_i + line.split[3].to_i
-				system_stats << capacity
+				system_stats.merge!(:hd_capacity => capacity)
 			end
 		}
 
 		drive_info.each{|line|
 			if line.include?("/media/compensato_client")
-				system_stats << line.split[2]
+				system_stats.merge!(:hd_space_used => line.split[2])
 			end
 		}
 
 		ip_info.each{|line|
-			if line.include?("inet addr:")
-				ip_address = line.split(" ")[1][5..-1]
-				unless ip_address.include?("127.0.0.1")
-					system_stats << ip_address
-				end
+			if line.include?("inet addr:") and line.include?("127.0.0.1") == false
+				# system_stats << "hello	"
+				system_stats.merge!(:ip_address => line.split(" ")[1][5..-1])
 			end
 		}
 

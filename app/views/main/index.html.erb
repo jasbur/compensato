@@ -2,11 +2,11 @@
 
 <div id="systemInformation" class="mainAction">
 	<ul>
-		<li><span class="systemStatCat">CPU Model:</span> <%=@system_stats[0]%></li>
-		<li><span class="systemStatCat">CPU Cores:</span> <%=@system_stats[1]%></li>
-		<li><span class="systemStatCat">Memory:</span> <%=((@system_stats[2].to_f / 1024) / 1024).round(1)%>GB</li>
-		<li><span class="systemStatCat">HD Capacity:</span> <%=(@system_stats[3].to_f / 1000000).round(1)%>GB</li>
-		<li><span class="systemStatCat">HD Space Used:</span> <%=(@system_stats[4].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>
-		<li><span class="systemStatCat">IP Address:</span> <%=@system_stats[5]%></li>
+		<li><span class="systemStatCat">CPU Model:</span> <%=@system_stats[:cpu_model]%></li>
+		<li><span class="systemStatCat">CPU Cores:</span> <%=@system_stats[:cpu_cores]%></li>
+		<li><span class="systemStatCat">Memory:</span> <%=((@system_stats[:mem_total].to_f / 1024) / 1024).round(1)%>GB</li>
+		<li><span class="systemStatCat">HD Capacity:</span> <%=(@system_stats[:hd_capacity].to_f / 1000000).round(1)%>GB</li>
+		<li><span class="systemStatCat">HD Space Used:</span> <%=(@system_stats[:hd_space_used].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>
+		<li><span class="systemStatCat">IP Address:</span> <%=@system_stats[:ip_address]%></li>
 	</ul>
 </div>

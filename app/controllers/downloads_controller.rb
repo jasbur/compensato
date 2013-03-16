@@ -4,7 +4,7 @@ class DownloadsController < ApplicationController
 	def index
 		@online_status = true
 
-		if SystemInfo.get_system_stats[5].nil?
+		if SystemInfo.get_system_stats[:ip_address].nil?
 			@online_status = false
 		end
 

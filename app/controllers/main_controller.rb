@@ -5,7 +5,7 @@ class MainController < ApplicationController
 	def index
 		FileOp.mount_client_drive
 		@system_stats = SystemInfo.get_system_stats
-		@drive_percent_used = ((@system_stats[4].to_f / @system_stats[3].to_f) * 100).round
+		@drive_percent_used = ((@system_stats[:hd_space_used].to_f / @system_stats[:hd_capacity].to_f) * 100).round
 	end
 
 	def system_shutdown
