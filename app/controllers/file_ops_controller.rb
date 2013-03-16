@@ -45,6 +45,7 @@ class FileOpsController < ApplicationController
 	def all_files_modified_on_date
 		start_date = params[:start_date]
 		end_date = params[:end_date]
+		@selected_file_name = params[:selected_file_name]
 
 		file_paths = FileOp.find_all_files_on_date(start_date, end_date)
 		@file_objects = FileOp.create_file_object_array(file_paths)

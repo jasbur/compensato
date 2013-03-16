@@ -78,6 +78,14 @@ header li{
 	font-weight: bold;
 }
 
+.isolatedOnAllFilesScan{
+	margin: 5px 0px 5px 0px;
+	padding: 5px 0px 5px 5px;
+	background-color: #000000;
+	font-size: 20px;
+	color: #FF0000;
+}
+
 div#footer{
 	margin:15px 0px 0px 85%;
 }

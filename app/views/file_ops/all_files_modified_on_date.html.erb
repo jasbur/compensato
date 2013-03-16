@@ -2,7 +2,11 @@
 	<ul>
 		<%@file_objects.each{|file_object|%>
 
-			<li><%=file_object.mtime%> | <%=file_object.path.gsub("/media/compensato_client", "")%></li>
+			<li 
+			<%if File.basename(file_object) == @selected_file_name%>
+				class = "isolatedOnAllFilesScan"
+			<%end%>
+			><%=file_object.mtime%> | <%=file_object.path.gsub("/media/compensato_client", "")%></li>
 
 		<%}%>
 	</ul>

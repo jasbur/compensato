@@ -12,7 +12,7 @@
 				<%for selected_file_object in @selected_file_objects%>
 					<%if selected_file_object.path.include?(".#{extension}")%>
 						<li>
-							<%=selected_file_object.mtime%> | <%=selected_file_object.path.gsub("/media/compensato_client", "")%> <%=link_to "Find all files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :end_date => (selected_file_object.mtime + 86400).to_s[0..9]%>
+							<%=selected_file_object.mtime%> | <%=selected_file_object.path.gsub("/media/compensato_client", "")%> <%=link_to "Find all files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :end_date => (selected_file_object.mtime + 86400).to_s[0..9], :selected_file_name => File.basename(selected_file_object)%>
 						</li>
 					<%end%>
 				<%end%>
