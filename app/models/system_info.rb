@@ -51,8 +51,7 @@ class SystemInfo < ActiveRecord::Base
 			end
 		}
 
-		smart_health = %x(smartctl #{hd_id} -H).split.last
-		system_stats.merge!(:smart_health => smart_health)
+		system_stats.merge!(:smart_health => %x(smartctl #{hd_id} -H).split.last)
 
 		ip_info.each{|line|
 			if line.include?("inet addr:") and line.include?("127.0.0.1") == false
