@@ -6,6 +6,7 @@ class SystemInfo < ActiveRecord::Base
 		cpu_info = %x(cat /proc/cpuinfo).split("\n")
 		mem_info = %x(cat /proc/meminfo).split("\n")
 		drive_info = %x(df).split("\n")
+		hd_id = DriveOp.get_client_device_id
 		ip_info = %x(ifconfig).split("\n")
 		#This will be used to dectect duplicate entries when cat'ing /proc
 		detect_duplicate = 0
@@ -49,6 +50,9 @@ class SystemInfo < ActiveRecord::Base
 				system_stats.merge!(:hd_space_used => line.split[2])
 			end
 		}
+
+		smart_health = %x(smartctl #{hd_id} -H).split.last
+		system_stats.merge!(:smart_health => smart_health)
 
 		ip_info.each{|line|
 			if line.include?("inet addr:") and line.include?("127.0.0.1") == false
