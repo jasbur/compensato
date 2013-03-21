@@ -1,0 +1,2 @@
+class DiskOpsController < ApplicationController
+end
