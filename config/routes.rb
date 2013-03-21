@@ -24,6 +24,7 @@ RailsCompensato::Application.routes.draw do
     resources :file_ops
     resources :disk_ops
     resources :downloads
+    resources :diagnostics
 
   # Sample resource route with options:
   #   resources :products do
