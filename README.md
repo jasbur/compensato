@@ -13,5 +13,6 @@ Requirements:
 
 Ubuntu 12.10
 Rails 3.2.6
-curl 7.27.0
+Curl 7.27.0
 smartmontools 5.43
+Wine 1.4.1
