@@ -22,6 +22,7 @@ RailsCompensato::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
     resources :file_ops
+    resources :disk_ops
     resources :downloads
 
   # Sample resource route with options:

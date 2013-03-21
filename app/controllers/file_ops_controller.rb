@@ -13,11 +13,6 @@ class FileOpsController < ApplicationController
 
 		if @file_op_type == "clean_temp_files"
 			@temp_files_size = FileOp.get_temp_files_size
-		elsif @file_op_type == "edit_partitions"
-			spawn "gparted"
-		elsif @file_op_type == "disk check"
-			client_device_id = DriveOp.get_client_device_id
-			DriveOp.schedule_disk_check(client_device_id)
 		end
 	end
 

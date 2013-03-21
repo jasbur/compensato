@@ -1,0 +1,8 @@
+<%@page_title = "Disk Operations"%>
+
+<div id="diskOpChoice" class="mainAction">
+<ul>
+	<li><%=link_to "Edit partitions", :action => "new", :fileOpType => "edit_partitions"%></li>
+	<li><%=link_to "Schedule a file system check on the client's drive", :action => "new", :fileOpType => "disk check"%></li>
+</ul>
+</div>
