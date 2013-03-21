@@ -18,7 +18,11 @@ echo "deb-src http://security.ubuntu.com/ubuntu quantal-security universe" >> /e
 echo "deb http://security.ubuntu.com/ubuntu quantal-security multiverse" >> /etc/apt/sources.list
 echo "deb-src http://security.ubuntu.com/ubuntu quantal-security multiverse" >> /etc/apt/sources.list
 
+#This is to bypass some bug in Ubuntu 12.10 that doesn't allow wine to install properly otherwise
+sudo dpkg --add-architecture i386
+
 #Install dependencies
+apt-get update
 apt-get install rails3 curl smartmontools wine
 
 #Create the launch script
