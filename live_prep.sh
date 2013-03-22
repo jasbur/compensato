@@ -23,7 +23,8 @@ sudo dpkg --add-architecture i386
 
 #Install dependencies
 apt-get update
-apt-get install rails3 curl smartmontools wine
+apt-get upgrade -y
+apt-get install rails3 curl smartmontools wine -y
 
 #Create the launch script
 echo "#!/bin/bash" >> /home/launch_compensato.sh
