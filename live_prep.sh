@@ -29,13 +29,10 @@ apt-get install rails3 curl smartmontools wine -y
 #Create the launch script
 echo "#!/bin/bash" >> /home/launch_compensato.sh
 echo "cd /home/compensato" >> /home/launch_compensato.sh
-echo "sudo rails s -d" >> /home/launch_compensato.sh
-echo "firefox http://localhost:3000"
+echo "sudo rails s &" >> /home/launch_compensato.sh
+echo "firefox http://localhost:3000" >> /home/launch_compensato.sh
 chmod 777 /home/launch_compensato.sh
 
 #Set the script to auto-run on login
-echo "[Desktop Entry]" >> /usr/share/xsessions/custom.desktop
-echo "Name=Compensato Launcher" >> /usr/share/xsessions/custom.desktop
-echo "Comment=Script to launch Compensato automatically" >> /usr/share/xsessions/custom.desktop
-echo "Exec=/home/launch_compensato.sh" >> /usr/share/xsessions/custom.desktop
-echo "X-Ubuntu-Gettext-Domain=gdm" >> /usr/share/xsessions/custom.desktop
+mkdir /home/ubuntu
+echo "gnome-session --session=ubuntu & unity & /home/launch_compensato.sh" >> /home/ubuntu/.gnomerc
