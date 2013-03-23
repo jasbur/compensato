@@ -30,6 +30,7 @@ apt-get install rails3 curl smartmontools wine -y
 echo "#!/bin/bash" >> /home/launch_compensato.sh
 echo "cd /home/compensato" >> /home/launch_compensato.sh
 echo "sudo rails s &" >> /home/launch_compensato.sh
+echo "sleep 10" >> /home/launch_compensato.sh
 echo "firefox http://localhost:3000" >> /home/launch_compensato.sh
 chmod 777 /home/launch_compensato.sh
 
