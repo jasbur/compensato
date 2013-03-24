@@ -1,9 +1,27 @@
 <%@page_title = "File Operations"%>
 
 <div id="fileOpChoice" class="mainAction">
-<ul>
-	<li><%=link_to "File scan", :action => "new", :fileOpType => "file_scan"%></li>
-	<li><%=link_to "File copy", :action => "new", :fileOpType => "file_copy"%></li>
-	<li><%=link_to "Clean temporary files", :action => "new", :fileOpType => "clean_temp_files"%></li>
-</ul>
+	<ul>
+		<li><%=link_to "File Scan", :action => "new", :fileOpType => "file_scan"%></li>
+		<li><%=link_to "File Copy", :action => "new", :fileOpType => "file_copy"%></li>
+		<li><%=link_to "Clean Temporary Files", :action => "new", :fileOpType => "clean_temp_files"%></li>
+	</ul>
+
+	<div id="informationalDisplay">
+		<h1>Usage Tip:</h1>
+		<p>This page gives you access to the main file-related functions of Compensato.</p>
+		<ul>
+			<li><b>File Scan:</b> This will scan the system for recently modified files of an executable type. This 
+				is a good way to surface recently infected files since they will be some of the most recently 
+				modified files on the system by definition.</li>
+			</br>
+			<li><b>File Copy:</b> This will copy the entire contents of one folder to another. This is most commonly 
+				used to copy the client's "User" or "Documents and Settings" folder to an external device prior to 
+				formatting the system and re-installing. It can also be used after a format/re-install to copy the 
+				data back.</li>
+			</br>
+			<li><b>Clean Temporary Files:</b> This will collect information about the amount of temporary files on 
+				the client's system and then give you the opportunity to have them all removed.</li>
+		</ul>
+	</div>
 </div>

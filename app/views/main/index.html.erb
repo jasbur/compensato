@@ -1,6 +1,11 @@
 <%@page_title = "Main"%>
 
 <div id="systemInformation" class="mainAction">
+	<p>Compensato is designed to help you troubleshoot a variety of computer issues from a virus infection 
+		to hardware isssues. Most of the functions are Windows focused, but many of them are platform 
+		agnostic and can be used on any computer (like the partition resizing and file copy). Each page will 
+		have a "Usage Tip" to help you get familiar with the program.</p>
+
 	<ul>
 		<li><span class="systemStatCat">CPU Model:</span> <%=@system_stats[:cpu_model]%></li>
 		<li><span class="systemStatCat">CPU Cores:</span> <%=@system_stats[:cpu_cores]%></li>
@@ -12,4 +17,13 @@
 		</br>
 		<li><span class="systemStatCat">IP Address:</span> <%=@system_stats[:ip_address]%></li>
 	</ul>
+
+	<div id="informationalDisplay">
+		<h1>Usage Tip:</h1>
+		<p>This screen displays general information about the system that Compensato is currently running on.
+			If you seem to be having reliability issues the SMART status might be of particular note. It is a 
+			diagnostic report from the drive itself. A "PASSED" status does not necessarily mean that everything 
+			is ok on the drive, but a "FAILED" almost definitely means that something in mechanically wrong with 
+			the drive and most likely needs to be replaced</p>
+	</div>
 </div>

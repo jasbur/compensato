@@ -1,8 +1,30 @@
 <%@page_title = "Disk Operations"%>
 
 <div id="diskOpChoice" class="mainAction">
-<ul>
-	<li><%=link_to "Edit partitions", :action => "new", :fileOpType => "edit_partitions"%></li>
-	<li><%=link_to "Schedule a file system check on the client's drive", :action => "new", :fileOpType => "disk check"%></li>
-</ul>
+	<ul>
+		<li><%=link_to "Edit partitions", :action => "new", :fileOpType => "edit_partitions"%></li>
+		<li><%=link_to "Schedule a file system check", :action => "new", :fileOpType => "disk check"%></li>
+	</ul>
+
+	<div id="informationalDisplay">
+		<h1>Usage Tip:</h1>
+
+		<p>This area for for disk based operations. Specifically:</p>
+
+		<ul>
+			<li><b>Edit Partitions:</b> This will open the gParted partition editor. gParted is a non-destructive 
+				partition editor that can handle just about any filesystem in existence. That means that you can 
+				resize and move partitions without losing any data. Depending on the amount of data on the partition 
+				being manipulated it can either be a very quick operation or can take quite some time. For instance, 
+				deleting a partition or increasing the size of one into already free space should take under minute 
+				or two. But, moving a partition from one place to another with sever gigabytes of data could take 
+				an hour or two.</li>
+			</br>
+			<li><b>Schedule a file system check:</b> This will schedule a file system check (or chkdsk) on the 
+				client's drive on the next reboot into Windows. We would love the just do the check right here, 
+				but the filesystems that Microsoft uses are proprietary and don't seem to have any way to be checked 
+				from outside of Windows. After clicking this link just reboot the computer normally and let Windows 
+				run the check automatically while it's booting.</li>
+		</ul>
+	</div>
 </div>

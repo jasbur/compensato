@@ -13,7 +13,7 @@
  */
 
 body{
-	background-color: #F0F0F0;
+	background-color: #f7dfbb;
 	font-family: arial;
 	margin: 0px;
 	padding: 10px;
@@ -27,11 +27,11 @@ body ul{
 
 a:link{
 	text-decoration: none;
-	color: #EE8585;
+	color: #5d799c;
 }
 
 a:visited{
-	color: #EE8585;
+	color: #5d799c;
 }
 
 header{
@@ -50,17 +50,18 @@ header li{
 .mainAction{
 	margin: 50px 0px 0px 20%;
 	padding: 10px;
-	background-color: #EE8585;
-	font-size: 12px;
+	background-color: #5d799c;
+	color: #EBEBEB;
+	font-size: 20px;
 	text-align: left;
 }
 
 .mainAction a{
-	color: #000000;
+	color: #EBEBEB;
 }
 
 .mainAction a:visited{
-	color: #000000;
+	color: #EBEBEB;
 }
 
 .systemStatCat{
@@ -84,6 +85,18 @@ header li{
 	background-color: #000000;
 	font-size: 20px;
 	color: #FF0000;
+}
+
+div#informationalDisplay{
+	margin: 20px 0px 0px 0px;
+	padding:10px 10px 10px 30px;
+	background-color:#9b6f2b;
+	color:#EBEBEB;
+	font-size: 15px;
+}
+
+div#informationalDisplay h1{
+	font-size: 30px;
 }
 
 div#footer{

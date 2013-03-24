@@ -2,6 +2,20 @@
 
 <div id="diagnosticsChoice" class="mainAction">
 	<ul>
-		<li><%=link_to "View bluescreen errors", :action => "new", :diagnostic_type => "bluescreen_view"%></li>
+		<li><%=link_to "Bluescreenview", :action => "new", :diagnostic_type => "bluescreen_view"%></li>
 	</ul>
+
+	<div id="informationalDisplay">
+		<h1>Usage Tip:</h1>
+
+		<p>The Diagnostics page will help you determine lower-level non-infection related problems on the clien't 
+			system. This would be things like hardware problems and low-level software problems like drive issues.</p>
+
+		<ul>
+			<li><b>Bluescreenview:</b> This utility is provided by Nirsoft and will alllow you to view any recent 
+				Bluescreen erros from the client's computer. It's actually a Windows based program and is run here 
+				via WINE (a Windows compatibility layer) so it may take a little while to start up.
+				<b><a href="http://www.nirsoft.net/utils/blue_screen_view.html">Click here for more information</a></b></li>
+		</ul>
+	</div>
 </div>

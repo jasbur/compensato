@@ -13,12 +13,11 @@ class DownloadsController < ApplicationController
 
 			@file_links = {
 				"Full Compensato Suite (Chrome, MSSE, Flash, Java, Malwarebytes, Adobe Reader)" => "http://ninite.com/chrome-essentials-flash-flashie-java-malwarebytes-reader/ninite.exe",
-				"ComboFix" => combofix_url, 
 				"TDSSKiller" => "http://support.kaspersky.com/downloads/utils/tdsskiller.exe",
 				"Malwarebytes" => "http://ninite.com/malwarebytes/ninite.exe",
+				"ComboFix" => combofix_url,
 				"Google Chrome" => "http://ninite.com/chrome/ninite.exe",
 				"Microsoft Security Essentials" => "http://ninite.com/essentials/ninite.exe",
-				"CCleaner" => "http://download.piriform.com/ccsetup327.exe",
 				"Adobe Flash" => "http://ninite.com/flash-flashie/ninite.exe",
 				"Java" => "http://ninite.com/java/ninite.exe"
 			}
