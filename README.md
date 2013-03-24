@@ -12,6 +12,8 @@ sudo rails s
 Then navigate to 127.0.0.1:3000 or localhost:3000 in your browser of choice.
 
 
+When booting from a Live ISO press any key at the boot screen when you see the little computer chip icon in the bottom-center then choose "Try Ubuntu without installing"
+
 
 Prerequisites:
 
