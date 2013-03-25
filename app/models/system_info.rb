@@ -1,4 +1,4 @@
-class SystemInfo < ActiveRecord::Base
+class SystemInfo
   
 	#Gets the system information for the desired attributes and returns them as an ordered array of strings
 	def self.get_system_stats
