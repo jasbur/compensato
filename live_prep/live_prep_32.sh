@@ -3,6 +3,9 @@
 #Copy new sources.list to /etc/apt
 cp sources.list /etc/apt/
 
+#Copy grub configuration file to /etc/default
+cp grub /etc/default/
+
 #Install dependencies
 apt-get update
 apt-get upgrade -y
