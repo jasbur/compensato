@@ -22,7 +22,7 @@ class DriveOp < ActiveRecord::Base
 		unless Dir.entries("/media/compensato_client").size > 2
 			mount_iterations.each{|i|
 				unless client_drive_found == true
-					if system "mount #{i} /media/compensato_client"
+					if system "mount -o remove_hiberfile #{i} /media/compensato_client"
 						if File.exist?("/media/compensato_client/pagefile.sys") or File.exist?("/media/compensato_client/PAGEFILE.SYS")
 							client_drive_found = true
 						else
