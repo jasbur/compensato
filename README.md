@@ -23,6 +23,7 @@ Rails 3.2.6
 Curl 7.27.0 
 smartmontools 5.43 
 Wine 1.4.1
+gdisk 0.8.5
 
 
 

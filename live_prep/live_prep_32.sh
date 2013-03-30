@@ -6,7 +6,7 @@ cp sources.list /etc/apt/
 #Install dependencies
 apt-get update
 apt-get upgrade -y
-apt-get install rails3 curl smartmontools wine -y
+apt-get install rails3 curl smartmontools wine gdisk -y
 
 #Copy the launch script
 cp launch_compensato.sh /home/
