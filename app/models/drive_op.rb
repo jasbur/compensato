@@ -6,16 +6,16 @@ class DriveOp < ActiveRecord::Base
 	#continues to the next item in "mount_iterations"
 	def self.mount_client_drive
 		mount_iterations = Array.new
-		fdisk_output = %x(fdisk -l).split("\n")
+		gdisk_output = %x(gdisk /dev/sda -l).split("\n")
 		client_drive_found = false
 
 		if Dir.exist?("/media/compensato_client") == false
 			Dir.mkdir("/media/compensato_client")
 		end
 
-		fdisk_output.each{|line|
-			if line.include?("NTFS")
-				mount_iterations << line.split[0]
+		gdisk_output.each{|line|
+			if line.include?("Microsoft basic data")
+				mount_iterations << "/dev/sda" + line.split[0]
 			end
 		}
 
