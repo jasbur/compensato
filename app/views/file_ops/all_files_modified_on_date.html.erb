@@ -1,5 +1,16 @@
 <%@page_title = "All files modified on #{@start_date}"%>
 
+<div id="fileOpChoice" class="mainAction">
+    <div id="informationalDisplay">
+    	<h1>Usage Tip:</h1>
+		<p>This page displays on ordered list of all files of any type modified on 
+			<%=@start_date%>. The file selected from the previous screen will be visually 
+			isolated in RED text to help you determine where to start looking. This 
+			listing can be a great way to get a sense of the scope of an infection because 
+			it lists all files modified, not just executables.</p>
+	</div> 
+</div>
+
 <div id="allFilesModifiedOnDate" class="fileListOutput">
 	<ul>
 		<%@file_objects.each{|file_object|%>

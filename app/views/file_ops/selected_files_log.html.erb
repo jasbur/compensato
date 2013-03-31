@@ -1,5 +1,17 @@
 <%@page_title = "Selected Files Log for the last #{@scan_days} days"%>
 
+<div id="fileOpChoice" class="mainAction">
+    <div id="informationalDisplay">
+    	<h1>Usage Tip:</h1>
+		<p>This is a list of just the files that you thought were suspicious from the previous 
+			screen. From here you can take action to delete or quarantine these files outside 
+			of this application using the built-in file browser on the left navigation bar. You 
+			can also click the "Find all files modified on this date" link next to any of the 
+			files to see a list of all files of any type modified on the client's system on 
+			that date. This can be really useful for finding the intire scale of the infection.</p>
+	</div> 
+</div>
+
 <div id="selectedFilesLog" class="fileListOutput">
 	<h3>A copy of this scan log has been saved in the "Compensato" folder on the root of the client computer</h3>
 

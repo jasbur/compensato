@@ -1,5 +1,16 @@
 <%@page_title = "Scan Results"%>
 
+<div id="fileOpChoice" class="mainAction">
+    <div id="informationalDisplay">
+    	<h1>Usage Tip:</h1>
+		<p>This page lists all of the files (of the selected types) that have been modified in the 
+			last <%=@scan_days%> days. Use the check boxes next any files that you think might look 
+			suspicious and click the "Select files" button when you're done. The next page will 
+			give you a nice isolated list of just those files for further examination. It will also 
+			create a text log on the client's computer at C:\Compensato</p>
+	</div> 
+</div>
+
 <div id="fileScanResults" class="fileListOutput">
 	<%=form_tag(:action => "selected_files_log", :method => "get") do%>
 		<%=submit_tag("Select files")%>
