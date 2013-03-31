@@ -15,8 +15,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="compensato_boot_logo.svg"
-   inkscape:export-filename="/home/jasbur/Desktop/bootlogo.png"
+   sodipodi:docname="compensato_blank.svg"
+   inkscape:export-filename="/home/jasbur/Desktop/bootblank.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -164,58 +164,5 @@
        height="479.28574"
        x="0.71428484"
        y="573.07642" />
-    <rect
-       style="opacity:0.20000000000000001;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;filter:url(#filter3896)"
-       id="rect2985"
-       width="71.296333"
-       height="65.529716"
-       x="103.7736"
-       y="722.33734"
-       transform="matrix(0.75470702,0,0,0.75470702,89.345988,145.19077)" />
-    <rect
-       y="726.00696"
-       x="107.44326"
-       height="65.529716"
-       width="71.296333"
-       id="rect3755"
-       style="opacity:0.40000000000000002;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;filter:url(#filter3892)"
-       transform="matrix(0.75470702,0,0,0.75470702,89.345988,145.19077)" />
-    <rect
-       style="opacity:0.59999999999999998;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;filter:url(#filter3888)"
-       id="rect3757"
-       width="71.296333"
-       height="65.529716"
-       x="111.59502"
-       y="730.15875"
-       transform="matrix(0.75470702,0,0,0.75470702,89.345988,145.19077)" />
-    <rect
-       y="734.31049"
-       x="115.74677"
-       height="65.529716"
-       width="71.296333"
-       id="rect3759"
-       style="opacity:0.80000000000000004;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;filter:url(#filter3884)"
-       transform="matrix(0.75470702,0,0,0.75470702,89.345988,145.19077)" />
-    <rect
-       style="fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;filter:url(#filter3880)"
-       id="rect3761"
-       width="71.296333"
-       height="65.529716"
-       x="90.48851"
-       y="713.02753"
-       transform="matrix(0.75470702,0,0,0.75470702,89.345988,145.19077)" />
-    <text
-       xml:space="preserve"
-       style="font-size:144.00564575000001355px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient3773);fill-opacity:1;stroke:#f7dfbb;stroke-width:2.09999989999999981;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;filter:url(#filter3876);font-family:Sans"
-       x="-81.32531"
-       y="807.89618"
-       id="text3763"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.39166943,0,0,0.39166943,202.58032,410.57249)"><tspan
-         sodipodi:role="line"
-         id="tspan3765"
-         x="-81.32531"
-         y="807.89618"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:url(#linearGradient3773);fill-opacity:1;stroke:#f7dfbb;stroke-width:2.09999989999999981;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">Compensato</tspan></text>
   </g>
 </svg>
