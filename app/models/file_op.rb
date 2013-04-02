@@ -1,4 +1,4 @@
-class FileOp < ActiveRecord::Base
+class FileOp
   # attr_accessible :title, :body
 
 	#Uses the system's "find" command to create a list of files maching the modified time given 

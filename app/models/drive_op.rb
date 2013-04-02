@@ -1,4 +1,4 @@
-class DriveOp < ActiveRecord::Base
+class DriveOp
   # attr_accessible :title, :body
 
 	#Auto-mounts the customer drive by iterating through "mount_iterations", mounting them, then 
