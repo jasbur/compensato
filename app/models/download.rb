@@ -1,4 +1,4 @@
-class Download < ActiveRecord::Base
+class Download
   # attr_accessible :title, :body
 
 	#Isolates the dynamically geberated ComboFix URL from the download page by finding predicatable 
