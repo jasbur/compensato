@@ -74,8 +74,13 @@ header li{
 	font-size: 13px;
 }
 
+.fileListOutput a{
+	color: #5d799c;
+}
+
 .fileListOutput li:hover{
-	background-color: #EE8585;
+	background-color: #D6B37C;
+	padding: 2px;
 	font-weight: bold;
 }
 

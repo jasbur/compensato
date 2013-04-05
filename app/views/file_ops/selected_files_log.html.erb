@@ -8,13 +8,12 @@
 			of this application using the built-in file browser on the left navigation bar. You 
 			can also click the "Find all files modified on this date" link next to any of the 
 			files to see a list of all files of any type modified on the client's system on 
-			that date. This can be really useful for finding the intire scale of the infection.</p>
+			that date. This can be really useful for finding the intire scale of the infection. 
+			A copy of this log has been saved on the client's drive at <b>C:\Compensato</b></p>
 	</div> 
 </div>
 
 <div id="selectedFilesLog" class="fileListOutput">
-	<h3>A copy of this scan log has been saved in the "Compensato" folder on the root of the client computer</h3>
-
 	<%=form_tag(:action => "selected_files_log", :method => "get") do%>
 		<%for extension in @extensions do%>
 			<hr>
