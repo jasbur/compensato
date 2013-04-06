@@ -16,7 +16,7 @@
 		<%end%>
 
 		<%=form_tag(:action => "all_files_modified_on_date", :method => "get") do%>
-			<%=label_tag(:start_date, "Scan for all files modified on:")%> <%=text_field_tag(:start_date)%><br>
+			<%=label_tag(:start_date, "Scan for all files modified on:")%> <%=text_field_tag(:start_date)%> (YYYY-MM-DD)<br>
 			<%=submit_tag("Begin scan...")%>
 		<%end%>
 
