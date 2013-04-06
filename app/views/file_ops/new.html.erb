@@ -15,6 +15,11 @@
 			<%=submit_tag("Begin scan...")%>
 		<%end%>
 
+		<%=form_tag(:action => "all_files_modified_on_date", :method => "get") do%>
+			<%=label_tag(:start_date, "Scan for all files modified on:")%> <%=text_field_tag(:start_date)%><br>
+			<%=submit_tag("Begin scan...")%>
+		<%end%>
+
 		<div id="informationalDisplay">
 			<h1>Usage Tip:</h1>
 			<p>Just enter the number of days into the past that you'd like to scan and select the boxes next to 
