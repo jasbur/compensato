@@ -41,7 +41,9 @@ class FileOpsController < ApplicationController
 	#Produces a log showing files of all types modified for the provided date range
 	def all_files_modified_on_date
 		@start_date = params[:start_date]
-		end_date = params[:end_date]
+		calc_end_date = Time.new("#{@start_date.split('-')[0]}", "#{@start_date.split('-')[1]}", "#{@start_date.split('-')[2]}")
+		end_date = (calc_end_date + 86400).to_s[0..9]
+
 		@selected_file_name = params[:selected_file_name]
 
 		file_paths = FileOp.find_all_files_on_date(@start_date, end_date)
