@@ -3,8 +3,10 @@
 <div id="fileOperation" class="mainAction">
 	<%if @file_op_type == "file_scan"%>
 
+		<h3>Scan for executable files modified recently</h3>
+
 		<%=form_tag(:action => "file_scan", :method => "get") do%>
-			<%=label_tag(:scan_days, "Number of days to scan:")%> <%=text_field_tag(:scan_days)%><br>
+			<%=label_tag(:scan_days, "Number of days back to scan:")%> <%=text_field_tag(:scan_days)%><br>
 			<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
 			<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
 			<%= check_box_tag "selected_extensions[]", "bat", true %> .bat
@@ -15,6 +17,10 @@
 			<%=submit_tag("Begin scan...")%>
 		<%end%>
 
+		<hr>
+
+		<h3>Scan for all files modified on a specific date</h3>
+
 		<%=form_tag(:action => "all_files_modified_on_date", :method => "get") do%>
 			<%=label_tag(:start_date, "Scan for all files modified on:")%> <%=text_field_tag(:start_date)%> (YYYY-MM-DD)<br>
 			<%=submit_tag("Begin scan...")%>
@@ -22,10 +28,15 @@
 
 		<div id="informationalDisplay">
 			<h1>Usage Tip:</h1>
-			<p>Just enter the number of days into the past that you'd like to scan and select the boxes next to 
-				the types of files that you'd like to scan for. Again, this will expose any files of the selected 
-				types that have been modified in the time-frame given. This is a great way to detect recent 
-				infections on a client's computer.</p>
+			<ul>
+				<li><b>Scan for executable files modified recently: </b>Just enter the number of days into the past that you'd like to scan and select the boxes next to 
+					the types of files that you'd like to scan for. Again, this will expose any files of the selected 
+					types that have been modified in the time-frame given. This is a great way to detect recent 
+					infections on a client's computer.</li></br>
+
+				<li><b>Scan for all files modified on a specific date: </b>Enter in a date to see all files, of any type, 
+					modified.</li>
+			</ul>
 		</div>
 
 	<%elsif @file_op_type == "file_copy"%>
