@@ -1,6 +1,13 @@
-<ul>
-	<li><%=@ping_results[:packet_loss_percentage]%></li>
-	<li><%=@ping_results[:rtt_min]%></li>
-	<li><%=@ping_results[:rtt_avg]%></li>
-	<li><%=@ping_results[:rtt_max]%></li>
-</ul>
+<%@page_title = "Ping test results"%>
+
+<div id="pingTestResults" class="mainAction">
+	<h2>Ping test results for <%=@number_of_pings%> pings</h2>
+
+	<ul>
+		<li><b>Packet loss:</b> <%=@ping_results[:packet_loss_percentage]%>%</li>
+		</br>
+		<li><b>Min. trip time:</b> <%=@ping_results[:rtt_min]%>ms</li>
+		<li><b>Avg. trip time:</b> <%=@ping_results[:rtt_avg]%>ms</li>
+		<li><b>Max. trip time:</b> <%=@ping_results[:rtt_max]%>ms</li>
+	</ul>
+</div>
