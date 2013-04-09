@@ -1,5 +1,7 @@
 class Diagnostic
 
+	#Uses the system 'ping' command to stress test the network by sending a supplied number of 
+	#packets to a specified address and returning a hash of the relevant results
 	def self.ping_test(address_to_ping, number_of_pings)
 		ping_results = Hash.new
 

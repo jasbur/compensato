@@ -7,7 +7,22 @@
 		<li><b>Packet loss:</b> <%=@ping_results[:packet_loss_percentage]%>%</li>
 		</br>
 		<li><b>Min. trip time:</b> <%=@ping_results[:rtt_min]%>ms</li>
-		<li><b>Avg. trip time:</b> <%=@ping_results[:rtt_avg]%>ms</li>
 		<li><b>Max. trip time:</b> <%=@ping_results[:rtt_max]%>ms</li>
+		<li><b>Avg. trip time:</b> <%=@ping_results[:rtt_avg]%>ms</li>
 	</ul>
+
+	<div id="informationalDisplay">
+		<h2>Usgae Tip:</h2>
+
+		<ul>
+			<li><b>Packet loss:</b> This is the best metric to judge the health of the network hardware. Generally any 
+				result at or above 5% would mean that some peice of hardware that the packets travelled thorugh might be 
+				faulty.</li></br>
+			<li><b>Min trip time:</b> The fastest packet in the test took this long to get there and back.</li></br>
+			<li><b>Max trip time:</b> The slowest packet in the test took this long to get there and back.</li></br>
+			<li><b>Avg trip time:</b> The The average round trip time accross all packets sent. On a healthy network this 
+				should be below <b>5ms</b> for an internal address tested and below about <b>60ms</b> for a major site 
+				at an external address like google.com</li>
+		</ul>
+	</div>
 </div>

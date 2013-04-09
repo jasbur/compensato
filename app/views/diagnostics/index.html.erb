@@ -2,8 +2,8 @@
 
 <div id="diagnosticsChoice" class="mainAction">
 	<ul>
-		<li><%=link_to "Bluescreenview", :action => "new", :diagnostic_type => "bluescreen_view"%></li>
 		<li><%=link_to "Network health test", :action => "new", :diagnostic_type => "network_health_test"%></li>
+		<li><%=link_to "Bluescreenview", :action => "new", :diagnostic_type => "bluescreen_view"%></li>
 	</ul>
 
 	<div id="informationalDisplay">
@@ -13,6 +13,9 @@
 			system. This would be things like hardware problems and low-level software problems like drive issues.</p>
 
 		<ul>
+			<li><b>Network health test:</b> This test will test the health of all network hardware by sending a 
+				bunch of data as quickly as possible through the network and measuring if any of it got lost and 
+				how long it took to travel.</li></br>
 			<li><b>Bluescreenview:</b> This utility is provided by Nirsoft and will alllow you to view any recent 
 				Bluescreen erros from the client's computer. It's actually a Windows based program and is run here 
 				via WINE (a Windows compatibility layer) so it may take a little while to start up.

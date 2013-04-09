@@ -4,6 +4,8 @@ class DiagnosticsController < ApplicationController
 		
 	end
 
+	#Hold the passed "@diagnostic_type" (what the user wnats to do) parameter to determine what to 
+	#display in the view
 	def new
 		@diagnostic_type = params[:diagnostic_type]
 
@@ -14,6 +16,7 @@ class DiagnosticsController < ApplicationController
 		end
 	end
 
+	#Executes the system's "ping" test with the given params
 	def ping_test
 		@address_to_ping = params[:address_to_ping]
 		@number_of_pings = params[:number_of_pings]
