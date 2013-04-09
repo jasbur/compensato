@@ -1,7 +1,7 @@
 <%@page_title = "Ping test results"%>
 
 <div id="pingTestResults" class="mainAction">
-	<h2>Ping test results for <%=@number_of_pings%> pings</h2>
+	<h2>Ping test results for <%=@number_of_pings%> pings to <%=@address_to_ping%></h2>
 
 	<ul>
 		<li><b>Packet loss:</b> <%=@ping_results[:packet_loss_percentage]%>%</li>
