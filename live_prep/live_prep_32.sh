@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#Copy and altered configuration files to live environment
+cp ./conf_files/limits.conf /etc/security/
+
 #Copy new sources.list to /etc/apt
-cp sources.list /etc/apt/
+cp ./conf_files/sources.list /etc/apt/
 
 #Install dependencies
 apt-get update

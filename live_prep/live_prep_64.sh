@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#Copy and altered configuration files to live environment
+cp ./conf_files/limits.conf /etc/security/
+
 #Copy new sources.list to /etc/apt
-cp sources.list /etc/apt/
+cp ./conf_files/sources.list /etc/apt/
 
 #This is to bypass some bug in Ubuntu 12.10 that doesn't allow wine to install properly otherwise
 sudo dpkg --add-architecture i386
