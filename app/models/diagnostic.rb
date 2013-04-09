@@ -1,9 +1,9 @@
 class Diagnostic
 
-	def self.ping_test(number_of_pings)
+	def self.ping_test(address_to_ping, number_of_pings)
 		ping_results = Hash.new
 
-		these_results = %x(ping -fq 192.168.1.1 -c #{number_of_pings}).split("\n")
+		these_results = %x(ping -fq #{address_to_ping} -c #{number_of_pings}).split("\n")
 
 		these_results.each{|line|
 			if line.include?("packet loss")

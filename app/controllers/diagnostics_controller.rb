@@ -15,8 +15,10 @@ class DiagnosticsController < ApplicationController
 	end
 
 	def ping_test
+		@address_to_ping = params[:address_to_ping]
 		@number_of_pings = params[:number_of_pings]
-		@ping_results = Diagnostic.ping_test(@number_of_pings)
+
+		@ping_results = Diagnostic.ping_test(@address_to_ping, @number_of_pings)
 	end
 
 end
