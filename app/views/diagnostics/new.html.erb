@@ -3,7 +3,16 @@
 <div id="diagnosticOperation" class="mainAction">
 	<%if @diagnostic_type == "bluescreen_view"%>
 
-		<h2>BluescreenView will open in another window...</h2>	
+		<h2>BluescreenView will open in another window...</h2>
+
+	<%elsif @diagnostic_type == "network_health_test"%>	
+
+		<ul>
+			<li><%=@ping_results[:packet_loss_percentage]%></li>
+			<li><%=@ping_results[:rtt_min]%></li>
+			<li><%=@ping_results[:rtt_avg]%></li>
+			<li><%=@ping_results[:rtt_max]%></li>
+		</ul>
 
 	<%end%>
 </div>
