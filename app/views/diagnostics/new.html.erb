@@ -7,8 +7,12 @@
 
 	<%elsif @diagnostic_type == "network_health_test"%>	
 
-		<%=link_to "ping 100", :action => "ping_test", :number_of_pings => "100"%></br>
-		<%=link_to "ping 1,000", :action => "ping_test", :number_of_pings => "1000"%>
+		<h2>Network health test</h2>
+
+		<%=form_tag(:action => "ping_test", :method => "get") do%>
+			<%=label_tag(:start_date, "Number of pings to send:")%> <%=text_field_tag(:number_of_pings)%><br>
+			<%=submit_tag("Start ping test...")%>
+		<%end%>
 
 	<%end%>
 </div>
