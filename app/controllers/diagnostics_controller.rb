@@ -9,6 +9,8 @@ class DiagnosticsController < ApplicationController
 
 		if @diagnostic_type == "bluescreen_view"
 			spawn "sudo -u ubuntu wine ext_apps/bluescreenview/BlueScreenView.exe /MiniDumpFolder z:\\\\media\\\\compensato_client\\\\Windows\\\\Minidump"
+		elsif @diagnostic_type == "network_health_test"
+			
 		end
 	end
 
