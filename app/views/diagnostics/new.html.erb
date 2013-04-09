@@ -7,12 +7,8 @@
 
 	<%elsif @diagnostic_type == "network_health_test"%>	
 
-		<ul>
-			<li><%=@ping_results[:packet_loss_percentage]%></li>
-			<li><%=@ping_results[:rtt_min]%></li>
-			<li><%=@ping_results[:rtt_avg]%></li>
-			<li><%=@ping_results[:rtt_max]%></li>
-		</ul>
+		<%=link_to "ping 100", :action => "ping_test", :number_of_pings => "100"%></br>
+		<%=link_to "ping 1,000", :action => "ping_test", :number_of_pings => "1000"%>
 
 	<%end%>
 </div>
