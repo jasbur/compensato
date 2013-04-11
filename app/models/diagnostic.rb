@@ -20,4 +20,31 @@ class Diagnostic
 		return ping_results
 	end
 
+	def self.get_system_temps
+		sensors_output = %x(sensors).split("\n")
+		system_temps = Hash.new
+		
+		sensors_output.each{|line|
+			if line.include?("Core 0")
+				system_temps.merge!(:core_0 => line)
+			elsif line.include?("Core 1")
+				system_temps.merge!(:core_1 => line)
+			elsif line.include?("Core 2")
+				system_temps.merge!(:core_2 => line)
+			elsif line.include?("Core 3")
+				system_temps.merge!(:core_3 => line)
+			elsif line.include?("Core 4")
+				system_temps.merge!(:core_4 => line)
+			elsif line.include?("Core 5")
+				system_temps.merge!(:core_5 => line)
+			elsif line.include?("Core 6")
+				system_temps.merge!(:core_6 => line)
+			elsif line.include?("Core 7")
+				system_temps.merge!(:core_7 => line)
+			end
+		}
+
+		return system_temps
+	end
+
 end

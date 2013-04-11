@@ -34,4 +34,10 @@ class DiagnosticsController < ApplicationController
 		redirect_to :action => "index"
 	end
 
+	def check_system_temps
+		@system_temps = Diagnostic.get_system_temps
+
+		render :layout => false
+	end
+
 end

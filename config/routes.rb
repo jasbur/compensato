@@ -16,6 +16,7 @@ RailsCompensato::Application.routes.draw do
     match 'downloads/fetch_downloads' => 'downloads#fetch_downloads'
     match 'diagnostics/ping_test' => 'diagnostics#ping_test'
     match 'diagnostics/stop_hardware_test' => 'diagnostics#stop_hardware_test'
+    match 'diagnostics/check_system_temps' => 'diagnostics#check_system_temps'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

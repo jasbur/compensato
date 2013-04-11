@@ -40,5 +40,9 @@
 		<h2>Mprime is running at <%=@mprime_pid%></h2>
 
 		<%=link_to "Stop test", :action => "stop_hardware_test", :mprime_pid => @mprime_pid%>
+
+		<script type="text/javascript">check_system_temps();</script>
+
+		<div id="systemTemps"></div>
 	<%end%>
 </div>
