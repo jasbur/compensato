@@ -12,7 +12,9 @@ class DiagnosticsController < ApplicationController
 		if @diagnostic_type == "bluescreen_view"
 			spawn "sudo -u ubuntu wine ext_apps/bluescreenview/BlueScreenView.exe /MiniDumpFolder z:\\\\media\\\\compensato_client\\\\Windows\\\\Minidump"
 		elsif @diagnostic_type == "network_health_test"
-			
+    
+    	elsif @diagnostic_type == "hardware_stress_test"
+			@mprime_pid = spawn "./ext_apps/mprime -t"
 		end
 	end
 
@@ -22,6 +24,14 @@ class DiagnosticsController < ApplicationController
 		@number_of_pings = params[:number_of_pings]
 
 		@ping_results = Diagnostic.ping_test(@address_to_ping, @number_of_pings)
+	end
+
+	def stop_hardware_test
+		mprime_pid = params[:mprime_pid]
+
+		system "kill -9 #{mprime_pid}"
+
+		redirect_to :action => "index"
 	end
 
 end

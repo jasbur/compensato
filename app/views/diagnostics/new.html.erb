@@ -36,5 +36,9 @@
 			</ul>
 		</div>
 
+	<%elsif @diagnostic_type == "hardware_stress_test"%>
+		<h2>Mprime is running at <%=@mprime_pid%></h2>
+
+		<%=link_to "Stop test", :action => "stop_hardware_test", :mprime_pid => @mprime_pid%>
 	<%end%>
 </div>
