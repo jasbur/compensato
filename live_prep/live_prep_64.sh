@@ -12,7 +12,7 @@ sudo dpkg --add-architecture i386
 #Install dependencies
 apt-get update
 apt-get upgrade -y
-apt-get install rails3 curl smartmontools wine gdisk -y
+apt-get install rails3 curl smartmontools wine gdisk lm-sensors -y
 
 #Remove unwanted packages
 apt-get remove ubiquity -y
