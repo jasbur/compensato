@@ -17,6 +17,9 @@ apt-get install rails3 curl smartmontools wine gdisk -y
 #Remove unwanted packages
 apt-get remove ubiquity -y
 
+#Create link to the 64 bit version of mprime to run later for torture test
+ln -sf ../ext_apps/mprime_statics/mprime64 ../ext_apps/mprime
+
 #Copy the launch script
 cp launch_compensato.sh /home/
 
