@@ -8,6 +8,8 @@ class SystemInfo
 		drive_info = %x(df).split("\n")
 		hd_id = DriveOp.get_client_device_id
 		ip_info = %x(ifconfig).split("\n")
+		smartctl_ouput = %x(smartctl -a #{hd_id}).split("\n")
+
 		#This will be used to dectect duplicate entries when cat'ing /proc
 		detect_duplicate = 0
 
@@ -51,7 +53,18 @@ class SystemInfo
 			end
 		}
 
-		system_stats.merge!(:smart_health => %x(smartctl #{hd_id} -H).split.last)
+
+		smartctl_ouput.each{|line|
+			if line.include?("FAILING_NOW")
+				system_stats.merge!(:smart_health => "Imminent failure")
+				break
+			elsif line.include?("Pre-fail")
+				system_stats.merge!(:smart_health => "Pre-fail")
+				break
+			else
+				system_stats.merge!(:smart_health => "Healthy")
+			end
+		}
 
 		ip_info.each{|line|
 			if line.include?("inet addr:") and line.include?("127.0.0.1") == false

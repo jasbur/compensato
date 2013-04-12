@@ -28,8 +28,14 @@
 		<h1>Usage Tip:</h1>
 		<p>This screen displays general information about the system that Compensato is currently running on.
 			If you seem to be having reliability issues the SMART status might be of particular note. It is a 
-			diagnostic report from the drive itself. A "PASSED" status does not necessarily mean that everything 
-			is ok on the drive, but a "FAILED" almost definitely means that something in mechanically wrong with 
-			the drive and most likely needs to be replaced</p>
+			diagnostic report from the drive itself.</p>
+
+		<ul>
+			<li><b>Healthy:</b> means everything tests out OK</li>
+			<li><b>Pre-fail:</b> means that some part of the drive is operating out of spec. This doesn't 
+				actually mean that something is about to fail though, just that a statistic thershold has 
+				been crossed.</li>
+			<li><b>Imminent failure:</b> means that the drive is most likely in the process of actively failing</li>
+		</ul>
 	</div>
 </div>
