@@ -10,27 +10,18 @@ class SystemInfo
 		ip_info = %x(ifconfig).split("\n")
 		smartctl_ouput = %x(smartctl -a #{hd_id}).split("\n")
 
-		#This will be used to dectect duplicate entries when cat'ing /proc
-		detect_duplicate = 0
-
 		#Grab CPU info from /proc/cpuinfo
 		cpu_info.each{|line|
 			if line.include?("model name")
-				if detect_duplicate == 0
-					system_stats.merge!(:cpu_model => line[13..-1])
-					detect_duplicate = 1
-				end
+				system_stats.merge!(:cpu_model => line[13..-1])
+				break
 			end
 		}
 
-		detect_duplicate = 0
-
 		cpu_info.each{|line|
 			if line.include?("cpu cores")
-				if detect_duplicate == 0
-					system_stats.merge!(:cpu_cores => line.split[3])
-					detect_duplicate = 1
-				end
+				system_stats.merge!(:cpu_cores => line.split[3])
+				break
 			end
 		}
 
