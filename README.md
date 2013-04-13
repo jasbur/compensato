@@ -32,6 +32,7 @@ Curl 7.27.0
 smartmontools 5.43 
 Wine 1.4.1
 gdisk 0.8.5
+lm-sensors 3.3.1
 
 
 
