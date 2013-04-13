@@ -67,6 +67,7 @@ class SystemInfo
 		return system_stats
 	end
 
+	#Use the system "ps -e" command to determine if a given process name is currently running or not
 	def self.check_for_running_process(process)
 		ps_output = %x(ps -e)
 		process_runnning = false
