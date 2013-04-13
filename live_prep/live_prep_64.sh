@@ -9,13 +9,13 @@ cp ./conf_files/sources.list /etc/apt/
 #This is to bypass some bug in Ubuntu 12.10 that doesn't allow wine to install properly otherwise
 sudo dpkg --add-architecture i386
 
+#Remove unwanted packages
+apt-get remove ubiquity -y
+
 #Install dependencies
 apt-get update
 apt-get upgrade -y
 apt-get install rails3 curl smartmontools wine gdisk lm-sensors -y
-
-#Remove unwanted packages
-apt-get remove ubiquity -y
 
 #Create link to the 64 bit version of mprime to run later for torture test
 ln -sf ../ext_apps/mprime_statics/mprime64 ../ext_apps/mprime

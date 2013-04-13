@@ -6,13 +6,13 @@ cp ./conf_files/limits.conf /etc/security/
 #Copy new sources.list to /etc/apt
 cp ./conf_files/sources.list /etc/apt/
 
+#Remove unwanted packages
+apt-get remove ubiquity -y
+
 #Install dependencies
 apt-get update
 apt-get upgrade -y
 apt-get install rails3 curl smartmontools wine gdisk lm-sensors -y
-
-#Remove unwanted packages
-apt-get remove ubiquity -y
 
 #Create link to the 32 bit version of mprime to run later for torture test
 ln -sf ../ext_apps/mprime_statics/mprime32 ../ext_apps/mprime
