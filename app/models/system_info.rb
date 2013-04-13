@@ -67,4 +67,15 @@ class SystemInfo
 		return system_stats
 	end
 
+	def self.check_for_running_process(process)
+		ps_output = %x(ps -e)
+		process_runnning = false
+
+		if ps_output.include?(" #{process}\n")
+			process_runnning = true
+		end
+
+		return process_runnning
+	end
+
 end

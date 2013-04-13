@@ -59,7 +59,7 @@ class FileOpsController < ApplicationController
 		@source_directory_size = FileOp.get_directory_size(source_directory)
 		@source_directory_files = FileOp.get_number_of_files(source_directory)
 
-		FileOp.copy_data(source_directory, @destination_directory)
+		@copy_pid = FileOp.copy_data(source_directory, @destination_directory)
 	end
 
 	#Cleans temp files from common locations on the client's drive
@@ -74,6 +74,8 @@ class FileOpsController < ApplicationController
 
 		@destination_directory_size = FileOp.get_directory_size(destination_directory)
 		@destination_directory_files = FileOp.get_number_of_files(destination_directory)
+
+		@process_running = SystemInfo.check_for_running_process("cp")
 		
 		render :layout => false
 	end

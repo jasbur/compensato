@@ -1,6 +1,6 @@
 Destination directory size: <%=(@destination_directory_size.to_f / 1000000).round(2)%>GB in <%=@destination_directory_files%> files
 
-<%if @destination_directory_files.to_i == @source_directory_files.to_i%>
+<%if @process_running == false%>
 	<h2>File Copy Complete!</h2>
 	<h3>Please check the numbers above to make sure everything looks right.</h3>
 <%end%>

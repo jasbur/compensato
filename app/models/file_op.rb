@@ -32,7 +32,9 @@ class FileOp
 
 	#Issue a simple "cp" command to copy data using the given directories
 	def self.copy_data(source_directory, destination_directory)
-		spawn "cp -a '#{source_directory}' '#{destination_directory}'"
+		pid = spawn "cp -a '#{source_directory}' '#{destination_directory}'"
+
+		return pid
 	end
 
 	#This process cleans disposable tmeorary files on the client's system. These disposable 
