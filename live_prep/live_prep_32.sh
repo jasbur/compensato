@@ -24,5 +24,5 @@ ln -sf ../ext_apps/mprime_statics/mprime32 ../ext_apps/mprime
 cp launch_compensato.sh /home/
 
 #Set the script to auto-run on login
-mkdir /home/ubuntu
-cp .gnomerc /home/ubuntu/
+mkdir -p /home/ubuntu/Desktop
+ln -sf /home/launch_compensato.sh /home/ubuntu/Desktop/Launch\ Compensato
