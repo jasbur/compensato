@@ -6,6 +6,9 @@ cp ./conf_files/limits.conf /etc/security/
 #Copy new sources.list to /etc/apt
 cp ./conf_files/sources.list /etc/apt/
 
+#Copy default wallpaper
+cp ./art/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
+
 #Remove unwanted packages
 apt-get remove ubiquity -y
 
