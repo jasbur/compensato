@@ -3,7 +3,7 @@ class MainController < ApplicationController
 	#Main index for the "main" controller. Also auto-mounts client drive and collects general 
 	#system information
 	def index
-		DriveOp.mount_client_drive
+		#DriveOp.mount_client_drive
 		@system_stats = SystemInfo.get_system_stats
 		
 		if @system_stats[:hd_capacity].nil? == false

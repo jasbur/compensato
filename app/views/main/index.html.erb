@@ -13,7 +13,7 @@
 		</br>
 		
 		<%if @system_stats[:hd_capacity].nil?%>
-			<li>-- Hard drive not mounted --</li>
+			<li>Auto-mount failed | <%=link_to "Manually mount", :controller => "disk_ops", :action => "new", :fileOpType => "manually_mount_drive"%></li>
 		<%else%>
 			<li><span class="systemStatCat">HD Capacity:</span> <%=(@system_stats[:hd_capacity].to_f / 1000000).round(1)%>GB</li>
 			<li><span class="systemStatCat">HD Space Used:</span> <%=(@system_stats[:hd_space_used].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>

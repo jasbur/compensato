@@ -1,5 +1,6 @@
 <%@page_title = "New Disk Operation"%>
 
+
 <div id="diskOperation" class="mainAction">
 	<%if @disk_op_type == "edit_partitions"%>
 
@@ -9,6 +10,13 @@
 
 		<h2>A disk check has been scheduled on the client's Windows partition. It will execute automatically the next time the computer is rebooted</h2>
 
-		
+	<%elsif @disk_op_type == "manually_mount_drive"%>	
+
+		<ul>
+			<%@partitions.each{|partition|%>
+				<li>/dev/sda<%=partition.split[0]%> <%=partition.split[3]%><%=partition.split[4]%> <%=partition.split[6]%></li>
+			<%}%>
+		</ul>
+
 	<%end%>
 </div>

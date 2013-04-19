@@ -37,6 +37,17 @@ class DriveOp
 		create_client_folder_structure
 	end
 
+	def self.gdisk_partition_output
+		gdisk_output = %x(gdisk /dev/sda -l).split("\n")
+		partitions = Array.new
+
+		gdisk_output[22..-1].each{|line|
+			partitions << line
+		}
+
+		return partitions
+	end
+
 	#Creates default folder structure on client drive if it doesn't already exist
 	def self.create_client_folder_structure
 		if Dir.exist?("/media/compensato_client/Compensato") == false
