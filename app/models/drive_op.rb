@@ -37,6 +37,7 @@ class DriveOp
 		create_client_folder_structure
 	end
 
+	#Generate output of viable client partitions using gdisk output
 	def self.gdisk_partition_output
 		gdisk_output = %x(gdisk /dev/sda -l).split("\n")
 		partitions = Array.new
@@ -46,6 +47,11 @@ class DriveOp
 		}
 
 		return partitions
+	end
+
+	#Manually mount the provided device into /media/compensato_client
+	def self.manual_drive_mount(device_id)
+		system "mount -o remove_hiberfile #{device_id} /media/compensato_client"
 	end
 
 	#Creates default folder structure on client drive if it doesn't already exist

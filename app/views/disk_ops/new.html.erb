@@ -14,8 +14,14 @@
 
 		<ul>
 			<%@partitions.each{|partition|%>
-				<li>/dev/sda<%=partition.split[0]%> <%=partition.split[3]%><%=partition.split[4]%> <%=partition.split[6]%></li>
+				<li><%=link_to "/dev/sda#{partition.split[0]} #{partition.split[3]}#{partition.split[4]} #{partition.split[6]}", :action => "new", :fileOpType => "mount_specific_drive", :device_id => "/dev/sda#{partition.split[0]}"%></li>
 			<%}%>
+
+			<div id="informationalDisplay">
+			<h1>Usage Tip:</h1>
+			<p>Choose which drive you would live to mount as the client's drive by clicking on it. You will
+				be redirected back to the main screen after the drive has been mounted.</p>
+		</div>
 		</ul>
 
 	<%end%>
