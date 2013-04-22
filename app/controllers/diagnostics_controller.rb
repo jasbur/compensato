@@ -12,7 +12,7 @@ class DiagnosticsController < ApplicationController
 		if @diagnostic_type == "bluescreen_view"
 			spawn "sudo -u ubuntu wine ext_apps/bluescreenview/BlueScreenView.exe /MiniDumpFolder z:\\\\media\\\\compensato_client\\\\Windows\\\\Minidump"
 		elsif @diagnostic_type == "network_health_test"
-    
+    		@system_stats = SystemInfo.get_system_stats
     	elsif @diagnostic_type == "hardware_stress_test"
 			@mprime_pid = spawn "./ext_apps/mprime -t"
 		end

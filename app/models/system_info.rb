@@ -8,6 +8,7 @@ class SystemInfo
 		drive_info = %x(df).split("\n")
 		hd_id = DriveOp.get_client_device_id
 		ip_info = %x(ifconfig).split("\n")
+		route_info = %x(route -n).split("\n")
 		smartctl_ouput = %x(smartctl -a #{hd_id}).split("\n")
 
 		#Grab CPU info from /proc/cpuinfo
@@ -59,8 +60,13 @@ class SystemInfo
 
 		ip_info.each{|line|
 			if line.include?("inet addr:") and line.include?("127.0.0.1") == false
-				# system_stats << "hello	"
 				system_stats.merge!(:ip_address => line.split(" ")[1][5..-1])
+			end
+		}
+
+		route_info.each{|line|
+			if line.split[1].include?(".") and line.split[1].include?("0.0.0.0") == false
+				system_stats.merge!(:network_gateway => line.split[1])
 			end
 		}
 
