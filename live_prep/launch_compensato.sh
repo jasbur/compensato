@@ -1,4 +1,7 @@
 #!/bin/bash
 
 cd /home/compensato
-sudo rails s -d && firefox http://localhost:3000
+
+sudo rails s -d &&
+sleep 5
+firefox http://localhost:3000
