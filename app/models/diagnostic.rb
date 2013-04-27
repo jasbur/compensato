@@ -25,21 +25,21 @@ class Diagnostic
 		system_temps = Hash.new
 		
 		sensors_output.each{|line|
-			if line.include?("Core 0")
+			if line.gsub(" ", "").downcase.include?("core0")
 				system_temps.merge!(:core_0 => line)
-			elsif line.include?("Core 1")
+			elsif line.gsub(" ", "").downcase.include?("core1")
 				system_temps.merge!(:core_1 => line)
-			elsif line.include?("Core 2")
+			elsif line.gsub(" ", "").downcase.include?("core2")
 				system_temps.merge!(:core_2 => line)
-			elsif line.include?("Core 3")
+			elsif line.gsub(" ", "").downcase.include?("core3")
 				system_temps.merge!(:core_3 => line)
-			elsif line.include?("Core 4")
+			elsif line.gsub(" ", "").downcase.include?("core4")
 				system_temps.merge!(:core_4 => line)
-			elsif line.include?("Core 5")
+			elsif line.gsub(" ", "").downcase.include?("core5")
 				system_temps.merge!(:core_5 => line)
-			elsif line.include?("Core 6")
+			elsif line.gsub(" ", "").downcase.include?("core6")
 				system_temps.merge!(:core_6 => line)
-			elsif line.include?("Core 7")
+			elsif line.gsub(" ", "").downcase.include?("core7")
 				system_temps.merge!(:core_7 => line)
 			end
 		}
