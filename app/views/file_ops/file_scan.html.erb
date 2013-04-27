@@ -8,6 +8,11 @@
 			suspicious and click the "Select files" button when you're done. The next page will 
 			give you a nice isolated list of just those files for further examination. It will also 
 			create a text log on the client's computer at C:\Compensato</p>
+			
+		<ul>	
+			<li><b>Open in browser:</b> This will open the conatining folder of the selected file. Moving suspicious files to the (already created) 
+				C:\Compensato\Quarantine folder on the client's	drive is a better choice than deleting them here because that can always be reversed</li>
+		</ul>
 	</div> 
 </div>
 
@@ -23,7 +28,7 @@
 					<%if log_line.include?(".#{extension}")%>
 						<li>
 							<%f = File.open(log_line)%>
-							<%= check_box_tag "selected_paths[]", log_line %> <%=f.mtime%> | <%=f.path.gsub("/media/compensato_client", "")%>
+							<%= check_box_tag "selected_paths[]", log_line %> <%=f.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => f.path%> <%=f.path.gsub("/media/compensato_client", "")%>
 							<%f.close%>
 						</li>
 					<%end%>

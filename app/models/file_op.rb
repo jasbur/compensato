@@ -169,4 +169,9 @@ class FileOp
 		system "killall #{process}"
 	end
 
+  #Launches a nautilus window displaying the given path
+  def self.launch_nautilus(path)
+    spawn "nautilus #{path}"
+  end
+
 end

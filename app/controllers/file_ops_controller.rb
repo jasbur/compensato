@@ -84,4 +84,13 @@ class FileOpsController < ApplicationController
 	def kill_copy
 		FileOp.kill_background_process("cp")
 	end
+
+  #Triggers a Nautilus file browser window to open displaying the containing folder of the specified file
+  def open_file_browser
+    full_path = params[:full_path]
+    file_name = full_path.split("/").last
+    
+    FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))
+  end
+
 end
