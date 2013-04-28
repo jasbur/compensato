@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header>
-		<h1><%=link_to image_tag("main_logo.png"), :controller => "main", :action => "index"%></h1>
+		<h1><%=link_to image_tag("main_logo.png", :class => "mainHeaderLogo"), :controller => "main", :action => "index"%></h1>
 
 		<ul>
 			<li><%= link_to "File Ops | ", :controller => "file_ops" %></li>

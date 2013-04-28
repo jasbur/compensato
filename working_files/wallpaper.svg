@@ -14,7 +14,7 @@
    height="1600"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="wallpaper.svg"
    inkscape:export-filename="/home/jasbur/Projects/compensato/live_prep/art/wallpaper.png"
    inkscape:export-xdpi="90"
@@ -28,7 +28,7 @@
          offset="0"
          id="stop3904" />
       <stop
-         style="stop-color:#5d799c;stop-opacity:1;"
+         style="stop-color:#87a0c1;stop-opacity:1;"
          offset="1"
          id="stop3906" />
     </linearGradient>
@@ -84,12 +84,12 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.36211948"
      inkscape:cx="1295.5054"
-     inkscape:cy="700.02102"
+     inkscape:cy="810.4818"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1871"
-     inkscape:window-height="1056"
+     inkscape:window-width="1317"
+     inkscape:window-height="744"
      inkscape:window-x="49"
      inkscape:window-y="24"
      inkscape:window-maximized="1" />
@@ -101,7 +101,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -118,7 +118,7 @@
        x="4.6196632"
        y="-547.76721" />
     <rect
-       style="opacity:0.20000000000000001;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793763999999999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;"
+       style="opacity:0.20000000000000001;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
        id="rect2985"
        width="71.296333"
        height="65.529716"
@@ -134,13 +134,13 @@
        height="65.529716"
        width="71.296333"
        id="rect3755"
-       style="opacity:0.40000000000000002;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793763999999999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;"
+       style="opacity:0.40000000000000002;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
        transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
        inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <rect
-       style="opacity:0.59999999999999998;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793763999999999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;"
+       style="opacity:0.59999999999999998;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
        id="rect3757"
        width="71.296333"
        height="65.529716"
@@ -156,13 +156,13 @@
        height="65.529716"
        width="71.296333"
        id="rect3759"
-       style="opacity:0.80000000000000004;fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793763999999999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;"
+       style="opacity:0.80000000000000004;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
        transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
        inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <rect
-       style="fill:#5d799c;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793763999999999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0;"
+       style="fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
        id="rect3761"
        width="71.296333"
        height="65.529716"
