@@ -6,6 +6,13 @@ cp ./conf_files/limits.conf /etc/security/
 #Copy new sources.list to /etc/apt
 cp ./conf_files/sources.list /etc/apt/
 
+#Copy the launch script
+cp launch_compensato.sh /home/
+
+#Copy the .desktop file to autostart and run the /home/launch_compensato.sh script when logging in
+mkdir -p /home/ubuntu/.config/autostart
+cp ./conf_files/Launch_Compensato.desktop /home/ubuntu/.config/autostart
+
 #Copy default wallpaper
 cp ./art/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
 
@@ -19,9 +26,6 @@ apt-get install rails3 curl smartmontools wine gdisk lm-sensors -y
 
 #Create link to the 32 bit version of mprime to run later for torture test
 ln -sf ../ext_apps/mprime_statics/mprime32 ../ext_apps/mprime
-
-#Copy the launch script
-cp launch_compensato.sh /home/
 
 #Set the script to auto-run on login
 mkdir -p /home/ubuntu/Desktop

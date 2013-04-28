@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/launch_compensato.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Launch_Compensato
+Name=Launch_Compensato
+Comment[en_US]=Launch Compensato
+Comment=This will auto-launch the Compensato program
