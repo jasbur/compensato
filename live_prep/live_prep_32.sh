@@ -7,7 +7,7 @@ cp ./conf_files/limits.conf /etc/security/
 cp ./conf_files/sources.list /etc/apt/
 
 #Copy the launch script
-cp launch_compensato.sh /home/
+cp compensato.sh /usr/bin
 
 #Copy the .desktop file to autostart and run the /home/launch_compensato.sh script when logging in
 mkdir -p /home/ubuntu/.config/autostart
