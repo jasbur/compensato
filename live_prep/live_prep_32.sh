@@ -17,7 +17,7 @@ cp ./conf_files/Launch_Compensato.desktop /home/ubuntu/.config/autostart
 cp ./art/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
 
 #Copy the Plymouth boot theme files
-cp ./art/* /lib/plymouth/themes/ubuntu-logo/
+cp ./art/plymouth_theme/* /lib/plymouth/themes/ubuntu-logo/
 
 #Remove unwanted packages
 apt-get remove ubiquity -y
