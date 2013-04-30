@@ -19,6 +19,9 @@ cp ./art/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
 #Copy the Plymouth boot theme files
 cp ./art/plymouth_theme/* /lib/plymouth/themes/ubuntu-logo/
 
+#Copy the Plymouth text boot theme files
+cp ./art/plymouth_text_theme/* /lib/plymouth/themes/ubuntu-text/
+
 #This is to bypass some bug in Ubuntu 12.10 that doesn't allow wine to install properly otherwise
 sudo dpkg --add-architecture i386
 

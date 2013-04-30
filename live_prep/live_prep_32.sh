@@ -19,6 +19,9 @@ cp ./art/wallpaper.png /usr/share/backgrounds/warty-final-ubuntu.png
 #Copy the Plymouth boot theme files
 cp ./art/plymouth_theme/* /lib/plymouth/themes/ubuntu-logo/
 
+#Copy the Plymouth text boot theme files
+cp ./art/plymouth_text_theme/* /lib/plymouth/themes/ubuntu-text/
+
 #Remove unwanted packages
 apt-get remove ubiquity -y
 
