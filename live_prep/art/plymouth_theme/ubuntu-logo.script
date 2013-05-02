@@ -166,8 +166,8 @@ fun StringToInteger (str) {
 # New background colour
 # #2c001e --> 0.16, 0.00, 0.12
 #
-Window.SetBackgroundTopColor (0.72, 0.74, 0.76);     # Nice colour on top of the screen fading to
-Window.SetBackgroundBottomColor (0.67, 0.71, 0.76);  # an equally nice colour on the bottom
+Window.SetBackgroundTopColor (0.96, 1.00, 0.85);     # Nice colour on top of the screen fading to
+Window.SetBackgroundBottomColor (0.92, 0.97, 0.75);  # an equally nice colour on the bottom
 
 bits_per_pixel = Window.GetBitsPerPixel ();
 if (bits_per_pixel == 4) {
