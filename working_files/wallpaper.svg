@@ -22,6 +22,17 @@
   <defs
      id="defs4">
     <linearGradient
+       id="linearGradient3884">
+      <stop
+         style="stop-color:#f3ffcd;stop-opacity:1;"
+         offset="0"
+         id="stop3886" />
+      <stop
+         style="stop-color:#f5ffcd;stop-opacity:1;"
+         offset="1"
+         id="stop3888" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient3902">
       <stop
          style="stop-color:#f3f3f3;stop-opacity:1;"
@@ -65,15 +76,69 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(-145.71429,335.71429)" />
     <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3902"
-       id="linearGradient3908"
-       x1="323.57144"
-       y1="572.61499"
-       x2="323.57144"
-       y2="1052.005"
+       gradientTransform="matrix(0.54605313,0,0,0.54605313,184.4988,302.13338)"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(4.0024093,0,0,3.3385707,1.7608029,-2461.0233)" />
+       y2="868.19696"
+       x2="583.45557"
+       y1="670.73029"
+       x1="583.45557"
+       id="linearGradient3800"
+       xlink:href="#linearGradient3794"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="matrix(0.39278915,0,0,0.39278915,291.38127,546.76896)"
+       gradientUnits="userSpaceOnUse"
+       y2="498.09207"
+       x2="451.84717"
+       y1="370.50949"
+       x1="451.84717"
+       id="linearGradient3773-7"
+       xlink:href="#linearGradient3767-4"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient3767-4">
+      <stop
+         id="stop3769-6"
+         offset="0"
+         style="stop-color:#626262;stop-opacity:1;" />
+      <stop
+         id="stop3771-4"
+         offset="1"
+         style="stop-color:#212121;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3791-8">
+      <stop
+         id="stop3793-2"
+         offset="0"
+         style="stop-color:#86c1ff;stop-opacity:1;" />
+      <stop
+         id="stop3795-5"
+         offset="1"
+         style="stop-color:#5babff;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3902-7">
+      <stop
+         id="stop3904-4"
+         offset="0"
+         style="stop-color:#f3f3f3;stop-opacity:1;" />
+      <stop
+         id="stop3906-0"
+         offset="1"
+         style="stop-color:#5d799c;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3794">
+      <stop
+         id="stop3796"
+         offset="0"
+         style="stop-color:#f7ffdb;stop-opacity:1;" />
+      <stop
+         id="stop3798"
+         offset="1"
+         style="stop-color:#edffb5;stop-opacity:1;" />
+    </linearGradient>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -82,8 +147,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.36211948"
-     inkscape:cx="1295.5054"
+     inkscape:zoom="0.25605714"
+     inkscape:cx="1302.867"
      inkscape:cy="810.4818"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -111,82 +176,88 @@
      id="layer1"
      transform="translate(0,547.63782)">
     <rect
-       style="fill:url(#linearGradient3908);fill-opacity:1;stroke:none"
+       style="fill:#f6ffd9;fill-opacity:1;stroke:none"
        id="rect3900"
        width="2558.6831"
        height="1600.1294"
        x="4.6196632"
        y="-547.76721" />
-    <rect
-       style="opacity:0.20000000000000001;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
-       id="rect2985"
-       width="71.296333"
-       height="65.529716"
-       x="103.7736"
-       y="722.33734"
-       transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       y="726.00696"
-       x="107.44326"
-       height="65.529716"
-       width="71.296333"
-       id="rect3755"
-       style="opacity:0.40000000000000002;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
-       transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="opacity:0.59999999999999998;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
-       id="rect3757"
-       width="71.296333"
-       height="65.529716"
-       x="111.59502"
-       y="730.15875"
-       transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       y="734.31049"
-       x="115.74677"
-       height="65.529716"
-       width="71.296333"
-       id="rect3759"
-       style="opacity:0.80000000000000004;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
-       transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:1.03793764000000022;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.07587537999999983, 1.03793768999999991;stroke-dashoffset:0"
-       id="rect3761"
-       width="71.296333"
-       height="65.529716"
-       x="90.48851"
-       y="713.02753"
-       transform="matrix(3.159787,0,0,3.159787,324.53069,-2156.6094)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <text
-       xml:space="preserve"
-       style="font-size:144.00564575000001355px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient3773);fill-opacity:1;stroke:#f7dfbb;stroke-width:2.09999989999999981;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Sans"
-       x="-81.32531"
-       y="807.89618"
-       id="text3763"
-       sodipodi:linespacing="125%"
-       transform="matrix(1.6398309,0,0,1.6398309,798.61714,-1045.5164)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"><tspan
-         sodipodi:role="line"
-         id="tspan3765"
-         x="-81.32531"
-         y="807.89618"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:url(#linearGradient3773);fill-opacity:1;stroke:#f7dfbb;stroke-width:2.0999999;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">Compensato</tspan></text>
+    <g
+       transform="matrix(3.9387021,0,0,3.9387021,-555.73357,-2623.9883)"
+       id="layer1-4"
+       inkscape:label="Layer 1">
+      <rect
+         y="666.38898"
+         x="348.73431"
+         height="108.75975"
+         width="272.4325"
+         id="rect3024"
+         style="fill:url(#linearGradient3800);fill-opacity:1;fill-rule:evenodd;stroke:#87a0c1;stroke-width:1.63815939;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         y="695.47522"
+         x="313.60074"
+         height="49.597122"
+         width="53.961681"
+         id="rect2985-0"
+         style="opacity:0.2;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.78557831;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.57115669, 0.78557835;stroke-dashoffset:0" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         style="opacity:0.4;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.78557831;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.57115669, 0.78557835;stroke-dashoffset:0"
+         id="rect3755-7"
+         width="53.961681"
+         height="49.597122"
+         x="316.37823"
+         y="698.25262" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         y="701.39496"
+         x="319.52051"
+         height="49.597122"
+         width="53.961681"
+         id="rect3757-9"
+         style="opacity:0.6;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.78557831;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.57115669, 0.78557835;stroke-dashoffset:0" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         style="opacity:0.8;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.78557831;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.57115669, 0.78557835;stroke-dashoffset:0"
+         id="rect3759-5"
+         width="53.961681"
+         height="49.597122"
+         x="322.66284"
+         y="704.53723" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         y="688.42896"
+         x="303.54575"
+         height="49.597122"
+         width="53.961681"
+         id="rect3761-5"
+         style="fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.78557831;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.57115669, 0.78557835;stroke-dashoffset:0" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         sodipodi:linespacing="125%"
+         id="text3763-4"
+         y="732.23688"
+         x="316.67255"
+         style="font-size:56.56386185px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient3773-7);fill-opacity:1;stroke:#f7dfbb;stroke-width:0.82485718;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:url(#linearGradient3773-7);fill-opacity:1;stroke:#f7dfbb;stroke-width:0.82485718;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+           y="732.23688"
+           x="316.67255"
+           id="tspan3765-6"
+           sodipodi:role="line">Compensato</tspan></text>
+    </g>
   </g>
 </svg>
