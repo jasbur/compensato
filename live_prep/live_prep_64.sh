@@ -17,6 +17,7 @@ cp ./conf_files/rc.local /etc
 
 #Copy the .desktop file to autostart and run the /home/launch_compensato.sh script when logging in
 mkdir -p /home/ubuntu/.config/autostart
+chmod 777 /home
 cp ./conf_files/Launch_Compensato.desktop /home/ubuntu/.config/autostart
 
 #Copy default wallpaper
@@ -45,3 +46,6 @@ ln -sf ../ext_apps/mprime_statics/mprime64 ../ext_apps/mprime
 #Set the script to auto-run on login
 mkdir -p /home/ubuntu/Desktop
 ln -sf /home/launch_compensato.sh /home/ubuntu/Desktop/Launch\ Compensato
+
+#Change all permissions to 777 in /home/ubuntu
+chmod -R 777 /home/ubuntu

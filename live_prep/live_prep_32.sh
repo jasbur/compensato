@@ -42,3 +42,6 @@ ln -sf ../ext_apps/mprime_statics/mprime32 ../ext_apps/mprime
 #Set the script to auto-run on login
 mkdir -p /home/ubuntu/Desktop
 ln -sf /home/launch_compensato.sh /home/ubuntu/Desktop/Launch\ Compensato
+
+#Change all permissions to 777 in /home/ubuntu
+chmod -R 777 /home/ubuntu
