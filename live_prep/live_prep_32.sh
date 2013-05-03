@@ -6,8 +6,11 @@ cp ./conf_files/limits.conf /etc/security/
 #Copy new sources.list to /etc/apt
 cp ./conf_files/sources.list /etc/apt/
 
+#Copy the rails server startup script
+cp ./conf_files/launch_compensato_server.sh /usr/bin/
+
 #Copy the launch script
-cp compensato.sh /usr/bin
+cp ./conf_files/compensato.sh /usr/bin
 
 #Copy the .desktop file to autostart and run the /home/launch_compensato.sh script when logging in
 mkdir -p /home/ubuntu/.config/autostart

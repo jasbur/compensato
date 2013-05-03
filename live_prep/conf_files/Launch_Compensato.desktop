@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/launch_compensato.sh
+Exec=/usr/bin/launch_compensato.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
