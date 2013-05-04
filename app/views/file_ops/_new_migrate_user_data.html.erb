@@ -1,0 +1,28 @@
+<%@page_title = "Migrate user data"%>
+
+<%=link_to "-- Open file browser --", :action => "open_file_browser", :directory => "/media/ubuntu"%>
+
+<%=form_tag(:action => "migrate_user_data", :method => "get") do%>
+	<p>Select source directory:</p>
+	<p><%=text_field_tag(:source_directory)%></p>
+	
+	<p>Select destination directory:</p>
+	<p><%=text_field_tag(:destination_directory)%></p>
+
+	<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
+<%end%>
+
+<div class="informationalDisplay">
+	<h1>Usage Tip:</h1>
+	<p>This will copy all data and subdirectories from one place to another. This is typically used for 
+		copy the user data directory to and from the client's computer. For now there are no browse buttons 
+		but you can browse to each directory clicking the "Open file browser" link at the top of the page and 
+		press CTRL-L on your keyboard, then just copy the path at the top of the window and paste it into 
+		the appropriate box.</p>
+		
+		<p>We recommend using the C:\Compensato\Customer_Data directory on the client's 
+		system which was automatically created when Compensato started to copy user data back to to if 
+		you've just done a re-install. If you're copying data off to an external drive we highly recommend 
+		having that drive formatted to EXT4 (thats'a common Linux filesystem) because the copy will go MUCH 
+		faster. The external drive can be formatted with just about any filesystem though.</p>
+</div>

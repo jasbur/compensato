@@ -1,0 +1,19 @@
+<h2>Temp files total: <%=((@temp_files_size.to_f / 1024) / 1024).round(2)%> GB</h2>
+
+<%=link_to "CLICK HERE to clean all temp files on the system", {:action => "clean_temp_files"}, :confirm => "Clicking OK here will PERMANENTLY delete all files in the directories listed on this page. Are you certain you want to do that?"%>
+
+<div class="informationalDisplay">
+	<h1>Usage Tip:</h1>
+
+	<p>Above is the total amount of temporary files ont he client's system. Specifically the files in:</p>
+	
+	<ul>
+		<li>C:\Windows\Temp</li>
+		<li>C:\Users\[user]\AppData\Local\Temp</li>
+		<li>C:\Users\[user]\AppData\Local\Microsoft\Windows\Temporary Internet Files</li>
+		<li>C:\Documents and Settings\[user]\Local\Application Data\Temp</li>
+		<li>C:\Documents and Settings\[user]\Local\Application Data\Temporary Internet Files</li>
+	</ul>
+	
+	<p>Clicking "CLICK HERE" above will remove all of the files in those directories from the client's system permanently.</p>
+</div>

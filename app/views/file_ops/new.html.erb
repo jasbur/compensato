@@ -3,93 +3,15 @@
 <div id="fileOperation" class="mainAction">
 	<%if @file_op_type == "file_scan"%>
 
-		<h3>Scan for executable files modified recently</h3>
-
-		<%=form_tag(:action => "file_scan", :method => "get") do%>
-			<%=label_tag(:scan_days, "Number of days back to scan:")%> <%=text_field_tag(:scan_days)%><br>
-			<%= check_box_tag "selected_extensions[]", "exe", true %> .exe
-			<%= check_box_tag "selected_extensions[]", "cmd", true %> .cmd
-			<%= check_box_tag "selected_extensions[]", "bat", true %> .bat
-			<%= check_box_tag "selected_extensions[]", "sys", true %> .sys
-			<%= check_box_tag "selected_extensions[]", "drv", true %> .drv
-			<%= check_box_tag "selected_extensions[]", "class", true %> .class
-			<%= check_box_tag "selected_extensions[]", "dll", true %> .dll<br>
-			<%=submit_tag("Begin scan...", :disable_with => "Scanning... Please wait...")%>
-		<%end%>
-
-		<hr>
-
-		<h3>Scan for all files modified on a specific date</h3>
-
-		<%=form_tag(:action => "all_files_modified_on_date", :method => "get") do%>
-			<%=label_tag(:start_date, "Scan for all files modified on:")%> <%=text_field_tag(:start_date)%> (YYYY-MM-DD)<br>
-			<%=submit_tag("Begin scan...", :disable_with => "Scanning... Please wait...")%>
-		<%end%>
-
-		<div class="informationalDisplay">
-			<h1>Usage Tip:</h1>
-			<ul>
-				<li><b>Scan for executable files modified recently: </b>Just enter the number of days into the past that you'd like to scan and select the boxes next to 
-					the types of files that you'd like to scan for. Again, this will expose any files of the selected 
-					types that have been modified in the time-frame given. This is a great way to detect recent 
-					infections on a client's computer.</li></br>
-
-				<li><b>Scan for all files modified on a specific date: </b>Enter in a date to see all files, of any type, 
-					modified.</li>
-			</ul>
-		</div>
+		<%=render "new_file_scan"%>
 
 	<%elsif @file_op_type == "migrate_user_data"%>
 
-		<%@page_title = "Migrate user data"%>
-
-		<%=link_to "-- Open file browser --", :action => "open_file_browser", :directory => "/media/ubuntu"%>
+		<%=render "new_migrate_user_data"%>
 		
-		<%=form_tag(:action => "migrate_user_data", :method => "get") do%>
-			<p>Select source directory:</p>
-			<p><%=text_field_tag(:source_directory)%></p>
-			
-			<p>Select destination directory:</p>
-			<p><%=text_field_tag(:destination_directory)%></p>
-
-			<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
-		<%end%>
-
-		<div class="informationalDisplay">
-			<h1>Usage Tip:</h1>
-			<p>This will copy all data and subdirectories from one place to another. This is typically used for 
-				copy the user data directory to and from the client's computer. For now there are no browse buttons 
-				but you can browse to each directory clicking the "Open file browser" link at the top of the page and 
-				press CTRL-L on your keyboard, then just copy the path at the top of the window and paste it into 
-				the appropriate box.</p>
-				
-				<p>We recommend using the C:\Compensato\Customer_Data directory on the client's 
-				system which was automatically created when Compensato started to copy user data back to to if 
-				you've just done a re-install. If you're copying data off to an external drive we highly recommend 
-				having that drive formatted to EXT4 (thats'a common Linux filesystem) because the copy will go MUCH 
-				faster. The external drive can be formatted with just about any filesystem though.</p>
-		</div>
-
 	<%elsif @file_op_type == "clean_temp_files"%>
 
-		<h2>Temp files total: <%=((@temp_files_size.to_f / 1024) / 1024).round(2)%> GB</h2>
-		<%=link_to "CLICK HERE to clean all temp files on the system", {:action => "clean_temp_files"}, :confirm => "Clicking OK here will PERMANENTLY delete all files in the directories listed on this page. Are you certain you want to do that?"%>
-
-		<div class="informationalDisplay">
-			<h1>Usage Tip:</h1>
-
-			<p>Above is the total amount of temporary files ont he client's system. Specifically the files in:</p>
-			
-			<ul>
-				<li>C:\Windows\Temp</li>
-				<li>C:\Users\[user]\AppData\Local\Temp</li>
-				<li>C:\Users\[user]\AppData\Local\Microsoft\Windows\Temporary Internet Files</li>
-				<li>C:\Documents and Settings\[user]\Local\Application Data\Temp</li>
-				<li>C:\Documents and Settings\[user]\Local\Application Data\Temporary Internet Files</li>
-			</ul>
-			
-			<p>Clicking "CLICK HERE" above will remove all of the files in those directories from the client's system permanently.</p>
-		</div>
+		<%=render "new_clean_temp_files"%>
 
 	<%elsif @file_op_type == "folder_usage_display"%>
 
