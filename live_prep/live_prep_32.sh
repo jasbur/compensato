@@ -1,10 +1,18 @@
 #!/bin/bash
 
-#Copy and altered configuration files to live environment
-cp ./conf_files/limits.conf /etc/security/
-
 #Copy new sources.list to /etc/apt
 cp ./conf_files/sources.list /etc/apt/
+
+#Remove unwanted packages
+apt-get remove ubiquity -y
+
+#Install dependencies
+apt-get update
+apt-get upgrade -y
+apt-get install rails3 curl smartmontools wine gdisk lm-sensors -y
+
+#Copy and altered configuration files to live environment
+cp ./conf_files/limits.conf /etc/security/
 
 #Copy the rails server startup script
 cp ./conf_files/launch_compensato_server.sh /usr/bin/
@@ -27,14 +35,6 @@ cp ./art/plymouth_theme/* /lib/plymouth/themes/ubuntu-logo/
 
 #Copy the Plymouth text boot theme files
 cp ./art/plymouth_text_theme/* /lib/plymouth/themes/ubuntu-text/
-
-#Remove unwanted packages
-apt-get remove ubiquity -y
-
-#Install dependencies
-apt-get update
-apt-get upgrade -y
-apt-get install rails3 curl smartmontools wine gdisk lm-sensors -y
 
 #Create link to the 32 bit version of mprime to run later for torture test
 ln -sf ../ext_apps/mprime_statics/mprime32 ../ext_apps/mprime
