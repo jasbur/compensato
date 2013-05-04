@@ -5,7 +5,7 @@ class DiskOpsController < ApplicationController
 	end
 
 	def new
-		@disk_op_type = params[:fileOpType]
+		@disk_op_type = params[:disk_op_type]
 		
 		if @disk_op_type == "edit_partitions"
 			spawn "gparted"
