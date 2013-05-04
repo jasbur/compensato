@@ -43,9 +43,14 @@
 
 		<%@page_title = "Migrate user data"%>
 
+		<%=link_to "-- Open file browser --", :action => "open_file_browser", :directory => "/media"%>
+		
 		<%=form_tag(:action => "migrate_user_data", :method => "get") do%>
 			<p>Select source directory:</p>
 			<p><%=text_field_tag(:source_directory)%></p>
+			
+			<p>Select destination directory:</p>
+			<p><%=text_field_tag(:destination_directory)%></p>
 
 			<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
 		<%end%>
@@ -54,7 +59,7 @@
 			<h1>Usage Tip:</h1>
 			<p>This will copy all data and subdirectories from one place to another. This is typically used for 
 				copy the user data directory to and from the client's computer. For now there are no browse buttons 
-				but you can browse to each directory using the system's file browser on the left of the screen and 
+				but you can browse to each directory clicking the "Open file browser" link at the top of the page and 
 				press CTRL-L on your keyboard, then just copy the path at the top of the window and paste it into 
 				the appropriate box.</p>
 				

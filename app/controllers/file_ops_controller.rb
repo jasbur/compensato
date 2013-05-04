@@ -54,7 +54,7 @@ class FileOpsController < ApplicationController
 	#Control the copying of data from the given directory to another specified directory
 	def migrate_user_data
 		source_directory = params[:source_directory]
-		@destination_directory = "/media/compensato_client/Compensato/Customer_Data"
+		@destination_directory = params[:destination_directory]
 
 		@source_directory_size = FileOp.get_directory_size(source_directory)
 		@source_directory_files = FileOp.get_number_of_files(source_directory)
@@ -85,12 +85,21 @@ class FileOpsController < ApplicationController
 		FileOp.kill_background_process("cp")
 	end
 
-  #Triggers a Nautilus file browser window to open displaying the containing folder of the specified file
+  #Triggers a Nautilus file browser window to open displaying the containing folder of the specified file. If
+  #the "full_path" is given (which includes a file name at the end) the file name is eliminated first. If a
+  #"directory parameter is given it's just passed on to FileOp.launch_nautilus as-is"
   def open_file_browser
     full_path = params[:full_path]
-    file_name = full_path.split("/").last
+    directory = params[:directory]
     
-    FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))
+    if full_path.nil?
+      FileOp.launch_nautilus(Regexp.escape(directory))
+      redirect_to :action => "new", :fileOpType => "migrate_user_data"
+    else
+      file_name = full_path.split("/").last
+      FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))
+    end
+    
   end
 
 end
