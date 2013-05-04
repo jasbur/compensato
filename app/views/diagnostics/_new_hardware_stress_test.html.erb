@@ -1,0 +1,20 @@
+<h2>The hardware stress test is running...</h2>
+
+<script type="text/javascript">check_system_temps();</script>
+
+<h3>CPU temperatures:</h3>
+
+<div id="systemTemps">
+	<p>Calculating temperatures...</p>
+</div>
+
+<%=link_to "CLICK HERE to stop running the test", :action => "stop_hardware_test", :mprime_pid => @mprime_pid%>
+
+<div class="informationalDisplay">
+	<h1>Usage Tip:</h1>
+
+	<p>This test will force the system to calculate prime numbers really, really fast. That will make the 
+	processor heat up quite a bit. This should expose any heat and reliability issues that might be lurking 
+	on the system. Keep an eye on the temperature in relation to the <b>crit</b> value, that's the highest 
+	temperature the CPU is designed to safely run at.</p>
+</div>

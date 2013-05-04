@@ -7,55 +7,11 @@
 
 	<%elsif @diagnostic_type == "network_health_test"%>	
 
-		<h2>Network health test</h2>
-
-		<%=form_tag(:action => "ping_test", :method => "get") do%>
-			<%=label_tag(:start_date, "Address to ping:")%> <%=text_field_tag(:address_to_ping, @system_stats[:network_gateway])%> [Default is current network gateway]<br>
-			<%=label_tag(:start_date, "Number of pings to send:")%> <%=text_field_tag(:number_of_pings)%><br>
-			<%=submit_tag("Start ping test...")%>
-		<%end%>
-
-		<div class="informationalDisplay">
-			<h1>Usage Tip:</h1>
-
-			<p>Use this test to test the reliability of the network hardware that this system is currently connected to. 
-				This includes the network adapter (wired or wireless), the router, and (if you enter an external address) 
-				the client's modem. If you'd like to stress test the network equipment pick an internal address, like the 
-				router, and a very high ping count.</p>
-
-			<ul>
-				<li><b>Address to ping:</b> This is where you want to send the data packets to. Choose an intenal address 
-					like the client's router to test the health of internal equipment and choose an external address like 
-					google.com to test the health of the connection after it leaves the building. (Some external addresses 
-					will not support this test)</li></br>
-				<li><b>Number to pings to send:</b> This is the number of pings, or packets, of data that you'd like to 
-					send. A number that's too low will not give an accurate sample of the network's health and a number 
-					too high will take a long time to finish. We recommend using <b>10,000</b> pings for an internal address 
-					and	<b>2,000</b> to an external address (both tests should take about 30 seconds to complete at that 
-					volume)</li>
-			</ul>
-		</div>
+		<%=render "new_network_health_test"%>
 
 	<%elsif @diagnostic_type == "hardware_stress_test"%>
-		<h2>The hardware stress test is running...</h2>
 
-		<script type="text/javascript">check_system_temps();</script>
+		<%=render "new_hardware_stress_test"%>
 
-		<h3>CPU temperatures:</h3>
-
-		<div id="systemTemps">
-			<p>Calculating temperatures...</p>
-		</div>
-
-		<%=link_to "CLICK HERE to stop running the test", :action => "stop_hardware_test", :mprime_pid => @mprime_pid%>
-
-		<div class="informationalDisplay">
-			<h1>Usage Tip:</h1>
-
-			<p>This test will force the system to calculate prime numbers really, really fast. That will make the 
-			processor heat up quite a bit. This should expose any heat and reliability issues that might be lurking 
-			on the system. Keep an eye on the temperature in relation to the <b>crit</b> value, that's the highest 
-			temperature the CPU is designed to safely run at.</p>
-		</div>
 	<%end%>
 </div>
