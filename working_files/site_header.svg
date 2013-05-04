@@ -85,6 +85,38 @@
        y2="868.19696"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.54605313,0,0,0.54605313,184.4988,302.13338)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3794"
+       id="linearGradient3959"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.54605313,0,0,0.54605313,-98.556932,135.75184)"
+       x1="583.45557"
+       y1="670.73029"
+       x2="583.45557"
+       y2="868.19696" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3767"
+       id="linearGradient3961"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.39278915,0,0,0.39278915,8.3255384,380.38742)"
+       x1="451.84717"
+       y1="370.50949"
+       x2="451.84717"
+       y2="498.09207" />
+    <filter
+       inkscape:collect="always"
+       id="filter3973"
+       x="-0.039769915"
+       width="1.0795398"
+       y="-0.12211954"
+       height="1.2442391">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="5.5340376"
+         id="feGaussianBlur3975" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -94,13 +126,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.448478"
-     inkscape:cx="401.46818"
+     inkscape:cx="279.96133"
      inkscape:cy="345.98867"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1317"
-     inkscape:window-height="744"
+     inkscape:window-width="1871"
+     inkscape:window-height="1056"
      inkscape:window-x="49"
      inkscape:window-y="24"
      inkscape:window-maximized="1" />
@@ -121,6 +153,83 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-52.3622)">
+    <g
+       id="g3963"
+       style="opacity:0.40800003;fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter3973)"
+       transform="translate(289.48257,174.04686)">
+      <rect
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="rect3943"
+         width="272.4325"
+         height="108.75975"
+         x="65.678581"
+         y="500.00745" />
+      <rect
+         style="opacity:0.2;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="rect3945"
+         width="53.961681"
+         height="49.597122"
+         x="30.545008"
+         y="529.09369"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         y="531.87109"
+         x="33.322502"
+         height="49.597122"
+         width="53.961681"
+         id="rect3947"
+         style="opacity:0.4;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         style="opacity:0.6;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="rect3949"
+         width="53.961681"
+         height="49.597122"
+         x="36.464775"
+         y="535.01343"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         y="538.1557"
+         x="39.607109"
+         height="49.597122"
+         width="53.961681"
+         id="rect3951"
+         style="opacity:0.8;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="rect3953"
+         width="53.961681"
+         height="49.597122"
+         x="20.490015"
+         y="522.04742"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <text
+         xml:space="preserve"
+         style="font-size:56.56386185px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="33.616814"
+         y="565.85535"
+         id="text3955"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan3957"
+           x="33.616814"
+           y="565.85535"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">Compensato</tspan></text>
+    </g>
     <rect
        style="fill:url(#linearGradient3800);fill-opacity:1;fill-rule:evenodd;stroke:#87a0c1;stroke-width:1.63815938999999999;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3024"
