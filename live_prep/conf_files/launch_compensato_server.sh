@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /home/jasbur/Projects/compensato
+cd /home/compensato
 sudo rails s -d
