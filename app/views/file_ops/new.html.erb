@@ -71,7 +71,7 @@
 	<%elsif @file_op_type == "clean_temp_files"%>
 
 		<h2>Temp files total: <%=((@temp_files_size.to_f / 1024) / 1024).round(2)%> GB</h2>
-		<%=link_to "CLICK HERE to clean all temp files on the system", :action => "clean_temp_files"%>
+		<%=link_to "CLICK HERE to clean all temp files on the system", {:action => "clean_temp_files"}, :confirm => "Clicking OK here will PERMANENTLY delete all files in the directories listed on this page. Are you certain you want to do that?"%>
 
 		<div class="informationalDisplay">
 			<h1>Usage Tip:</h1>
