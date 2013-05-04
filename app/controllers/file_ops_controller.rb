@@ -8,7 +8,7 @@ class FileOpsController < ApplicationController
 	#Hold the passed "@file_op_type" (what the user wnats to do) parameter to determine what to 
 	#display in the view
 	def new
-		@file_op_type = params[:fileOpType]
+		@file_op_type = params[:file_op_type]
 		@temp_files_size = 0
 
 		if @file_op_type == "clean_temp_files"
@@ -94,7 +94,7 @@ class FileOpsController < ApplicationController
     
     if full_path.nil?
       FileOp.launch_nautilus(Regexp.escape(directory))
-      redirect_to :action => "new", :fileOpType => "migrate_user_data"
+      redirect_to :action => "new", :file_op_type => "migrate_user_data"
     else
       file_name = full_path.split("/").last
       FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))

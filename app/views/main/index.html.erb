@@ -14,7 +14,7 @@
 		</br>
 		
 		<%if @system_stats[:hd_capacity].nil?%>
-			<li>Auto-mount failed | <%=link_to " CLICK HERE to manually mount client drive", :controller => "disk_ops", :action => "new", :fileOpType => "manually_mount_drive"%></li>
+			<li>Auto-mount failed | <%=link_to " CLICK HERE to manually mount client drive", :controller => "disk_ops", :action => "new", :file_op_type => "manually_mount_drive"%></li>
 			<p>If both auto-mount and manual mount (above) continue to fail (especially with a Windows 8 drive) you may 
 			need to boot back into Windows and choose "Restart" instead of "Shutdown"</p>
 		<%else%>
