@@ -7,7 +7,7 @@
 				<%=check_box_tag "download_links[]", "#{key}|#{value}"%> <%=key%></br>
 			<%}%>
 			</br>
-			<%=submit_tag("Download files")%>
+			<%=submit_tag("Download files", :disable_with => "Downloading your files... Please wait...")%>
 		<%end%>
 
 		<div class="informationalDisplay">

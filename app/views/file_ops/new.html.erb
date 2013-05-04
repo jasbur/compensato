@@ -14,7 +14,7 @@
 			<%= check_box_tag "selected_extensions[]", "drv", true %> .drv
 			<%= check_box_tag "selected_extensions[]", "class", true %> .class
 			<%= check_box_tag "selected_extensions[]", "dll", true %> .dll<br>
-			<%=submit_tag("Begin scan...")%>
+			<%=submit_tag("Begin scan...", :disable_with => "Scanning... Please wait...")%>
 		<%end%>
 
 		<hr>
@@ -23,7 +23,7 @@
 
 		<%=form_tag(:action => "all_files_modified_on_date", :method => "get") do%>
 			<%=label_tag(:start_date, "Scan for all files modified on:")%> <%=text_field_tag(:start_date)%> (YYYY-MM-DD)<br>
-			<%=submit_tag("Begin scan...")%>
+			<%=submit_tag("Begin scan...", :disable_with => "Scanning... Please wait...")%>
 		<%end%>
 
 		<div class="informationalDisplay">
