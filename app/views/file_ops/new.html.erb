@@ -1,21 +1,21 @@
-<%@page_title = "New File Scan"%>
-
 <div id="fileOperation" class="mainAction">
 	<%if @file_op_type == "file_scan"%>
-
+	
 		<%=render "new_file_scan"%>
-
+		
 	<%elsif @file_op_type == "migrate_user_data"%>
-
+	
 		<%=render "new_migrate_user_data"%>
 		
 	<%elsif @file_op_type == "clean_temp_files"%>
-
+	
 		<%=render "new_clean_temp_files"%>
-
+		
 	<%elsif @file_op_type == "folder_usage_display"%>
-
+	
+		<%@page_title = "View Space used by each folder"%>
+		
 		<h2>The folder usage display will appear in a separate window</h2>
-
+		
 	<%end%>
 </div>
