@@ -26,7 +26,7 @@
 			<%=submit_tag("Begin scan...")%>
 		<%end%>
 
-		<div id="informationalDisplay">
+		<div class="informationalDisplay">
 			<h1>Usage Tip:</h1>
 			<ul>
 				<li><b>Scan for executable files modified recently: </b>Just enter the number of days into the past that you'd like to scan and select the boxes next to 
@@ -53,7 +53,7 @@
 			<%=submit_tag("Start data copy")%>
 		<%end%>
 
-		<div id="informationalDisplay">
+		<div class="informationalDisplay">
 			<h1>Usage Tip:</h1>
 			<p>This will copy all data and subdirectories from one place to another. This is typically used for 
 				copy the user data directory to and from the client's computer. For now there are no browse buttons 
@@ -73,7 +73,7 @@
 		<h2>Temp files total: <%=((@temp_files_size.to_f / 1024) / 1024).round(2)%> GB</h2>
 		<%=link_to "CLICK HERE to clean all temp files on the system", :action => "clean_temp_files"%>
 
-		<div id="informationalDisplay">
+		<div class="informationalDisplay">
 			<h1>Usage Tip:</h1>
 
 			<p>Above is the total amount of temporary files ont he client's system. Specifically the files in:</p>

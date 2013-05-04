@@ -97,7 +97,7 @@ header li{
 	color: #FF0000;
 }
 
-div#informationalDisplay{
+.informationalDisplay{
 	margin: 20px 0px 0px 0px;
 	padding:10px 10px 10px 30px;
 	background-color:#AF986C;
@@ -105,7 +105,7 @@ div#informationalDisplay{
 	font-size: 15px;
 }
 
-div#informationalDisplay h1{
+.informationalDisplay h1{
 	font-size: 30px;
 }
 

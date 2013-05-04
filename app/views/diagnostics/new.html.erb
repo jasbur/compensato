@@ -15,7 +15,7 @@
 			<%=submit_tag("Start ping test...")%>
 		<%end%>
 
-		<div id="informationalDisplay">
+		<div class="informationalDisplay">
 			<h1>Usage Tip:</h1>
 
 			<p>Use this test to test the reliability of the network hardware that this system is currently connected to. 
@@ -49,7 +49,7 @@
 
 		<%=link_to "CLICK HERE to stop running the test", :action => "stop_hardware_test", :mprime_pid => @mprime_pid%>
 
-		<div id="informationalDisplay">
+		<div class="informationalDisplay">
 			<h1>Usage Tip:</h1>
 
 			<p>This test will force the system to calculate prime numbers really, really fast. That will make the 
