@@ -26,7 +26,7 @@
 				<%for selected_file_object in @selected_file_objects%>
 					<%if selected_file_object.path.include?(".#{extension}")%>
 						<li>
-							<%=selected_file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => selected_file_object.path%> - <%=link_to "Files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)%> <%=selected_file_object.path.gsub("/media/compensato_client", "")%>
+							<%=selected_file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => selected_file_object.path%> - <%=link_to "Files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%>
 						</li>
 					<%end%>
 				<%end%>

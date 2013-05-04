@@ -14,7 +14,7 @@ class FileOpsController < ApplicationController
 		if @file_op_type == "clean_temp_files"
 			@temp_files_size = FileOp.get_temp_files_size
 		elsif @file_op_type == "folder_usage_display"
-			spawn "baobab /media/compensato_client"
+			spawn "baobab /media/ubuntu/compensato_client"
 		end
 	end
 
@@ -27,7 +27,7 @@ class FileOpsController < ApplicationController
 	end
 
 	#Catches the selected files from "selected_files_log" and saves a simple text log into 
-	#/media/compensato_client/Compensato then isolates and sorts them for display
+	#/media/ubuntu/compensato_client/Compensato then isolates and sorts them for display
 	def selected_files_log
 		selected_paths = params[:selected_paths]
 		@extensions = params[:extensions].split

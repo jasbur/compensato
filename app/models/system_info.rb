@@ -33,14 +33,14 @@ class SystemInfo
 		}
 
 		drive_info.each{|line|
-			if line.include?("/media/compensato_client")
+			if line.include?("/media/ubuntu/compensato_client")
 				capacity = line.split[2].to_i + line.split[3].to_i
 				system_stats.merge!(:hd_capacity => capacity)
 			end
 		}
 
 		drive_info.each{|line|
-			if line.include?("/media/compensato_client")
+			if line.include?("/media/ubuntu/compensato_client")
 				system_stats.merge!(:hd_space_used => line.split[2])
 			end
 		}

@@ -4,7 +4,7 @@ class FileOp
 	#Uses the system's "find" command to create a list of files maching the modified time given 
 	#then filters them for unwanted files and to make sure they match the appropriate extensions
 	def self.file_scan_20(entered_scan_days, extensions)
-		full_file_list = %x(find /media/compensato_client/ -type f -mtime -#{entered_scan_days}).split("\n")
+		full_file_list = %x(find /media/ubuntu/compensato_client/ -type f -mtime -#{entered_scan_days}).split("\n")
 		lines_to_return = Array.new
 		
 		full_file_list.each{|line|	
@@ -22,7 +22,7 @@ class FileOp
 		system "touch tmp/start_search -d #{start_date}"
 		system "touch tmp/end_search -d #{end_date}"
 
-		file_paths = %x(find /media/compensato_client/ -type f -newer tmp/start_search -not -newer tmp/end_search).split("\n")
+		file_paths = %x(find /media/ubuntu/compensato_client/ -type f -newer tmp/start_search -not -newer tmp/end_search).split("\n")
 
 		system "rm tmp/start_search"
 		system "rm tmp/end_search"
@@ -41,7 +41,7 @@ class FileOp
 	#direcotries are listed as two arrays, one for user specific driectories and another for 
 	#common system-wide directories
 	def self.clean_temp_files
-		user_directories = Dir.entries("/media/compensato_client/Documents\ and\ Settings")
+		user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
 		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
 		user_specific_temp_directories = ["Local Settings/Temp", "Local Settings/Temporary Internet Files"]
 		system_temp_directories = ["Windows/Temp"]
@@ -50,18 +50,18 @@ class FileOp
 
 		user_directories.each{|user_directory|
 			user_specific_temp_directories.each{|user_specific_temp_directory|
-				system "rm -rf /media/compensato_client/Documents\\ and\\ Settings/" + Regexp.escape(user_directory) + "/" + Regexp.escape(user_specific_temp_directory) + "/*"
+				system "rm -rf /media/ubuntu/compensato_client/Documents\\ and\\ Settings/" + Regexp.escape(user_directory) + "/" + Regexp.escape(user_specific_temp_directory) + "/*"
 			}
 		}
 
 		system_temp_directories.each{|system_temp_directory|
-			system "rm -rf /media/compensato_client/" + Regexp.escape(system_temp_directory) + "/*"
+			system "rm -rf /media/ubuntu/compensato_client/" + Regexp.escape(system_temp_directory) + "/*"
 		}
 	end
 
 	#Calculates the total size in bytes of the temp files on the client's system
 	def self.get_temp_files_size
-		user_directories = Dir.entries("/media/compensato_client/Documents\ and\ Settings")
+		user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
 		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
 		user_specific_temp_directories = ["Local Settings/Temp", "Local Settings/Temporary Internet Files"]
 		system_temp_directories = ["Windows/Temp"]
@@ -71,13 +71,13 @@ class FileOp
 
 		user_directories.each{|user_directory|
 			user_specific_temp_directories.each{|user_specific_temp_directory|
-				this_dir_size = %x(du -s /media/compensato_client/Documents\\ and\\ Settings/#{Regexp.escape(user_directory)}/#{Regexp.escape(user_specific_temp_directory)}/)
+				this_dir_size = %x(du -s /media/ubuntu/compensato_client/Documents\\ and\\ Settings/#{Regexp.escape(user_directory)}/#{Regexp.escape(user_specific_temp_directory)}/)
 				total_temp_files_size = total_temp_files_size + this_dir_size.to_i
 			}
 		}
 
 		system_temp_directories.each{|system_temp_directory|
-			this_dir_size = %x(du -s /media/compensato_client/#{Regexp.escape(system_temp_directory)}/)
+			this_dir_size = %x(du -s /media/ubuntu/compensato_client/#{Regexp.escape(system_temp_directory)}/)
 			total_temp_files_size = total_temp_files_size + this_dir_size.to_i
 		}
 
@@ -137,7 +137,7 @@ class FileOp
 	#Generates a simple text log to be saved on the client's computer conatainging the 
 	#technician-selected files only from the "file_scan" output
 	def self.create_final_scan_log(file_objects, extensions, scan_days)
-		final_scan_log = File.open("/media/compensato_client/Compensato/scanlog_#{Time.now.to_s.gsub(":", "-")}.txt", "w+")
+		final_scan_log = File.open("/media/ubuntu/compensato_client/Compensato/scanlog_#{Time.now.to_s.gsub(":", "-")}.txt", "w+")
 
 		extensions.each{|extension|
 			final_scan_log.puts "######################################################"
@@ -150,7 +150,7 @@ class FileOp
 
 			file_objects.each{|file_object|
 				if file_object.path.include?(".#{extension}")
-					formatted_path = file_object.path.gsub("/media/compensato_client", "")
+					formatted_path = file_object.path.gsub("/media/ubuntu/compensato_client", "")
 					formatted_path.gsub!("/", "\\")
 
 					final_scan_log.puts "#{file_object.mtime} | C:#{formatted_path}"

@@ -20,7 +20,7 @@ Then navigate to 127.0.0.1:3000 or localhost:3000 in your browser of choice.
 When booting from a Live ISO press any key at the boot screen when you see the little computer chip icon in the bottom-center then choose "Try Ubuntu without installing"
 
 
-The program will automatically look for a Windows installation to work with. You should be able to have this Windows installation visible to the system either internally or externally. If you are using an external device to hold the Windows partition I recommend unmounting it (or mounting in manually to /media/compensato_client) before running Compensato to avoid confusing the automount routine.
+The program will automatically look for a Windows installation to work with. You should be able to have this Windows installation visible to the system either internally or externally. If you are using an external device to hold the Windows partition I recommend unmounting it (or mounting in manually to /media/ubuntu/compensato_client) before running Compensato to avoid confusing the automount routine.
 
 
 

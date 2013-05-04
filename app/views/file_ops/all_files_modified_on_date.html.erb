@@ -24,7 +24,7 @@
 			<%if File.basename(file_object) == @selected_file_name%>
 				class = "isolatedOnAllFilesScan"
 			<%end%>
-			><%=file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => file_object.path%> <%=file_object.path.gsub("/media/compensato_client", "")%></li>
+			><%=file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => file_object.path%> <%=file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
 
 		<%}%>
 	</ul>
