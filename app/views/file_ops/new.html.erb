@@ -43,7 +43,7 @@
 
 		<%@page_title = "Migrate user data"%>
 
-		<%=link_to "-- Open file browser --", :action => "open_file_browser", :directory => "/media"%>
+		<%=link_to "-- Open file browser --", :action => "open_file_browser", :directory => "/media/ubuntu"%>
 		
 		<%=form_tag(:action => "migrate_user_data", :method => "get") do%>
 			<p>Select source directory:</p>
