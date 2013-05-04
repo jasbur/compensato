@@ -39,18 +39,15 @@
 			</ul>
 		</div>
 
-	<%elsif @file_op_type == "file_copy"%>
+	<%elsif @file_op_type == "migrate_user_data"%>
 
-		<%@page_title = "Copy user data"%>
+		<%@page_title = "Migrate user data"%>
 
-		<%=form_tag(:action => "copy_user_data", :method => "get") do%>
+		<%=form_tag(:action => "migrate_user_data", :method => "get") do%>
 			<p>Select source directory:</p>
 			<p><%=text_field_tag(:source_directory)%></p>
 
-			<p>Select destination directory:</p>
-			<p><%=text_field_tag(:destination_directory)%></p>
-
-			<%=submit_tag("Start data copy")%>
+			<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
 		<%end%>
 
 		<div class="informationalDisplay">

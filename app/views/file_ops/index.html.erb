@@ -3,7 +3,7 @@
 <div id="fileOpChoice" class="mainAction">
 	<ul>
 		<li><%=link_to "File Scan", :action => "new", :fileOpType => "file_scan"%></li>
-		<li><%=link_to "File Copy", :action => "new", :fileOpType => "file_copy"%></li>
+		<li><%=link_to "Migrate user data to THIS computer", :action => "new", :fileOpType => "migrate_user_data"%></li>
 		<li><%=link_to "Clean Temporary Files", :action => "new", :fileOpType => "clean_temp_files"%></li>
 		<li><%=link_to "View Space used by each folder", :action => "new", :fileOpType => "folder_usage_display"%></li>
 	</ul>
@@ -16,7 +16,7 @@
 				is a good way to surface recently infected files since they will be some of the most recently 
 				modified files on the system by definition.</li>
 			</br>
-			<li><b>File Copy:</b> This will copy the entire contents of one folder to another. This is most commonly 
+			<li><b>Migrate user data:</b> This will copy the entire contents of one folder to another. This is most commonly 
 				used to copy the client's "User" or "Documents and Settings" folder to an external device prior to 
 				formatting the system and re-installing. It can also be used after a format/re-install to copy the 
 				data back.</li>
