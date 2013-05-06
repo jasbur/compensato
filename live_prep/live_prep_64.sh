@@ -7,7 +7,7 @@ cp ./conf_files/sources.list /etc/apt/
 sudo dpkg --add-architecture i386
 
 #Remove unwanted packages
-apt-get remove ubiquity firefox -y
+apt-get remove ubiquity firefox unity-webapps-common -y
 
 #Install dependencies
 apt-get update
@@ -24,7 +24,7 @@ cp ./conf_files/launch_compensato_server.sh /usr/bin/
 cp ./conf_files/compensato.sh /usr/bin
 
 #Copy rc.local to start the rails server on boot
-cp ./conf_files/rc.local /etc
+#cp ./conf_files/rc.local /etc
 
 #Copy the .desktop file to autostart and run the /usr/bin/compensato.sh script when logging in
 mkdir -p /home/ubuntu/.config/autostart
