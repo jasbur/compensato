@@ -1,3 +1,3 @@
 #!/bin/bash
 
-firefox http://localhost:3000
+chromium-browser http://localhost:3000
