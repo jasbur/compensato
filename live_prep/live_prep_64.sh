@@ -11,7 +11,7 @@ apt-get remove ubiquity firefox -y
 
 #Install dependencies
 apt-get update
-#apt-get upgrade -y
+apt-get upgrade -y
 apt-get install rails3 curl smartmontools wine gdisk lm-sensors chromium-browser -y
 
 #Copy and altered configuration files to live environment
