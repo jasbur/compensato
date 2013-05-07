@@ -12,9 +12,9 @@ class DiagnosticsController < ApplicationController
 		if @diagnostic_type == "bluescreen_view"
 			spawn "sudo -u ubuntu wine /home/compensato/ext_apps/bluescreenview/BlueScreenView.exe /MiniDumpFolder z:\\\\media\\\\compensato_client\\\\Windows\\\\Minidump"
 		elsif @diagnostic_type == "network_health_test"
-    		@system_stats = SystemInfo.get_system_stats
-    	elsif @diagnostic_type == "hardware_stress_test"
-			@mprime_pid = spawn "/home/compensato/ext_apps/mprime -t"
+      @system_stats = SystemInfo.get_system_stats
+    elsif @diagnostic_type == "hardware_stress_test"
+      #@mprime_pid = spawn "/home/compensato/ext_apps/mprime -t"
 		end
 	end
 
@@ -36,7 +36,7 @@ class DiagnosticsController < ApplicationController
 
 	def check_system_temps
 		@system_temps = Diagnostic.get_system_temps
-
+		
 		render :layout => false
 	end
 

@@ -1,7 +1,12 @@
-<ul>
-	
-	<%@system_temps.each_pair{|core, temp|%>
-		<li><%=core.to_s.gsub("_", " ").capitalize%> = <%=temp[8..-1]%></li>
-	<%}%>
+<%if @system_temps.size == 0%>
+	<ul>
+		<li>-- No CPU temp. information avaiable --</li>
+	</ul>
+<%else%>
+	<ul>
+		<%@system_temps.each_pair{|core, temp|%>
+			<li><%=core.to_s.gsub("_", " ").capitalize%> = <%=temp[8..-1]%></li>
+		<%}%>
+	</ul>
+<%end%>
 
-</ul>
