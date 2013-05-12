@@ -1,0 +1,37 @@
+**Beta 1**
+
+*Bug Fixes*
+ - Switched to GPT file system detection from MBR to facilitate Windows 8 and mac file-system mounting
+ - Prompt user with information if the drive fails to auto-mount to inform about Windows 8 quirkyness
+
+*New Features*
+ - Added status messages to form submission buttons for when a long process triggers
+ - Added project logo throughout site
+ - Added network gateway detection and auto-fill to the Network Health Test
+ - Modified Unity favorites bar to only display relevant applications
+ - Added an option to open Nautilus from the folder copy process to browse for files
+ - Updated art throughout the live environment
+ - Changed the default web browser to Chromium
+ - Added option to open containing folder for any file found in any file list
+ - Added temperature output display in the Hardware Stress Test
+ - Added Manual mount option if drive is not auto-mounted
+ 
+
+**Alpha 4**
+
+* Changed the auto-open behavior of Firefox on boot to a user launch-able script on the desktop to try to avoid inconsistent launches. You may still have to refresh the browser if Firefox fails to load the page the first time.
+
+
+**Alpha 3**
+
+* Added "Network Health Test" and a "Hardware Stress Test" features. Other minor improvements
+
+
+**Alpha 2**
+
+* More stability fixes and some artwork done
+
+
+**Alpha 1**
+
+* Initial release. Software is fully working but is not feature complete and is a little ugly at the moment. Fully bootable ISO images will be available via sourceforge.
