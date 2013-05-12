@@ -3,7 +3,7 @@
 <%=form_tag(:action => "ping_test", :method => "get") do%>
 	<%=label_tag(:start_date, "Address to ping:")%> <%=text_field_tag(:address_to_ping, @system_stats[:network_gateway])%> [Default is current network gateway]<br>
 	<%=label_tag(:start_date, "Number of pings to send:")%> <%=text_field_tag(:number_of_pings)%><br>
-	<%=submit_tag("Start ping test...")%>
+	<%=submit_tag("Start ping test...", :disable_with => "Ping test running... Please wait...")%>
 <%end%>
 
 <div class="informationalDisplay">
