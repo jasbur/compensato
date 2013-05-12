@@ -2,7 +2,7 @@
 
 cd /home/compensato
 
-sudo rails s &
+sudo rails s -e production &
 
 sleep 5
 
