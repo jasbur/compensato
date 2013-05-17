@@ -12,7 +12,7 @@ class DownloadsController < ApplicationController
 			combofix_url = Download.get_combofix_url
 
 			@file_links = {
-				"TDSSKiller" => "http://support.kaspersky.com/downloads/utils/tdsskiller.exe",
+				"TDSSKiller" => "http://media.kaspersky.com/utilities/VirusUtilities/EN/tdsskiller.exe",
 				"ComboFix" => combofix_url,
 				"Malwarebytes" => "http://ninite.com/malwarebytes/ninite.exe",
 				"Google Chrome" => "http://ninite.com/chrome/ninite.exe",
