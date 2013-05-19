@@ -26,6 +26,7 @@ class DiagnosticsController < ApplicationController
 		@ping_results = Diagnostic.ping_test(@address_to_ping, @number_of_pings)
 	end
 
+	#Kills the mprime instance spawned by the "hardware stress test" in "/diagnostics/new"
 	def stop_hardware_test
 		mprime_pid = params[:mprime_pid]
 
@@ -34,6 +35,7 @@ class DiagnosticsController < ApplicationController
 		redirect_to :action => "index"
 	end
 
+	#Fetches system temps using the get_system_temps method for display in a javascript view
 	def check_system_temps
 		@system_temps = Diagnostic.get_system_temps
 		
