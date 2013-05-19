@@ -4,7 +4,7 @@ class DiagnosticsController < ApplicationController
 		
 	end
 
-	#Hold the passed "@diagnostic_type" (what the user wnats to do) parameter to determine what to 
+	#Hold the passed "@diagnostic_type" (what the user wants to do) parameter to determine what to 
 	#display in the view
 	def new
 		@diagnostic_type = params[:diagnostic_type]
