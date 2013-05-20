@@ -5,7 +5,7 @@
 		<li><%=link_to "File Scan", :action => "new", :file_op_type => "file_scan"%></li>
 		<li><%=link_to "View Web Browser History", :action => "new", :file_op_type => "view_ie_browser_history"%></li></br>
 		<li><%=link_to "Complete folder data copy", :action => "new", :file_op_type => "migrate_user_data"%></li>
-		<li><%=link_to "Clean Temporary Files", :action => "new", :file_op_type => "clean_temp_files"%></li>
+		<li><%=link_to "Clean Temporary Files", {:action => "new", :file_op_type => "clean_temp_files"}, :confirm => "Heads up, this may take a little while to calculate the total number of temp files..."%></li>
 		<li><%=link_to "View Space used by each folder", :action => "new", :file_op_type => "folder_usage_display"%></li>
 	</ul>
 
