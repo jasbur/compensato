@@ -170,6 +170,11 @@ class FileOp
     spawn "nautilus #{path}"
   end
 
+  #Launches and instance of IEHV from the ext_apps folder for the specified user
+  def self.launch_iehv(user)
+    spawn "sudo -u ubuntu wine /home/compensato/ext_apps/iehv/iehv.exe -folder z:\\\\media\\\\ubuntu\\\\compensato_client\\\\Documents\\ and\\ Settings\\\\#{Regexp.escape(user)}\\\\Local\\ Settings\\\\History"
+  end
+
   #Gets a list of users by looking into the "Users" folder on the client system
   def self.get_all_windows_users
     user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
