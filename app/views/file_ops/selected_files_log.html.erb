@@ -6,7 +6,11 @@
 		<p>This is a list of just the files that you thought were suspicious from the previous 
 			screen. A copy of this log has been saved on the client's drive at <b>C:\Compensato</b></p>
 			
-		<ul>	
+		<ul>
+			<li><b>View Internet Explorer browser history:</b> This will display a list of user, and then ultimately their browsing history, in 
+				Internet Explorer. This can be useful when coupled with the date and time information gathered below about hte start of the infection
+				to help dteermine where the infection came from if it was encountered while usign IE.</li></br>
+			
 			<li><b>Open in browser:</b> This will open the conatining folder of the selected file. Moving suspicious files to the (already created) 
 				C:\Compensato\Quarantine folder on the client's	drive is a better choice than deleting them here because that can always be reversed</li></br>
 				
@@ -15,6 +19,10 @@
 		</ul>
 	</div> 
 </div>
+
+<ul>
+	<li class="selectedFilesLogHistoryLink"><%=link_to "View Internet Explorer browser history", :controller => "file_ops", :action => "new", :file_op_type => "view_ie_browser_history"%></li>
+</ul>
 
 <div id="selectedFilesLog" class="fileListOutput">
 	<%=form_tag(:action => "selected_files_log", :method => "get") do%>
@@ -25,9 +33,7 @@
 			<ul>
 				<%for selected_file_object in @selected_file_objects%>
 					<%if selected_file_object.path.include?(".#{extension}")%>
-						<li>
-							<%=selected_file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => selected_file_object.path%> - <%=link_to "Files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%>
-						</li>
+						<li><%=selected_file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => selected_file_object.path%> - <%=link_to "Files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
 					<%end%>
 				<%end%>
 			</ul>
