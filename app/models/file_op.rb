@@ -41,16 +41,14 @@ class FileOp
 	#direcotries are listed as two arrays, one for user specific driectories and another for 
 	#common system-wide directories
 	def self.clean_temp_files
-		user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
-		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
+	  users = get_all_windows_users
+	  
 		user_specific_temp_directories = ["Local Settings/Temp", "Local Settings/Temporary Internet Files"]
 		system_temp_directories = ["Windows/Temp"]
-		
-		user_directories = user_directories - garbage_directory_entries
 
-		user_directories.each{|user_directory|
+		users.each{|user|
 			user_specific_temp_directories.each{|user_specific_temp_directory|
-				system "rm -rf /media/ubuntu/compensato_client/Documents\\ and\\ Settings/" + Regexp.escape(user_directory) + "/" + Regexp.escape(user_specific_temp_directory) + "/*"
+				system "rm -rf /media/ubuntu/compensato_client/Documents\\ and\\ Settings/" + Regexp.escape(user) + "/" + Regexp.escape(user_specific_temp_directory) + "/*"
 			}
 		}
 
@@ -61,17 +59,15 @@ class FileOp
 
 	#Calculates the total size in bytes of the temp files on the client's system
 	def self.get_temp_files_size
-		user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
-		garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users"]
+		users = get_all_windows_users
+		
 		user_specific_temp_directories = ["Local Settings/Temp", "Local Settings/Temporary Internet Files"]
 		system_temp_directories = ["Windows/Temp"]
 		total_temp_files_size = 0
-		
-		user_directories = user_directories - garbage_directory_entries
 
-		user_directories.each{|user_directory|
+		users.each{|user|
 			user_specific_temp_directories.each{|user_specific_temp_directory|
-				this_dir_size = %x(du -s /media/ubuntu/compensato_client/Documents\\ and\\ Settings/#{Regexp.escape(user_directory)}/#{Regexp.escape(user_specific_temp_directory)}/)
+				this_dir_size = %x(du -s /media/ubuntu/compensato_client/Documents\\ and\\ Settings/#{Regexp.escape(user)}/#{Regexp.escape(user_specific_temp_directory)}/)
 				total_temp_files_size = total_temp_files_size + this_dir_size.to_i
 			}
 		}
@@ -172,6 +168,16 @@ class FileOp
   #Launches a nautilus window displaying the given path
   def self.launch_nautilus(path)
     spawn "nautilus #{path}"
+  end
+
+  #Gets all user directories from the /Users folder on the client's Windows drive
+  def self.get_all_windows_users
+    user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
+    garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users", "Default", "Default User", "UpdatusUser"]
+    
+    user_directories = user_directories - garbage_directory_entries
+    
+    return user_directories
   end
 
 end
