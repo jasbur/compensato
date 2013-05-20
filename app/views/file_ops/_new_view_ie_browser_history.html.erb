@@ -1,0 +1,16 @@
+<h2>Which user would you like to view the IE browser history for?</h2>
+
+<ul>
+	<%@users.each{|user|%>
+		<li><%=link_to user, :action => "launch_iehv", :user => user%></li>
+	<%}%>
+</ul>
+
+<div class="informationalDisplay">
+	<h1>Usage Tip:</h1>
+	
+	<p>Above you will se a list of all of the users on the client's system. Click one the launch the IE History View app from Nirsoft 
+		(<a href="http://www.nirsoft.net/utils/iehv.html">more info...</a>) to see that user's browsing hostory in Internet Explorer. 
+		Cross reference this information with the data you've gathered from the file scan and other methods here to dtermine where the 
+		infection might have come from.</p>
+</div>

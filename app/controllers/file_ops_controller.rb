@@ -15,6 +15,8 @@ class FileOpsController < ApplicationController
 			@temp_files_size = FileOp.get_temp_files_size
 		elsif @file_op_type == "folder_usage_display"
 			spawn "baobab /media/ubuntu/compensato_client"
+		elsif @file_op_type == "view_ie_browser_history"
+		  @users = FileOp.get_all_windows_users
 		end
 	end
 
@@ -100,6 +102,12 @@ class FileOpsController < ApplicationController
       FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))
     end
     
+  end
+
+  def launch_iehv
+    user = params[:user]
+    
+    FileOp.launch_iehv(user)
   end
 
 end

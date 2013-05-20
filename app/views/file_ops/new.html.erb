@@ -17,5 +17,11 @@
 		
 		<h2>The folder usage display will appear in a separate window</h2>
 		
+	<%elsif @file_op_type == "view_ie_browser_history"%>
+	
+		<%@page_title = "View Internet Explorer History"%>
+		
+		<%=render "new_view_ie_browser_history"%>
+		
 	<%end%>
 </div>
