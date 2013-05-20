@@ -170,7 +170,7 @@ class FileOp
     spawn "nautilus #{path}"
   end
 
-  #Gets all user directories from the /Users folder on the client's Windows drive
+  #Gets a list of users by looking into the "Users" folder on the client system
   def self.get_all_windows_users
     user_directories = Dir.entries("/media/ubuntu/compensato_client/Documents\ and\ Settings")
     garbage_directory_entries = [".", "..", "desktop.ini", "Public", "All Users", "Default", "Default User", "UpdatusUser"]
