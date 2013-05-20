@@ -84,7 +84,6 @@ header li{
 .fileListOutput li:hover{
 	background-color: #D6B37C;
 	padding: 2px;
-	font-weight: bold;
 }
 
 .isolatedOnAllFilesScan{
