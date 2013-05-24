@@ -14,18 +14,21 @@
 //= require jquery_ujs
 //= require_tree .
 
+//Calls the file_copy_progress action in the file_ops controller avery 30 seconds
 function file_copy_progress(directory, source_directory_files){
 	setInterval(function(){
 		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=' + directory + '&source_directory_files=' + source_directory_files);
 	}, 30000);
 }
 
+//Calls the check_system_temps action in the diagnostics controller every 1 second
 function check_system_temps(){
 	setInterval(function(){
 		$('#systemTemps').load('/diagnostics/check_system_temps');
 	}, 1000);
 }
 
+//Closes the current tab or window after the amount of milliseconds provided have elapsed
 function close_this_window_in(miliseconds){
 	setTimeout (function (){
 		window.close();
