@@ -29,8 +29,8 @@ function check_system_temps(){
 }
 
 //Closes the current tab or window after the amount of milliseconds provided have elapsed
-function close_this_window_in(miliseconds){
+function close_this_window_in(milliseconds){
 	setTimeout (function (){
 		window.close();
-	}, miliseconds)
+	}, milliseconds)
 }
