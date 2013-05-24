@@ -25,3 +25,9 @@ function check_system_temps(){
 		$('#systemTemps').load('/diagnostics/check_system_temps');
 	}, 1000);
 }
+
+function close_this_window_in(miliseconds){
+	setTimeout (function (){
+		window.close();
+	}, miliseconds)
+}
