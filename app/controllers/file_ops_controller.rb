@@ -96,7 +96,6 @@ class FileOpsController < ApplicationController
     
     if full_path.nil?
       FileOp.launch_nautilus(Regexp.escape(directory))
-      redirect_to :action => "new", :file_op_type => "migrate_user_data"
     else
       file_name = full_path.split("/").last
       FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))
