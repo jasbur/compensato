@@ -11,6 +11,9 @@ apt-get update
 apt-get upgrade -y
 apt-get install rails3 curl smartmontools wine gdisk lm-sensors chromium-browser -y
 
+#Install some Rails dependencies
+bundle install
+
 #Copy and altered configuration files to live environment
 cp ./conf_files/limits.conf /etc/security/
 
