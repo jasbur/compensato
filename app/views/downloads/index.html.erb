@@ -4,7 +4,7 @@
 	<div id="downloadChoices" class="mainAction">
 		<%=form_tag(:action => "fetch_downloads", :method => "get") do%>
 			<%@file_links.each{|key, value|%>
-				<%=check_box_tag "download_links[]", "#{key}|#{value}"%> <%=key%></br>
+				<%=check_box_tag "download_links[]", "#{key}|#{value}", true%> <%=key%></br>
 			<%}%>
 			</br>
 			<%=submit_tag("Download files", :disable_with => "Downloading your files... Please wait...")%>
