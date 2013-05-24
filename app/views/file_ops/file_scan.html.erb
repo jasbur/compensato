@@ -28,7 +28,7 @@
 					<%if log_line.include?(".#{extension}")%>
 						<li>
 							<%f = File.open(log_line)%>
-							<%= check_box_tag "selected_paths[]", log_line %> <%=f.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => f.path%> <%=f.path.gsub("/media/ubuntu/compensato_client", "")%>
+							<%= check_box_tag "selected_paths[]", log_line %> <%=f.mtime%> | <%=link_to "Open in browser", {:action => "open_file_browser", :full_path => f.path}, :target => "_blank"%> <%=f.path.gsub("/media/ubuntu/compensato_client", "")%>
 							<%f.close%>
 						</li>
 					<%end%>
