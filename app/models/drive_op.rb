@@ -1,38 +1,16 @@
 class DriveOp
   # attr_accessible :title, :body
 
-	#Auto-mounts the customer drive by iterating through "mount_iterations", mounting them, then 
-	#checking to see if the "pagefile.sys" exists. If it doesn't then it unmounts the drive and 
-	#continues to the next item in "mount_iterations"
+	#Auto-mounts the customer drive by using the output from DriveOp.find_client_partition
 	def self.mount_client_drive
-		mount_iterations = Array.new
-		gdisk_output = %x(gdisk /dev/sda -l).split("\n")
-		client_drive_found = false
-
 		if Dir.exist?("/media/ubuntu/compensato_client") == false
 			system "mkdir -p /media/ubuntu/compensato_client"
 		end
-
-		gdisk_output.each{|line|
-			if line.include?("Microsoft basic data")
-				mount_iterations << "/dev/sda" + line.split[0]
-			end
-		}
-
-		unless Dir.entries("/media/ubuntu/compensato_client").size > 2
-			mount_iterations.each{|i|
-				unless client_drive_found == true
-					if system "mount -o remove_hiberfile #{i} /media/ubuntu/compensato_client"
-						if File.exist?("/media/ubuntu/compensato_client/pagefile.sys") or File.exist?("/media/ubuntu/compensato_client/PAGEFILE.SYS")
-							client_drive_found = true
-						else
-							sleep 1
-							system "umount /media/ubuntu/compensato_client"
-						end
-					end
-				end
-			}
-		end
+		
+    unless Dir.entries("/media/ubuntu/compensato_client").size > 3
+  		client_partition = find_client_partition
+      system "mount -o remove_hiberfile /dev/sda#{client_partition} /media/ubuntu/compensato_client"
+    end
 
 		create_client_folder_structure
 	end
@@ -54,6 +32,28 @@ class DriveOp
 		system "mount -o remove_hiberfile #{device_id} /media/ubuntu/compensato_client"
 	end
 
+	#Finds the largest and therefore most likely to be system partition on the clients system
+	#using the output from the "partel -l"
+	def self.find_client_partition
+	  parted_output = %x(parted -l)
+	  biggest_partition_size = 0
+	  most_likely_partition = 0
+	  
+    parted_output.split("\n").each{|line|
+      if line.split[3].to_s.include?("GB")
+        this_partition_size = line.split[3][0..-3].to_i
+        
+         if this_partition_size > biggest_partition_size
+           biggest_partition_size = this_partition_size
+           most_likely_partition = line.split[0]
+         end
+         
+      end
+    }
+    
+    return most_likely_partition
+	end
+	
 	#Creates default folder structure on client drive if it doesn't already exist
 	def self.create_client_folder_structure
 		if Dir.exist?("/media/ubuntu/compensato_client/Compensato") == false
