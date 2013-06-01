@@ -1,3 +1,5 @@
+<h2>Pick which partition looks like the client's drive:</h2>
+
 <ul>
 	<%@partitions.each_pair{|partition, size|%>
 		<li><%=link_to "#{partition} - #{size}", 
@@ -9,6 +11,7 @@
 	<div class="informationalDisplay">
 		<h1>Usage Tip:</h1>
 		<p>Choose which drive you would live to mount as the client's drive by clicking on it. You will
-			be redirected back to the main screen after the drive has been mounted.</p>
+			be redirected back to the main screen after the drive has been mounted. Use the size of the partition as an indicator of which to choose.
+			Usually the largest will be the right choice.</p>
 	</div>
 </ul>
