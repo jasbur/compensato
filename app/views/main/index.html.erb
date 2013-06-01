@@ -14,13 +14,15 @@
 		</br>
 		
 		<%if @system_stats[:hd_capacity].nil?%>
-			<li>Auto-mount failed | <%=link_to " CLICK HERE to manually mount client drive", :controller => "disk_ops", :action => "new", :file_op_type => "manually_mount_drive"%></li>
+			<li>Auto-mount failed | <%=link_to " CLICK HERE to manually mount client drive", :controller => "disk_ops", :action => "new", :disk_op_type => "manually_mount_drive"%></li>
 			<p>If both auto-mount and manual mount (above) continue to fail (especially with a Windows 8 drive) you may 
 			need to boot back into Windows and choose "Restart" instead of "Shutdown"</p>
 		<%else%>
 			<li><span class="systemStatCat">HD Capacity:</span> <%=(@system_stats[:hd_capacity].to_f / 1000000).round(1)%>GB</li>
 			<li><span class="systemStatCat">HD Space Used:</span> <%=(@system_stats[:hd_space_used].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>
 			<li><span class="systemStatCat">Drive SMART Status:</span> <%=@system_stats[:smart_health]%></li>
+			</br>
+			<li><%=link_to "CLICK HERE to manually mount client drive if this doesn't look right", :controller => "disk_ops", :action => "new", :disk_op_type => "manually_mount_drive"%></li>
 		<%end%>
 	</ul>
 
