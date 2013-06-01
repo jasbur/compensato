@@ -9,7 +9,7 @@ apt-get remove ubiquity firefox unity-webapps-common -y
 #Install dependencies
 apt-get update
 apt-get upgrade -y
-apt-get install rails3 curl smartmontools wine gdisk lm-sensors chromium-browser -y
+apt-get install rails3 curl smartmontools wine lm-sensors chromium-browser -y
 
 #Install some Rails dependencies
 bundle install
