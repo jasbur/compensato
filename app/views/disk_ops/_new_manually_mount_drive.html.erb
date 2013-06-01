@@ -2,7 +2,7 @@
 	<%@partitions.each_pair{|partition, size|%>
 		<li><%=link_to "#{partition} - #{size}", 
 				:action => "new", 
-				:file_op_type => "mount_specific_drive", 
+				:disk_op_type => "mount_specific_drive", 
 				:device_id => partition%></li>
 	<%}%>
 
