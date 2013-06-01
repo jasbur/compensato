@@ -15,17 +15,26 @@ class DriveOp
 		create_client_folder_structure
 	end
 
-	#Generate output of viable client partitions using gdisk output
-	def self.gdisk_partition_output
-		gdisk_output = %x(gdisk /dev/sda -l).split("\n")
-		partitions = Array.new
-
-		gdisk_output[22..-1].each{|line|
-			partitions << line
-		}
-
-		return partitions
-	end
+  #Returns a hash of all partitions on the system and their sizes
+  def self.get_client_partitions
+    parted_output = %x(parted -l).split("\n")
+    detected_partitions = Hash.new
+    this_disk = ""
+    
+    parted_output.each{|line|
+      if line[0..9] == "Disk /dev/"
+        this_disk = line[5..12]
+      end
+      
+      this_partition_number = Integer(line[1]) rescue nil
+      
+      unless this_partition_number == nil
+        detected_partitions.merge!(this_disk + this_partition_number.to_s => line.split[3])
+      end
+    }
+    
+    return detected_partitions
+  end
 
 	#Manually mount the provided device into /media/ubuntu/compensato_client
 	def self.manual_drive_mount(device_id)

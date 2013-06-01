@@ -1,9 +1,9 @@
 <ul>
-	<%@partitions.each{|partition|%>
-		<li><%=link_to "/dev/sda#{partition.split[0]} #{partition.split[3]}#{partition.split[4]} #{partition.split[6]}", 
+	<%@partitions.each_pair{|partition, size|%>
+		<li><%=link_to "#{partition} - #{size}", 
 				:action => "new", 
 				:file_op_type => "mount_specific_drive", 
-				:device_id => "/dev/sda#{partition.split[0]}"%></li>
+				:device_id => partition%></li>
 	<%}%>
 
 	<div class="informationalDisplay">

@@ -13,7 +13,7 @@ class DiskOpsController < ApplicationController
 			client_device_id = DriveOp.get_client_device_id
 			DriveOp.schedule_disk_check(client_device_id)
 		elsif @disk_op_type == "manually_mount_drive"
-			@partitions = DriveOp.gdisk_partition_output
+			@partitions = DriveOp.get_client_partitions
 		elsif @disk_op_type == "mount_specific_drive"
 			device_id = params[:device_id]
 
