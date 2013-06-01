@@ -38,6 +38,7 @@ class DriveOp
 
 	#Manually mount the provided device into /media/ubuntu/compensato_client
 	def self.manual_drive_mount(device_id)
+		system "umount /media/ubuntu/compensato_client"
 		system "mount -o remove_hiberfile #{device_id} /media/ubuntu/compensato_client"
 	end
 
