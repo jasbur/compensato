@@ -20,7 +20,19 @@
 			<%if directory == ".."%>
 				<li><%=directory%></li>
 			<%else%>
-				<li><%=directory%> | Use as source - Use as destination</li>
+				
+				<li><%=directory%> | <a href="#" id=<%="#{directory}_source_link"%>>Use as source</a> - <a href="#" id=<%="#{directory}_destination_link"%>>Use as destination</a></li>
+				
+				<script>
+					document.getElementById("<%=directory + "_source_link"%>").onclick = function(){
+							update_form_text_field("source_directory", "/media/ubuntu/<%=directory%>");
+						}
+						
+					document.getElementById("<%=directory + "_destination_link"%>").onclick = function(){
+							update_form_text_field("destination_directory", "/media/ubuntu/<%=directory%>");
+						}
+				</script>
+			
 			<%end%>
 		<%}%>
 	</ul>

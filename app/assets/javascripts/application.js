@@ -34,3 +34,9 @@ function close_this_window_in(milliseconds){
 		window.close();
 	}, milliseconds)
 }
+
+//Updates the given form field with the given text
+function update_form_text_field(field_id, field_value){
+	var form_field = document.getElementById(field_id);
+	form_field.value = field_value;
+}
