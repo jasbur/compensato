@@ -17,23 +17,19 @@
 	
 	<ul>
 		<%@browser_directories.each{|directory|%>
-			<%if directory == ".."%>
-				<li><%=directory%></li>
-			<%else%>
-				
-				<li><%=directory%> | <a href="#" id=<%="#{directory}_source_link"%>>Use as source</a> - <a href="#" id=<%="#{directory}_destination_link"%>>Use as destination</a></li>
-				
-				<script>
-					document.getElementById("<%=directory + "_source_link"%>").onclick = function(){
-							update_form_text_field("source_directory", "/media/ubuntu/<%=directory%>");
-						}
-						
-					document.getElementById("<%=directory + "_destination_link"%>").onclick = function(){
-							update_form_text_field("destination_directory", "/media/ubuntu/<%=directory%>");
-						}
-				</script>
+			<%base_dir_name = directory.path.gsub("/media/ubuntu/", "")%>
 			
-			<%end%>
+			<li><%=base_dir_name%> | <a href="#" id=<%="#{base_dir_name}_source_link"%>>Use as source</a> - <a href="#" id=<%="#{base_dir_name}_destination_link"%>>Use as destination</a></li>
+			
+			<script>
+				document.getElementById("<%=base_dir_name + "_source_link"%>").onclick = function(){
+						update_form_text_field("source_directory", "<%=directory.path%>");
+					}
+					
+				document.getElementById("<%=base_dir_name + "_destination_link"%>").onclick = function(){
+						update_form_text_field("destination_directory", "<%=directory.path%>");
+					}
+			</script>
 		<%}%>
 	</ul>
 </div>
