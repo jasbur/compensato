@@ -17,6 +17,9 @@ class FileOpsController < ApplicationController
 			spawn "baobab /media/ubuntu/compensato_client"
 		elsif @file_op_type == "view_ie_browser_history"
 		  @users = FileOp.get_all_windows_users
+		elsif @file_op_type == "complete_folder_copy"
+		  @browser_directories = Dir.entries("/media/ubuntu")
+      @browser_directories = @browser_directories - ["."]
 		end
 	end
 

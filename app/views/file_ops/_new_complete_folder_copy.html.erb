@@ -12,6 +12,20 @@
 	<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
 <%end%>
 
+<div id="folderCopyBrowser">
+	<h3>Select from the folders below:</h3>
+	
+	<ul>
+		<%@browser_directories.each{|directory|%>
+			<%if directory == ".."%>
+				<li><%=directory%></li>
+			<%else%>
+				<li><%=directory%> | Use as source - Use as destination</li>
+			<%end%>
+		<%}%>
+	</ul>
+</div>
+
 <div class="informationalDisplay">
 	<h1>Usage Tip:</h1>
 	<p>This will copy all data and subdirectories from one place to another. This is typically used for 
