@@ -12,9 +12,7 @@
 	<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
 <%end%>
 
-<div id="folderCopyBrowser">
-	<%=render :partial => "folder_browser"%>
-</div>
+<div id="folderCopyBrowser"></div>
 
 <div class="informationalDisplay">
 	<h1>Usage Tip:</h1>
@@ -30,3 +28,9 @@
 		having that drive formatted to EXT4 (thats'a common Linux filesystem) because the copy will go MUCH 
 		faster. The external drive can be formatted with just about any filesystem though.</p>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('#folderCopyBrowser').load('/file_ops/folder_browser');
+	});
+</script>

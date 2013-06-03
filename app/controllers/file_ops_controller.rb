@@ -18,14 +18,7 @@ class FileOpsController < ApplicationController
 		elsif @file_op_type == "view_ie_browser_history"
 		  @users = FileOp.get_all_windows_users
 		elsif @file_op_type == "complete_folder_copy"
-		  directories = Dir.entries("/media/ubuntu")
-		  directories = directories - [".", ".."]
-      @browser_directories = Array.new
-      
-      directories.each{|dir|
-        d_ob = Dir.open("/media/ubuntu/#{dir}")
-        @browser_directories << d_ob
-      }
+
 		end
 	end
 
@@ -119,6 +112,15 @@ class FileOpsController < ApplicationController
   end
 
   def folder_browser
+      directories = Dir.entries("/media/ubuntu")
+      directories = directories - [".", ".."]
+      @browser_directories = Array.new
+      
+      directories.each{|dir|
+        d_ob = Dir.open("/media/ubuntu/#{dir}")
+        @browser_directories << d_ob
+      }
+      
     render :layout => false
   end
 
