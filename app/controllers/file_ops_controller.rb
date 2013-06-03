@@ -112,14 +112,28 @@ class FileOpsController < ApplicationController
   end
 
   def folder_browser
-      directories = Dir.entries("/media/ubuntu")
-      directories = directories - [".", ".."]
-      @browser_directories = Array.new
+    user_selected_directory = params[:user_selected_directory]
+    @base_directory = ""
+    
+    if user_selected_directory.nil?
+      @base_directory = "/media/ubuntu"
+    else
+      @base_directory = user_selected_directory
+    end
+    
+    @the_time = Time.now
+    
+    directories = Dir.entries(@base_directory)
       
-      directories.each{|dir|
-        d_ob = Dir.open("/media/ubuntu/#{dir}")
+    directories = directories - [".", ".."]
+    @browser_directories = Array.new
+    
+    directories.each{|dir|
+      if File.directory?("#{@base_directory}/#{dir}")
+        d_ob = Dir.open("#{@base_directory}/#{dir}")
         @browser_directories << d_ob
-      }
+      end
+    }
       
     render :layout => false
   end
