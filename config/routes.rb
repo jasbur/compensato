@@ -15,6 +15,7 @@ RailsCompensato::Application.routes.draw do
     match 'file_ops/open_file_browser' => 'file_ops#open_file_browser'
     match 'file_ops/clean_temp_files' => 'file_ops#clean_temp_files'
     match 'file_ops/all_files_modified_on_date' => 'file_ops#all_files_modified_on_date'
+    match 'file_ops/folder_browser' => 'file_ops#folder_browser'
     match 'downloads/fetch_downloads' => 'downloads#fetch_downloads'
     match 'diagnostics/ping_test' => 'diagnostics#ping_test'
     match 'diagnostics/stop_hardware_test' => 'diagnostics#stop_hardware_test'

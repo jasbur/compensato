@@ -118,4 +118,8 @@ class FileOpsController < ApplicationController
     FileOp.launch_iehv(user)
   end
 
+  def folder_browser
+    render :layout => false
+  end
+
 end
