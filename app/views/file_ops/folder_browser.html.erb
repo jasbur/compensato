@@ -1,6 +1,13 @@
-<%=@the_time%>
-<%=@base_directory%>
 <h3>Select from the folders below:</h3>
+
+<%unless @base_directory == "/media/ubuntu"%>
+	<a href="#" id="directory_up">Up...</a>
+	
+	<script>
+		document.getElementById("directory_up").onclick = function(){
+					folder_browser_refresh("<%=@previous_directory%>");}
+	</script>
+<%end%>
 
 <ul>
 	<%@browser_directories.each{|directory|%>
@@ -10,16 +17,13 @@
 		
 		<script>
 			document.getElementById("<%=@base_directory + "_folder_link"%>").onclick = function(){
-					folder_browser_refresh("<%=Regexp.escape(directory.path)%>");
-				}
+					folder_browser_refresh("<%=Regexp.escape(directory.path)%>");}
 		
 			document.getElementById("<%=@base_directory + "_source_link"%>").onclick = function(){
-					update_form_text_field("source_directory", "<%=directory.path%>");
-				}
+					update_form_text_field("source_directory", "<%=directory.path%>");}
 				
 			document.getElementById("<%=@base_directory + "_destination_link"%>").onclick = function(){
-					update_form_text_field("destination_directory", "<%=directory.path%>");
-				}
+					update_form_text_field("destination_directory", "<%=directory.path%>");}
 		</script>
 	<%}%>
 </ul>

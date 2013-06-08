@@ -121,7 +121,7 @@ class FileOpsController < ApplicationController
       @base_directory = user_selected_directory
     end
     
-    @the_time = Time.now
+    @previous_directory = @base_directory.gsub(@base_directory.split("/").last, "")[0..-2]
     
     directories = Dir.entries(@base_directory)
       
