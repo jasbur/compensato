@@ -15,15 +15,17 @@
 		
 		<li><a href="#" id="<%=@base_directory%>_folder_link"><%=@base_directory%></a> | <a href="#" id=<%="#{@base_directory}_source_link"%>>Use as source</a> - <a href="#" id=<%="#{@base_directory}_destination_link"%>>Use as destination</a></li>
 		
-		<script>
-			document.getElementById("<%=@base_directory + "_folder_link"%>").onclick = function(){
-					folder_browser_refresh("<%=Regexp.escape(directory.path)%>");}
-		
-			document.getElementById("<%=@base_directory + "_source_link"%>").onclick = function(){
-					update_form_text_field("source_directory", "<%=directory.path%>");}
-				
-			document.getElementById("<%=@base_directory + "_destination_link"%>").onclick = function(){
-					update_form_text_field("destination_directory", "<%=directory.path%>");}
-		</script>
+		<%unless @browser_directories.size == 0%>
+			<script>
+				document.getElementById("<%=@base_directory + "_folder_link"%>").onclick = function(){
+						folder_browser_refresh("<%=Regexp.escape(directory.path)%>");}
+			
+				document.getElementById("<%=@base_directory + "_source_link"%>").onclick = function(){
+						update_form_text_field("source_directory", "<%=directory.path%>");}
+					
+				document.getElementById("<%=@base_directory + "_destination_link"%>").onclick = function(){
+						update_form_text_field("destination_directory", "<%=directory.path%>");}
+			</script>
+		<%end%>
 	<%}%>
 </ul>
