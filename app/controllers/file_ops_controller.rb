@@ -105,12 +105,17 @@ class FileOpsController < ApplicationController
     
   end
 
+  #Spawns an instance of IEHV by calling launch_iehv with the supplied user directory
   def launch_iehv
     user = params[:user]
     
     FileOp.launch_iehv(user)
   end
 
+  #Produces a list of directory objects to be displayed in the /file_ops/folder_browser 
+  #view as a partial render. It also exposes the directory just above the one currently 
+  #being focused on the the user can ultimately go "up" on directory level and the current 
+  #"base directory" for cleaning up the output for the user
   def folder_browser
     user_selected_directory = params[:user_selected_directory]
     

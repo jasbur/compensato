@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
-//Calls the file_copy_progress action in the file_ops controller avery 30 seconds
+//Calls the file_copy_progress action in the file_ops controller every 30 seconds
 function file_copy_progress(directory, source_directory_files){
 	setInterval(function(){
 		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=' + directory + '&source_directory_files=' + source_directory_files);
@@ -42,6 +42,8 @@ function update_form_text_field(field_id, field_value){
 }
 
 
+//Replaces the contents of the "folderCopyBrowser" div in /file_ops/new?file_op_type=complete_folder_copy 
+//with the output of the /file_ops/folder_browser action
 function folder_browser_refresh(user_selected_directory){
 	$('#folderCopyBrowser').load('/file_ops/folder_browser?user_selected_directory=' + user_selected_directory);
 }
