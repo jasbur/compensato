@@ -18,7 +18,7 @@
 		<%unless @browser_directories.size == 0%>
 			<script>
 				document.getElementById("<%=@base_directory + "_folder_link"%>").onclick = function(){
-						folder_browser_refresh("<%=Regexp.escape(directory.path)%>");}
+						folder_browser_refresh("<%=directory.path.gsub(" ", "%20")%>");}
 			
 				document.getElementById("<%=@base_directory + "_source_link"%>").onclick = function(){
 						update_form_text_field("source_directory", "<%=directory.path%>");}

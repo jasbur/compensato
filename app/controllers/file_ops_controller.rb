@@ -113,6 +113,8 @@ class FileOpsController < ApplicationController
 
   def folder_browser
     user_selected_directory = params[:user_selected_directory]
+    puts "USER SELECTED IS: #{user_selected_directory}"
+    
     @base_directory = ""
     
     if user_selected_directory.nil?
@@ -121,19 +123,16 @@ class FileOpsController < ApplicationController
       @base_directory = user_selected_directory
     end
     
-    @previous_directory = @base_directory.gsub(@base_directory.split("/").last, "")[0..-2]
+    @previous_directory = @base_directory.gsub(@base_directory.split("/").last, "")[0..-2]    
     
     directories = Dir.entries(@base_directory)
       
     directories = directories - [".", ".."]
     @browser_directories = Array.new
     
-    directories.each{|dir|      
-      if File.directory?(Regexp.escape("#{@base_directory}/#{dir}"))
-        d_ob = Dir.open(Regexp.escape("#{@base_directory}/#{dir}"))
-        
-        puts "==============================================="
-        puts Regexp.escape("#{@base_directory}/#{dir}")
+    directories.each{|dir|
+      if File.directory?("#{@base_directory}/#{dir}")
+        d_ob = Dir.open("#{@base_directory}/#{dir}")
         
         @browser_directories << d_ob
       end

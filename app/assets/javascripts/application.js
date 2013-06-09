@@ -44,4 +44,5 @@ function update_form_text_field(field_id, field_value){
 
 function folder_browser_refresh(user_selected_directory){
 	$('#folderCopyBrowser').load('/file_ops/folder_browser?user_selected_directory=' + user_selected_directory);
+	console.log("path is: " + user_selected_directory)
 }
