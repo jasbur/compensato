@@ -128,9 +128,13 @@ class FileOpsController < ApplicationController
     directories = directories - [".", ".."]
     @browser_directories = Array.new
     
-    directories.each{|dir|
-      if File.directory?("#{@base_directory}/#{dir}")
-        d_ob = Dir.open("#{@base_directory}/#{dir}")
+    directories.each{|dir|      
+      if File.directory?(Regexp.escape("#{@base_directory}/#{dir}"))
+        d_ob = Dir.open(Regexp.escape("#{@base_directory}/#{dir}"))
+        
+        puts "==============================================="
+        puts Regexp.escape("#{@base_directory}/#{dir}")
+        
         @browser_directories << d_ob
       end
     }
