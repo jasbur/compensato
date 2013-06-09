@@ -2,12 +2,12 @@
 
 <%=link_to "-- Open file browser --", {:action => "open_file_browser", :directory => "/media/ubuntu/compensato_client"}, :target => "_blank"%>
 
-<%=form_tag(:action => "migrate_user_data", :method => "get") do%>
+<%=form_tag(:action => "migrate_user_data") do%>
 	<p>Select source directory:</p>
-	<p><%=text_field_tag(:source_directory)%></p>
+	<p><%=text_field_tag(:source_directory, nil, :class => "folderCopyPathInput")%></p>
 	
 	<p>Select destination directory:</p>
-	<p><%=text_field_tag(:destination_directory)%></p>
+	<p><%=text_field_tag(:destination_directory, nil, :class => "folderCopyPathInput")%></p>
 
 	<%=submit_tag("Start data copy", :disable_with => "Calculating initial folder size... Please wait...")%>
 <%end%>

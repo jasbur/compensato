@@ -112,6 +112,10 @@ header li{
 	font-size: 30px;
 }
 
+.folderCopyPathInput{
+	width:50%;
+}
+
 div#footer{
 	margin:15px 0px 0px 85%;
 }
