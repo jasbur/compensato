@@ -1,5 +1,7 @@
 <h3>Select from the folders below:</h3>
 
+<h5><%=@base_directory.gsub("/media/ubuntu", "")%></h4>
+
 <%unless @base_directory == "/media/ubuntu"%>
 	<a href="#" id="directory_up">Up...</a>
 	
@@ -13,7 +15,7 @@
 	<%@browser_directories.each{|directory|%>
 		<%@base_directory = directory.path.gsub("/media/ubuntu/", "")%>
 		
-		<li><a href="#" id="<%=@base_directory.gsub(" ", "%20")%>_folder_link"><%=@base_directory%></a></li>
+		<li><a href="#" id="<%=@base_directory.gsub(" ", "%20")%>_folder_link"><%=@base_directory.split("/").last%></a></li>
 		<li class="folderBrowserSubLinks"><a href="#" id=<%="#{@base_directory.gsub(" ", "%20")}_source_link"%>>Use as source</a> | <a href="#" id=<%="#{@base_directory.gsub(" ", "%20")}_destination_link"%>>Use as destination</a></li>
 		
 		<%unless @browser_directories.size == 0%>
