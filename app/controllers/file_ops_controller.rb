@@ -113,7 +113,6 @@ class FileOpsController < ApplicationController
 
   def folder_browser
     user_selected_directory = params[:user_selected_directory]
-    puts "USER SELECTED IS: #{user_selected_directory}"
     
     @base_directory = ""
     
