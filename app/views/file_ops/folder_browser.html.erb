@@ -5,7 +5,7 @@
 	
 	<script>
 		document.getElementById("directory_up").onclick = function(){
-					folder_browser_refresh("<%=@previous_directory%>");}
+					folder_browser_refresh("<%=@previous_directory.gsub(" ", "%20")%>");}
 	</script>
 <%end%>
 
