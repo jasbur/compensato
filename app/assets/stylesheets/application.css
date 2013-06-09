@@ -116,6 +116,11 @@ header li{
 	width:50%;
 }
 
+.folderBrowserSubLinks{
+	margin:0px 0px 15px 0px;
+	font-size:13px;
+}
+
 div#footer{
 	margin:15px 0px 0px 85%;
 }

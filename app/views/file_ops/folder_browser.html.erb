@@ -13,7 +13,8 @@
 	<%@browser_directories.each{|directory|%>
 		<%@base_directory = directory.path.gsub("/media/ubuntu/", "")%>
 		
-		<li><a href="#" id="<%=@base_directory.gsub(" ", "%20")%>_folder_link"><%=@base_directory%></a> | <a href="#" id=<%="#{@base_directory.gsub(" ", "%20")}_source_link"%>>Use as source</a> - <a href="#" id=<%="#{@base_directory.gsub(" ", "%20")}_destination_link"%>>Use as destination</a></li>
+		<li><a href="#" id="<%=@base_directory.gsub(" ", "%20")%>_folder_link"><%=@base_directory%></a></li>
+		<li class="folderBrowserSubLinks"><a href="#" id=<%="#{@base_directory.gsub(" ", "%20")}_source_link"%>>Use as source</a> | <a href="#" id=<%="#{@base_directory.gsub(" ", "%20")}_destination_link"%>>Use as destination</a></li>
 		
 		<%unless @browser_directories.size == 0%>
 			<script>
