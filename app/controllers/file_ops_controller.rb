@@ -141,6 +141,8 @@ class FileOpsController < ApplicationController
         @browser_directories << d_ob
       end
     }
+    
+    @browser_directories.sort!{|a,b| a.path <=> b.path}
       
     render :layout => false
   end
