@@ -14,7 +14,7 @@
 <ul>
 	<%@browser_directories.each{|directory|%>		
 		<li><a href="#" id="<%=directory.path.gsub(" ", "%20")%>_folder_link"><%=directory.path.split("/").last%></a></li>
-		<li class="folderBrowserSubLinks"><a href="#" id=<%="#{directory.path.gsub(" ", "%20")}_source_link"%>>Use as source</a> | <a href="#" id=<%="#{directory.path.gsub(" ", "%20")}_destination_link"%>>Use as destination</a> | <%=link_to "Open in browser", :action => "open_file_browser", :directory => directory.path%> </li>
+		<li class="folderBrowserSubLinks"><a href="#" id=<%="#{directory.path.gsub(" ", "%20")}_source_link"%>>Use as source</a> | <a href="#" id=<%="#{directory.path.gsub(" ", "%20")}_destination_link"%>>Use as destination</a> | <%=link_to "Open in browser", {:action => "open_file_browser", :directory => directory.path}, :target => "_blank"%> </li>
 		
 		<%unless @browser_directories.size == 0%>
 			<script>
