@@ -26,6 +26,7 @@
 			<%end%>
 			><%=file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => file_object.path%> <%=file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
 
+		<%file_object.close%>
 		<%}%>
 	</ul>
 </div>

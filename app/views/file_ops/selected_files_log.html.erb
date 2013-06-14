@@ -39,4 +39,8 @@
 			</ul>
 		<%end%>
 	<%end%>
+	
+	<%for selected_file_object in @selected_file_objects%>
+		<%selected_file_object.close%>
+	<%end%>
 </div>
