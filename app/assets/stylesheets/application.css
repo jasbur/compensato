@@ -121,6 +121,10 @@ header li{
 	font-size:13px;
 }
 
+.executableFileInAllFilesList{
+	color:#F30000;
+}
+
 div#footer{
 	margin:15px 0px 0px 85%;
 }

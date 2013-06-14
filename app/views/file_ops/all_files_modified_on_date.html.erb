@@ -3,11 +3,11 @@
 <div id="fileOpChoice" class="mainAction">
     <div class="informationalDisplay">
     	<h1>Usage Tip:</h1>
-		<p>This page displays on ordered list of all files of any type modified on 
-			<%=@start_date%>. The file selected from the previous screen will be visually 
-			isolated in RED text to help you determine where to start looking. This 
-			listing can be a great way to get a sense of the scope of an infection because 
-			it lists all files modified, not just executables.</p>
+		<p>This page displays on ordered list of all files of any type modified on <%=@start_date%>. 
+			If you selected a file from the previous screen it will be visually isolated in a black 
+			border with red text to help you determine where to start looking. All executable type 
+			files will be listed in red text This listing can be a great way to get a sense of the 
+			scope of an infection because it lists all files modified, not just executables.</p>
 			
 		<ul>	
 			<li><b>Open in browser:</b> This will open the conatining folder of the selected file. Moving suspicious files to the (already created) 
@@ -24,9 +24,23 @@
 			<%if File.basename(file_object) == @selected_file_name%>
 				class = "isolatedOnAllFilesScan"
 			<%end%>
-			><%=file_object.mtime%> | <%=link_to "Open in browser", :action => "open_file_browser", :full_path => file_object.path%> <%=file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
+			>
+			
+			<%extension = file_object.path.split(".").last.downcase%>
+			
+			<%if extension == "exe" or extension == "cmd" or extension == "bat" or extension == "sys" or extension == "drv" or extension == "class" or extension == "dll"%>
+				<span class="executableFileInAllFilesList">
+			<%end%>
+			
+			<%=file_object.mtime%> | <%=link_to "Open in browser", 
+										:action => "open_file_browser", 
+										:full_path => file_object.path%> <%=file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
 
-		<%file_object.close%>
+			<%if extension == "exe" or extension == "cmd" or extension == "bat" or extension == "sys" or extension == "drv" or extension == "class" or extension == "dll"%>
+				</span>
+			<%end%>
+
+			<%file_object.close%>
 		<%}%>
 	</ul>
 </div>
