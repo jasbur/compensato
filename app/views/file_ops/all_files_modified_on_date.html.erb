@@ -32,9 +32,7 @@
 				<span class="executableFileInAllFilesList">
 			<%end%>
 			
-			<%=file_object.mtime%> | <%=link_to "Open in browser", 
-										:action => "open_file_browser", 
-										:full_path => file_object.path%> <%=file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
+			<%=file_object.mtime%> | <%=link_to "Open in browser", {:action => "open_file_browser", :full_path => file_object.path}, :target => "_blank"%> <%=file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
 
 			<%if extension == "exe" or extension == "cmd" or extension == "bat" or extension == "sys" or extension == "drv" or extension == "class" or extension == "dll"%>
 				</span>
