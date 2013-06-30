@@ -13,7 +13,8 @@
  */
 
 body{
-	margin:-21px 0px 0px 0px;
+	margin: -21px 0px 0px 0px;
+	background-color: #FDFFED;
 	font-family: arial;
 }
 
@@ -31,7 +32,6 @@ a:visited{
 }
 
 header {
-	background-color: #F5FFD9;
 	padding: 9px 0px 0px 0px;
 }
 
@@ -40,11 +40,13 @@ header {
 }
 
 div#navigationMenu {
-	background-color: #F5FFD9;
 	float: left;
 	margin: -22px 0px 0px 0px;
 	padding: 0px 27px 0px 0px;
-	font-size: 26px;
+	border-top: 35px solid #7995B8;
+	border-top-right-radius: 110px;
+	box-shadow: 3px -6px 8px -6px #000;
+	font-size: 35px;
 }
 
 div#navigationMenu a{
@@ -55,10 +57,20 @@ div#navigationMenu a:visited{
 	color:#616161;
 }
 
+div#navigationMenu li{
+	margin: 0px 0px 19px 0px;
+}
+
+div#mainContent{
+	margin: -22px 0px 0px 248px;
+}
+
 .mainAction{
-	margin: 100px 0px 0px 20%;
 	padding: 10px;
-	background-color: #5d799c;
+	border-bottom-left-radius: 57px;
+	border-top-left-radius: 101px;
+	background-color: #7995B8;
+	box-shadow: 0px 0px 8px #000;
 	color: #EBEBEB;
 	font-size: 20px;
 	text-align: left;
@@ -102,6 +114,7 @@ div#navigationMenu a:visited{
 .informationalDisplay{
 	margin: 20px 0px 0px 0px;
 	padding:10px 10px 10px 30px;
+	border-radius: 55px;
 	background-color:#AF986C;
 	color:#EBEBEB;
 	font-size: 15px;
