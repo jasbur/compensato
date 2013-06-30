@@ -1,7 +1,5 @@
 <%@page_title = "Migrate user data"%>
 
-<%=link_to "-- Open file browser --", {:action => "open_file_browser", :directory => "/media/ubuntu/compensato_client"}, :target => "_blank"%>
-
 <%=form_tag(:action => "migrate_user_data") do%>
 	<p>Select source directory:</p>
 	<p><%=text_field_tag(:source_directory, nil, :class => "folderCopyPathInput")%></p>
