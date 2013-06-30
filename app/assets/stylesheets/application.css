@@ -13,10 +13,8 @@
  */
 
 body{
-	background-color: #F5FFD9;
+	margin:-21px 0px 0px 0px;
 	font-family: arial;
-	margin: 0px;
-	padding: 10px;
 }
 
 body ul{
@@ -32,26 +30,33 @@ a:visited{
 	color: #5d799c;
 }
 
-header{
-	
-}
-
-header ul{
-	margin: 0px 0px 0px 6%;
-}
-
-header li{
-	float: left;
-	margin: 0px 0px 0px 20px;
-	font-size: 40px;
+header {
+	background-color: #F5FFD9;
+	padding: 9px 0px 0px 0px;
 }
 
 .mainHeaderLogo{
 	margin: 0px 0px 0px 6%;
 }
 
+div#navigationMenu {
+	background-color: #F5FFD9;
+	float: left;
+	margin: -22px 0px 0px 0px;
+	padding: 0px 27px 0px 0px;
+	font-size: 26px;
+}
+
+div#navigationMenu a{
+	color:#616161;
+}
+
+div#navigationMenu a:visited{
+	color:#616161;
+}
+
 .mainAction{
-	margin: 50px 0px 0px 20%;
+	margin: 100px 0px 0px 20%;
 	padding: 10px;
 	background-color: #5d799c;
 	color: #EBEBEB;
