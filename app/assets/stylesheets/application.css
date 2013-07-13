@@ -12,9 +12,9 @@
  *= require_tree .
  */
 
-body{
-	margin: -21px 0px 0px 0px;
-	background-color: #FDFFED;
+body {
+	margin: 0px;
+	background-color: #CAC5BB;
 	font-family: arial;
 }
 
@@ -36,29 +36,44 @@ header {
 }
 
 .mainHeaderLogo{
+	float: right;
 	margin: 0px 0px 0px 26px;
 }
 
 div#navigationMenu {
-margin: -114px 0px 0px 244px;
-font-size: 35px;
+	width: 738px;
+	height: 98px;
+	float: left;
+	margin: -9px 0px 0px 0px;
+	background-color: #AF986C;
+	border: 5px solid #EBEBEB;
+	border-top: none;
+	border-left: none;
+	border-bottom-right-radius: 55px;
+	font-size: 29px;
 }
 
 div#navigationMenu a{
-	color:#616161;
+	color: #EBEBEB;
 }
 
 div#navigationMenu a:visited{
-	color:#616161;
+	color: #EBEBEB;
+}
+
+div#navigationMenu ul {
+	margin: 29px 0px 0px 12px;
+	padding: 0px 0px 0px 0px;
 }
 
 div#navigationMenu li {
-float: left;
-margin: 0px 0px 0px 54px;
+	float: left;
+	margin: 0px 0px 0px 27px;
+	font-weight: bold;
 }
 
 div#mainContent {
-margin: 123px 0px 0px 44px;
+	margin: 123px 0px 0px 44px;
 }
 
 .mainAction{
@@ -107,12 +122,15 @@ margin: 123px 0px 0px 44px;
 	color: #FF0000;
 }
 
-.informationalDisplay{
-	margin: 20px 0px 0px -15px;
+.informationalDisplay {
+	margin: 20px -10px 0px -15px;
 	padding: 10px 10px 10px 30px;
 	border-radius: 55px;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
 	background-color: #AF986C;
 	border: 5px solid #EBEBEB;
+	border-right: none;
 	color: #EBEBEB;
 	font-size: 15px;
 }
