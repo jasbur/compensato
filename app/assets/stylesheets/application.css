@@ -40,13 +40,8 @@ header {
 }
 
 div#navigationMenu {
-	float: left;
-	margin: -22px 0px 0px 0px;
-	padding: 0px 27px 0px 0px;
-	border-top: 35px solid #7995B8;
-	border-top-right-radius: 110px;
-	box-shadow: 3px -9px 8px -9px #000;
-	font-size: 35px;
+margin: -114px 0px 0px 244px;
+font-size: 35px;
 }
 
 div#navigationMenu a{
@@ -57,12 +52,13 @@ div#navigationMenu a:visited{
 	color:#616161;
 }
 
-div#navigationMenu li{
-	margin: 0px 0px 19px 0px;
+div#navigationMenu li {
+float: left;
+margin: 0px 0px 0px 54px;
 }
 
-div#mainContent{
-	margin: -22px 0px 0px 248px;
+div#mainContent {
+margin: 123px 0px 0px 44px;
 }
 
 .mainAction{

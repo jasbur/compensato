@@ -9,16 +9,16 @@
 <body>
 	<header>
 		<h1><%=link_to image_tag("main_logo.svg", :width => 240, :height => 90, :class => "mainHeaderLogo"), :controller => "main", :action => "index"%></h1>
+
+		<div id="navigationMenu">
+			<ul >
+				<li><%= link_to "File Ops", :controller => "file_ops" %></li>
+				<li><%= link_to "Disk Ops", :controller => "disk_ops" %></li>
+				<li><%= link_to "Downloads", :controller => "downloads" %></li>
+				<li><%= link_to "Diagnostics", :controller => "diagnostics" %></li>
+			</ul>
+		</div>
 	</header>
-	
-	<div id="navigationMenu">
-		<ul >
-			<li><%= link_to "File Ops", :controller => "file_ops" %></li>
-			<li><%= link_to "Disk Ops", :controller => "disk_ops" %></li>
-			<li><%= link_to "Downloads", :controller => "downloads" %></li>
-			<li><%= link_to "Diagnostics", :controller => "diagnostics" %></li>
-		</ul>
-	</div>
 	
 	<div id="mainContent">
 		<%= yield %>
