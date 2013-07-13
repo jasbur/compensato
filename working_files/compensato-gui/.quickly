@@ -1,0 +1,3 @@
+project = compensato-gui
+version = 12.08.1
+template = ubuntu-application

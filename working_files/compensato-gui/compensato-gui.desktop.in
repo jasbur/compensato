@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Compensato Gui
+_Comment=CompensatoGui application
+Categories=GNOME;Utility;
+Exec=compensato-gui
+Icon=compensato-gui
+Terminal=false
+Type=Application

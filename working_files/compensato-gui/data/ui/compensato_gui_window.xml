@@ -1,0 +1,8 @@
+<glade-catalog name="compensato_gui_window" domain="glade-3" 
+               depends="gtk+" version="1.0">
+  <glade-widget-classes>
+    <glade-widget-class title="Compensato Gui Window" name="CompensatoGuiWindow" 
+                        generic-name="CompensatoGuiWindow" parent="GtkWindow"
+                        icon-name="widget-gtk-window"/>
+  </glade-widget-classes>
+</glade-catalog>
