@@ -1,4 +1,6 @@
-<h2>Network health test</h2>
+<%@page_title = "Netwrok Health Test"%>
+
+<h1><%=@page_title%></h1>
 
 <%=form_tag(:action => "ping_test", :method => "get") do%>
 	<%=label_tag(:start_date, "Address to ping:")%> <%=text_field_tag(:address_to_ping, @system_stats[:network_gateway])%> [Default is current network gateway]<br>

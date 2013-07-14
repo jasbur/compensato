@@ -1,6 +1,8 @@
 <%@page_title = "File Operations"%>
 
 <div id="fileOpChoice" class="mainAction">
+	<h1><%=@page_title%></h1>
+
 	<ul>
 		<li><%=link_to "File Scan", :action => "new", :file_op_type => "file_scan"%></li>
 		<li><%=link_to "View Web Browser History", :action => "new", :file_op_type => "view_ie_browser_history"%></li></br>

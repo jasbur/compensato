@@ -1,6 +1,8 @@
 <%@page_title = "Diagnostics"%>
 
 <div id="diagnosticsChoice" class="mainAction">
+	<h1><%=@page_title%></h1>
+	
 	<ul>
 		<li><%=link_to "Network health test", :action => "new", :diagnostic_type => "network_health_test"%></li>
     	<li><%=link_to "Hardware Stress Test", :action => "new", :diagnostic_type => "hardware_stress_test"%></li>

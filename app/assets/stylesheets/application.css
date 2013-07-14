@@ -107,6 +107,11 @@ div#mainContent {
 	color: #EBEBEB;
 }
 
+.mainAction h1{
+	font-size: 31px;
+	margin: 0px 0px 34px 0px;
+}
+
 .systemStatCat{
 	font-weight: bold;
 }
@@ -148,6 +153,7 @@ div#mainContent {
 }
 
 .informationalDisplay h1{
+	margin:0px 0px 0px 0px;
 	font-size: 30px;
 }
 

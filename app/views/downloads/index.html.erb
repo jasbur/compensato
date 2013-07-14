@@ -2,6 +2,8 @@
 
 <%if @online_status == true%>
 	<div id="downloadChoices" class="mainAction">
+		<h1><%=@page_title%></h1>
+		
 		<%=form_tag(:action => "fetch_downloads", :method => "get") do%>
 			<%@file_links.each{|key, value|%>
 				<%=check_box_tag "download_links[]", "#{key}|#{value}", true%> <%=key%></br>
