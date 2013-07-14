@@ -85,7 +85,7 @@ div#mainContent {
 }
 
 .mainAction{
-	padding: 28px 10px 10px 25px;
+	padding: 40px 10px 59px 70px;
 	border-bottom-left-radius: 57px;
 	border-top-left-radius: 101px;
 	background-color: #7995B8;
@@ -93,6 +93,10 @@ div#mainContent {
 	color: #EBEBEB;
 	font-size: 20px;
 	text-align: left;
+}
+
+.mainAction form{
+	margin: 15px 0px 0px 30px;
 }
 
 .mainAction a{
@@ -131,7 +135,7 @@ div#mainContent {
 }
 
 .informationalDisplay {
-	margin: 20px -10px 0px -15px;
+	margin: 54px -10px 0px -15px;
 	padding: 10px 10px 10px 30px;
 	border-radius: 55px;
 	border-bottom-right-radius: 0;
