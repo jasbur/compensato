@@ -116,19 +116,25 @@ div#mainContent {
 	font-weight: bold;
 }
 
-.fileListOutput{
+.fileListOutput {
 	width: 2000px;
 	margin: 50px 0px 0px 0px;
+	padding: 35px 0px 49px 95px;
+	border-bottom-left-radius: 57px;
+	border-top-left-radius: 101px;
+	background: -webkit-linear-gradient(top, #596E87 0%,#7995B8 270px);
+	box-shadow: 0px 0px 8px #000;
+	color: #EBEBEB;
 	font-size: 13px;
 }
 
-.fileListOutput a{
-	color: #5d799c;
+.fileListOutput a {
+	color: #E0C38A;
+	font-weight: bold;
 }
 
 .fileListOutput li:hover{
-	background-color: #D6B37C;
-	padding: 2px;
+	background-color: #A29581;
 }
 
 .isolatedOnAllFilesScan{
