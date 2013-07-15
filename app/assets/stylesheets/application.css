@@ -8,14 +8,17 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
+
  */
+
+
+
 
 body {
 	margin: 0px;
 	background: -webkit-linear-gradient(top, #B2AFA7 0%,#CAC5BB 28%,#B2AFA7 100%);
-	font-family: arial;
+	font-family: URW Gothic L;
 }
 
 body ul{
