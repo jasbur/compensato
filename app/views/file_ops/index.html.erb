@@ -8,8 +8,10 @@
 		<li><%=link_to "View Web Browser History", :action => "new", :file_op_type => "view_ie_browser_history"%></li></br>
 		<li><%=link_to "Complete folder data copy", :action => "new", :file_op_type => "complete_folder_copy"%></li>
 		<li><%=link_to "Clean Temporary Files", {:action => "new", :file_op_type => "clean_temp_files"}, :confirm => "Heads up, this may take a little while to calculate the total number of temp files..."%></li>
-		<li><%=link_to "View Space used by each folder", :action => "new", :file_op_type => "folder_usage_display"%></li>
+		<li><a href="#" id="folder_usage_display_link">View Space used by each folder</a></li>
 	</ul>
+	
+	<div id="external_action_load" style="display: none"></div>
 
 	<div class="informationalDisplay">
 		<h1>Usage Tip:</h1>
@@ -32,3 +34,9 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	$("#folder_usage_display_link").click(function(){
+		$("#external_action_load").load("/file_ops/new?file_op_type=folder_usage_display");
+	})
+</script>
