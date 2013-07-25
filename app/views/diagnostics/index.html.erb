@@ -6,8 +6,11 @@
 	<ul>
 		<li><%=link_to "Network health test", :action => "new", :diagnostic_type => "network_health_test"%></li>
     	<li><%=link_to "Hardware Stress Test", :action => "new", :diagnostic_type => "hardware_stress_test"%></li>
+		<li><a href="#" id="bluescreen_view_link">NEW - Bluescreenview</a></li>
 		<li><%=link_to "Bluescreenview", :action => "new", :diagnostic_type => "bluescreen_view"%></li>
 	</ul>
+	
+	<div id="external_action_load" style="display: none"></div>
 
 	<div class="informationalDisplay">
 		<h1>Usage Tip:</h1>
@@ -26,3 +29,7 @@
 		</ul>
 	</div>
 </div>
+
+<script>	
+	load_action_in_hidden_div("bluescreen_view_link", "/diagnostics/new?diagnostic_type=bluescreen_view", "external_action_load")
+</script>
