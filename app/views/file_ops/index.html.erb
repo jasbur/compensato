@@ -36,7 +36,7 @@
 </div>
 
 <script>
-	$("#folder_usage_display_link").click(function(){
-		$("#external_action_load").load("/file_ops/new?file_op_type=folder_usage_display");
-	})
+	load_action_in_hidden_div("folder_usage_display_link", 
+								"/file_ops/new?file_op_type=folder_usage_display", 
+								"external_action_load");
 </script>

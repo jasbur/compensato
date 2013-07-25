@@ -41,9 +41,15 @@ function update_form_text_field(field_id, field_value){
 	form_field.value = field_value;
 }
 
-
 //Replaces the contents of the "folderCopyBrowser" div in /file_ops/new?file_op_type=complete_folder_copy 
 //with the output of the /file_ops/folder_browser action
 function folder_browser_refresh(user_selected_directory){
 	$('#folderCopyBrowser').load('/file_ops/folder_browser?user_selected_directory=' + user_selected_directory);
+}
+
+//Loads the provided html file into the provided div when the specified link is clicked
+function load_action_in_hidden_div(clicked_link_id, url_to_load, div_to_load_into){
+	$("#" + clicked_link_id).click(function(){
+		$("#" + div_to_load_into).load(url_to_load);
+	})
 }

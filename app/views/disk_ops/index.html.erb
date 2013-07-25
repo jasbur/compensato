@@ -35,7 +35,7 @@
 </div>
 
 <script>
-	$("#edit_partitions_link").click(function(){
-		$("#external_action_load").load("/disk_ops/new?disk_op_type=edit_partitions");
-	})
+	load_action_in_hidden_div("edit_partitions_link", 
+								"/disk_ops/new?disk_op_type=edit_partitions", 
+								"external_action_load");
 </script>
