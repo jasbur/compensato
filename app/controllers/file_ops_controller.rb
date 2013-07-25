@@ -104,6 +104,7 @@ class FileOpsController < ApplicationController
       FileOp.launch_nautilus(Regexp.escape(full_path.gsub(file_name, "")))
     end
     
+    render :layout => false
   end
 
   #Spawns an instance of IEHV by calling launch_iehv with the supplied user directory

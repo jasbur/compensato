@@ -3,6 +3,8 @@
 <div id="fileOpChoice" class="mainAction">
 	<h1><%=@page_title%></h1>
 	
+	<div id="external_action_load" style="display: none"></div>
+	
     <div class="informationalDisplay">
     	<h1>Usage Tip:</h1>
 		<p>This is a list of just the files that you thought were suspicious from the previous 
@@ -28,6 +30,8 @@
 
 <div id="selectedFilesLog" class="fileListOutput">
 	<%=form_tag(:action => "selected_files_log", :method => "get") do%>
+		<%counter = 0%>
+		
 		<%for extension in @extensions do%>
 			<hr>
 			<h4>.<%=extension.upcase%> files</h4>
@@ -35,7 +39,16 @@
 			<ul>
 				<%for selected_file_object in @selected_file_objects%>
 					<%if selected_file_object.path.include?(".#{extension}")%>
-						<li><%=selected_file_object.mtime%> | <%=link_to "Open in browser", {:action => "open_file_browser", :full_path => selected_file_object.path}, :target => "_blank"%> - <%=link_to "Files modified on this date", {:action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)}, :target => "_blank"%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
+						<%counter = counter + 1%>
+					
+						<li><%=selected_file_object.mtime%> | <a href="#" id="open_in_browser_link_<%=counter%>">Open in browser</a> - <%=link_to "Files modified on this date", {:action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)}, :target => "_blank"%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
+					
+						<script>
+							load_action_in_hidden_div("open_in_browser_link_<%=counter%>", 
+														"/file_ops/open_file_browser?full_path=<%=selected_file_object.path.gsub(" ", "%20")%>", 
+														"external_action_load");
+						</script>
+					
 					<%end%>
 				<%end%>
 			</ul>
