@@ -186,6 +186,14 @@ div#mainContent {
 	color:#F30000;
 }
 
+.pop_over {
+	float: left;
+	position: absolute;
+	margin: -239px 0px 0px 16px;
+	height: 491px;
+	width: 851px;
+}
+
 div#footer{
 	margin:15px 0px 0px 85%;
 }

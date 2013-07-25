@@ -18,6 +18,7 @@ class FileOpsController < ApplicationController
 			render :layout => false
 		elsif @file_op_type == "view_ie_browser_history"
 		  @users = FileOp.get_all_windows_users
+		  render :layout => false
 		elsif @file_op_type == "complete_folder_copy"
 
 		end

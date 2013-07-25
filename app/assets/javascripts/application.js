@@ -40,9 +40,15 @@ function folder_browser_refresh(user_selected_directory){
 	$('#folderCopyBrowser').load('/file_ops/folder_browser?user_selected_directory=' + user_selected_directory);
 }
 
-//Loads the provided html file into the provided div when the specified link is clicked
-function load_action_in_hidden_div(clicked_link_id, url_to_load, div_to_load_into){
+//Loads the provided html file into the provided div when the specified link is clicked. The "visible" 
+//variable is boolean and determines whether or not to trigger the jquery .show() is run on 
+//the the div_to_load_into
+function load_action_in_hidden_div(clicked_link_id, url_to_load, div_to_load_into, visible){
 	$("#" + clicked_link_id).click(function(){
+		if (visible == true){
+			$("#" + div_to_load_into).show();
+		};
+		
 		$("#" + div_to_load_into).load(url_to_load);
 	})
 }
