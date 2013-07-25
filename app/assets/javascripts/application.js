@@ -28,13 +28,6 @@ function check_system_temps(){
 	}, 1000);
 }
 
-//Closes the current tab or window after the amount of milliseconds provided have elapsed
-function close_this_window_in(milliseconds){
-	setTimeout (function (){
-		window.close();
-	}, milliseconds)
-}
-
 //Updates the given form field with the given text
 function update_form_text_field(field_id, field_value){
 	var form_field = document.getElementById(field_id);
