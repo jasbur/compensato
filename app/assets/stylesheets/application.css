@@ -191,7 +191,7 @@ div#mainContent {
     position: absolute;
     margin: -275px 0px 0px 21px;
     padding: 48px 10px 59px 95px;
-    height: 491px;
+    min-height: 491px;
     width: 729px;
     border: 5px solid #E6E6E6;
     border-radius: 164px;
