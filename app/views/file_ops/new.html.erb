@@ -1,23 +1,22 @@
-<div id="fileOperation" class="mainAction">
-	<%if @file_op_type == "file_scan"%>
-	
+<%if @file_op_type == "file_scan"%>
+	<div id="fileOperation" class="mainAction">	
 		<%=render "new_file_scan"%>
-		
-	<%elsif @file_op_type == "complete_folder_copy"%>
-	
+	</div>
+<%elsif @file_op_type == "complete_folder_copy"%>
+	<div id="fileOperation" class="mainAction">
 		<%=render "new_complete_folder_copy"%>
-		
-	<%elsif @file_op_type == "clean_temp_files"%>
-	
+	</div>
+<%elsif @file_op_type == "clean_temp_files"%>
+	<div id="fileOperation" class="mainAction">
 		<%=render "new_clean_temp_files"%>
-		
-	<%elsif @file_op_type == "folder_usage_display"%>
-		
-	<%elsif @file_op_type == "view_ie_browser_history"%>
-	
+	</div>
+<%elsif @file_op_type == "folder_usage_display"%>
+	<div id="fileOperation" class="mainAction">
+	</div>
+<%elsif @file_op_type == "view_ie_browser_history"%>
+	<div class="popOver">
 		<%@page_title = "View Internet Explorer History"%>
 		
 		<%=render "new_view_ie_browser_history"%>
-		
-	<%end%>
-</div>
+	</div>
+<%end%>
