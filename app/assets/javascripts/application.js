@@ -52,3 +52,10 @@ function load_action_in_hidden_div(clicked_link_id, url_to_load, div_to_load_int
 		$("#" + div_to_load_into).load(url_to_load);
 	})
 }
+
+//A simple function to hide a visible div when given the id of the link clicked and the div to be hidden
+function hide_div(link_id, div_id){
+	$("#" + link_id).click(function(){
+		$("#" + div_id).hide();
+	})
+}
