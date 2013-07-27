@@ -204,6 +204,15 @@ div#mainContent {
     text-align: left;
 }
 
+.popOver h2 {
+    margin: 48px 0px 0px 0px;
+}
+
+.popOverCloseButton {
+    float: right;
+    margin: 0px 92px 0px 0px;
+}
+
 div#footer{
 	margin:15px 0px 0px 85%;
 }
