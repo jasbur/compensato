@@ -1,17 +1,21 @@
 <%@page_title = "New Disk Operation"%>
 
-<div id="diskOperation" class="mainAction">
-	<%if @disk_op_type == "edit_partitions"%>
+<%if @disk_op_type == "edit_partitions"%>
 
+	<div id="diskOperation" class="mainAction">
 		<h2>Partition editor will open in a seperate window</h2>	
+	</div>
 
-	<%elsif @disk_op_type == "disk check"%>
+<%elsif @disk_op_type == "disk check"%>
 
+	<div id="diskOperation" class="mainAction">
 		<h2>A disk check has been scheduled on the client's Windows partition. It will execute automatically the next time the computer is rebooted</h2>
+	</div>
 
-	<%elsif @disk_op_type == "manually_mount_drive"%>	
-	
+<%elsif @disk_op_type == "manually_mount_drive"%>
+
+	<div id="diskOperation" class="popOver">
 		<%=render "new_manually_mount_drive"%>
+	</div>
 
-	<%end%>
-</div>
+<%end%>

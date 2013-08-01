@@ -6,6 +6,8 @@
 		agnostic and can be used on any computer (like the partition resizing and file copy). Each page will 
 		have a "Usage Tip" to help you get familiar with the program.</p>
 
+	<div id="external_action_load" style="display: none"></div>
+
 	<ul>
 		<li><span class="systemStatCat">CPU Model:</span> <%=@system_stats[:cpu_model]%></li>
 		<li><span class="systemStatCat">CPU Cores:</span> <%=@system_stats[:cpu_cores]%></li>
@@ -22,7 +24,7 @@
 			<li><span class="systemStatCat">HD Space Used:</span> <%=(@system_stats[:hd_space_used].to_f / 1000000).round(1)%>GB - <%=@drive_percent_used%>%</li>
 			<li><span class="systemStatCat">Drive SMART Status:</span> <%=@system_stats[:smart_health]%></li>
 			</br>
-			<li><%=link_to "CLICK HERE to manually mount client drive if this doesn't look right", :controller => "disk_ops", :action => "new", :disk_op_type => "manually_mount_drive"%></li>
+			<li><a href="#" id="manually_mount_drive_link">CLICK HERE to manually mount client drive if this doesn't look right</a></li>
 		<%end%>
 	</ul>
 
@@ -41,3 +43,10 @@
 		</ul>
 	</div>
 </div>
+
+<script>
+	load_action_in_hidden_div("manually_mount_drive_link", 
+								"/disk_ops/new?disk_op_type=manually_mount_drive", 
+								"external_action_load",
+								true);
+</script>
