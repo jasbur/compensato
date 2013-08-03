@@ -23,6 +23,8 @@ function file_copy_progress(directory, source_directory_files){
 
 //Calls the check_system_temps action in the diagnostics controller every 1 second
 function check_system_temps(){
+	$('#systemTemps').load('/diagnostics/check_system_temps');
+	
 	setInterval(function(){
 		$('#systemTemps').load('/diagnostics/check_system_temps');
 	}, 1000);

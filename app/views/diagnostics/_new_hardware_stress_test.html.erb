@@ -2,13 +2,9 @@
 
 <h1><%=@page_title%></h1>
 
-<script type="text/javascript">check_system_temps();</script>
-
 <h3>CPU temperatures:</h3>
 
-<div id="systemTemps">
-	<p>Calculating temperatures...</p>
-</div>
+<div id="systemTemps"></div>
 
 <%=link_to "CLICK HERE to stop running the test", :action => "stop_hardware_test", :mprime_pid => @mprime_pid%>
 
@@ -20,3 +16,9 @@
 	on the system. Keep an eye on the temperature in relation to the <b>crit</b> value, that's the highest 
 	temperature the CPU is designed to safely run at.</p>
 </div>
+
+<script>
+	$(document).ready(function() {
+		check_system_temps();
+	});
+</script>
