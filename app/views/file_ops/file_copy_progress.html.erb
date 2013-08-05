@@ -1,7 +1,18 @@
 Destination directory size: <%=(@destination_directory_size.to_f / 1000000).round(2)%>GB in <%=@destination_directory_files%> files
 
 <%if @process_running == false%>
-	<h2>File Copy Complete!</h2>
-	<h3>Please check the numbers above to make sure everything looks right.</h3>
+	<%if @destination_directory_files.to_i != @source_directory_files.to_i%>
+		<h2>Something might have gone wrong!</h2>
+		<h3>It looks like all of the files might not have copied! This can occur if the client's drive is failing. Look above to determine the xentent of the problem</h3>
+	<%else%>
+		<h2>File Copy Complete!</h2>
+		<h3>It looks like evrything went well but double check the numbers above to makes sure everything looks right</h3>
+	<%end%>
+<%end%>
 
+</br>
+</br>
+
+<%if @process_running == true%>
+	<%=link_to "Cancel", :action => "kill_copy"%>
 <%end%>
