@@ -18,7 +18,7 @@
 function file_copy_progress(directory, source_directory_files){
 	setInterval(function(){
 		$('#file_copy_progress').load('/file_ops/file_copy_progress?destination_directory=' + directory + '&source_directory_files=' + source_directory_files);
-	}, 5000);
+	}, 30000);
 }
 
 //Calls the check_system_temps action in the diagnostics controller every 1 second
