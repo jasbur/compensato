@@ -85,6 +85,12 @@ div#navigationMenu li {
 	font-weight: bold;
 }
 
+.navBackLink {
+	float: left;
+	margin: 5px 0px 0px 15px;
+	font-size: 14px;
+}
+
 div#mainContent {
 	margin: 123px 0px 0px 44px;
 }

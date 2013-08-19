@@ -11,6 +11,10 @@
 		<%=link_to image_tag("main_logo.svg", :width => 240, :height => 90, :class => "mainHeaderLogo"), :controller => "main", :action => "index"%>
 
 		<div id="navigationMenu">
+			<%unless @page_title == "Main"%>
+				<a href="#" class="navBackLink" onclick="history.go(-1);return false"><< Go Back</a>
+			<%end%>
+			
 			<ul>
 				<li><%= link_to "File Ops", :controller => "file_ops" %></li>
 				<li><%= link_to "Disk Ops", :controller => "disk_ops" %></li>
@@ -27,5 +31,11 @@
 	<div id="footer">
 		<%=link_to "Shutdown system", :controller => "main", :action => "system_shutdown"%>
 	</div>
+
+	<script>
+		$("#nav_back_link").click(function(event){
+			go_back();
+		})
+	</script>
 </body>
 </html>
