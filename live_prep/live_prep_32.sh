@@ -41,7 +41,7 @@ ln -sf ../ext_apps/mprime_statics/mprime32 ../ext_apps/mprime
 
 #Set the script to auto-run on login
 mkdir -p /home/ubuntu/Desktop
-ln -sf /usr/bin/compensato.sh /home/ubuntu/Desktop/Launch\ Compensato
+cp ./conf_files/Launch_Compensato.desktop /home/ubuntu/Desktop/
 
 #Copy Unity launcher favorites
 mkdir -p /home/ubuntu/.config/dconf
