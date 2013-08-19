@@ -1,9 +1,5 @@
 #!/bin/bash
 
-cd /home/compensato
+cd /home/compensato/working_files/compensato-gui/
 
-sudo rails s -e production &
-
-sleep 8
-
-chromium-browser http://localhost:3000 -start-maximized
+quickly run
