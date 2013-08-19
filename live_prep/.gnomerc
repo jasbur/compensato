@@ -1,1 +1,0 @@
-gnome-session --session=ubuntu & unity & /home/launch_compensato.sh
