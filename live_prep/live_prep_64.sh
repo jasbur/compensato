@@ -9,7 +9,7 @@ sudo dpkg --add-architecture i386
 #Install dependencies
 apt-get update
 apt-get upgrade -y
-apt-get install rails3 curl smartmontools wine lm-sensors chromium-browser quickly deborphan -y
+apt-get install rails3 curl smartmontools wine lm-sensors chromium-browser quickly quickly-ubuntu-templates deborphan -y
 
 #Remove unwanted packages
 apt-get remove --purge ubiquity firefox xul-ext-ubufox unity-webapps-common libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw libreoffice-math gnome-font-viewer yelp gnome-contacts ubuntuone-control-panel-qt xdiagnose aisleriot gnome-sudoku gnome-mines shotwell simple-scan vino transmission-gtk remmina thunderbird empathy rhythmbox landscape-client-ui-install usb-creator-gtk update-manager checkbox-qt gnome-orca xterm deja-dup -y
