@@ -6,13 +6,13 @@ cp ./conf_files/sources.list /etc/apt/
 #This is to bypass some bug in Ubuntu that doesn't allow wine to install properly otherwise
 sudo dpkg --add-architecture i386
 
-#Remove unwanted packages
-apt-get remove --purge ubiquity firefox xul-ext-ubufox unity-webapps-common libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw libreoffice-math gnome-font-viewer yelp gnome-contacts ubuntuone-control-panel-qt xdiagnose aisleriot gnome-sudoku gnome-mines shotwell simple-scan vino transmission-gtk remmina thunderbird empathy rhythmbox landscape-client-ui-install usb-creator-gtk update-manager checkbox-qt gnome-orca xterm deja-dup -y
-
 #Install dependencies
 apt-get update
 apt-get upgrade -y
 apt-get install rails3 curl smartmontools wine lm-sensors chromium-browser quickly deborphan -y
+
+#Remove unwanted packages
+apt-get remove --purge ubiquity firefox xul-ext-ubufox unity-webapps-common libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw libreoffice-math gnome-font-viewer yelp gnome-contacts ubuntuone-control-panel-qt xdiagnose aisleriot gnome-sudoku gnome-mines shotwell simple-scan vino transmission-gtk remmina thunderbird empathy rhythmbox landscape-client-ui-install usb-creator-gtk update-manager checkbox-qt gnome-orca xterm deja-dup -y
 
 #Remove all cached .deb diles to keep overall ISO size down as low as possible
 rm -rf /var/cache/apt/archives/*.deb
