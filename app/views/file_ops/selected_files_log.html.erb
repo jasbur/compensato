@@ -3,12 +3,12 @@
 <div id="fileOpChoice" class="mainAction">
 	<h1><%=@page_title%></h1>
 	
-	<div id="external_action_load" style="display: none"></div>
-	
     <div class="informationalDisplay">
     	<h1>Usage Tip:</h1>
 		<p>This is a list of just the files that you thought were suspicious from the previous 
 			screen. A copy of this log has been saved on the client's drive at <b>C:\Compensato</b></p>
+			
+		<div id="external_action_load" style="display: none"></div>
 			
 		<ul>
 			<li><b>View Internet Explorer browser history:</b> This will display a list of user, and then ultimately their browsing history, in 
@@ -21,12 +21,12 @@
 			<li><b>Files modified on this date:</b> This will display a complete log of all files, of any type, that have been modified on the same date as the selected file.
 				This can be very useful in determining the system-wide scale of an infection.</li>
 		</ul>
-	</div> 
+	</div>
 </div>
 
-<ul>
-	<li class="selectedFilesLogHistoryLink"><%=link_to "View Internet Explorer browser history", :controller => "file_ops", :action => "new", :file_op_type => "view_ie_browser_history"%></li>
-</ul>
+
+<a href="#", id="view_ie_browser_history_link" class="selectedFilesLogHistoryLink">NEW - View Internet Explorer browser history</a>
+
 
 <div id="selectedFilesLog" class="fileListOutput">
 	<%=form_tag(:action => "selected_files_log", :method => "get") do%>
@@ -59,3 +59,11 @@
 		<%selected_file_object.close%>
 	<%end%>
 </div>
+
+
+<script>
+	load_action_in_hidden_div("view_ie_browser_history_link", 
+								"/file_ops/new?file_op_type=view_ie_browser_history", 
+								"external_action_load",
+								true);
+</script>
