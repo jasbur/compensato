@@ -42,7 +42,7 @@
 					<%if selected_file_object.path.include?(".#{extension}")%>
 						<%counter = counter + 1%>
 					
-						<li><%=selected_file_object.mtime%> | <a href="#" id="open_in_browser_link_<%=counter%>">Open in browser</a> - <%=link_to "Files modified on this date", {:action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)}, :target => "_blank"%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
+						<li><%=selected_file_object.mtime%> | <a href="#" id="open_in_browser_link_<%=counter%>">Open in browser</a> - <%=link_to "Files modified on this date", :action => "all_files_modified_on_date", :start_date => selected_file_object.mtime.to_s[0..9], :selected_file_name => File.basename(selected_file_object)%> <%=selected_file_object.path.gsub("/media/ubuntu/compensato_client", "")%></li>
 					
 						<script>
 							load_action_in_hidden_div("open_in_browser_link_<%=counter%>", 
