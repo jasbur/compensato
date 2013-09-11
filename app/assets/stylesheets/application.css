@@ -186,6 +186,10 @@ div#mainContent {
 	font-size: 30px;
 }
 
+.informationalDisplay li{
+	margin: 0px 0px 15px 0px;
+}
+
 .selectedFilesLogHistoryLink{
 	padding: 0px;
 	margin: 50px 0px -20px 0px;
