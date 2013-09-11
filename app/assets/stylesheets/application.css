@@ -125,6 +125,16 @@ div#mainContent {
 	margin: 0px 0px 34px 0px;
 }
 
+.mainActionNav{
+	margin: 0px 0px 217px 0px;
+}
+
+.mainActionNav li{
+	float: left;
+	margin: 0px 17px 0px 0px;
+	font-weight: bold;
+}
+
 .systemStatCat{
 	font-weight: bold;
 }
