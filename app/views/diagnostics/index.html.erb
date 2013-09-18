@@ -3,10 +3,10 @@
 <div id="diagnosticsChoice" class="mainAction">
 	<h1><%=@page_title%></h1>
 	
-	<ul>
-		<li><%=link_to "Network health test", :action => "new", :diagnostic_type => "network_health_test"%></li>
-    	<li><%=link_to "Hardware Stress Test", :action => "new", :diagnostic_type => "hardware_stress_test"%></li>
-		<li><a href="#" id="bluescreen_view_link">Bluescreenview</a></li>
+	<ul class="mainActionNav">
+		<li><%=link_to image_tag("network_health_test_button.svg"), :action => "new", :diagnostic_type => "network_health_test"%></li>
+    	<li><%=link_to image_tag("hardware_stress_test_button.svg"), :action => "new", :diagnostic_type => "hardware_stress_test"%></li>
+		<li><a href="#" id="bluescreen_view_link"><img src="/assets/view_bluescreen_errors_button.svg"/></a></li>
 	</ul>
 	
 	<div id="external_action_load" style="display: none"></div>

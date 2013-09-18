@@ -3,10 +3,10 @@
 <div id="diskOpChoice" class="mainAction">
 	<h1><%=@page_title%></h1>
 	
-	<ul>
-		<li><a href="#" id="edit_partitions_link">Edit Partitions</a></li>
-		<li><%=link_to "Schedule a file system check", :action => "new", :disk_op_type => "disk check"%></li>
-		<li><a href="#" id="manually_mount_drive_link">Manually mount the client's drive</a></li>
+	<ul class="mainActionNav">
+		<li><a href="#" id="edit_partitions_link"><img src="/assets/edit_partitions_button.svg"/></a></li>
+		<li><%=link_to image_tag("schedule_disk_check_button.svg"), :action => "new", :disk_op_type => "disk check"%></li>
+		<li><a href="#" id="manually_mount_drive_link"><img src="/assets/schedule_disk_check_button.svg"/></a></li>
 	</ul>
 	
 	<div id="external_action_load" style="display: none"></div>
