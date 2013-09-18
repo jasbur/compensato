@@ -15,13 +15,24 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="folder_uage_display_button.svg">
+   sodipodi:docname="clean_temp_files_button.svg">
   <defs
      id="defs4">
     <linearGradient
+       id="linearGradient4370">
+      <stop
+         style="stop-color:#af986c;stop-opacity:1;"
+         offset="0"
+         id="stop4372" />
+      <stop
+         style="stop-color:#b5a077;stop-opacity:1;"
+         offset="1"
+         id="stop4374" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient4201">
       <stop
-         style="stop-color:#af986f;stop-opacity:1;"
+         style="stop-color:#f0e6d3;stop-opacity:1;"
          offset="0"
          id="stop4203" />
       <stop
@@ -51,55 +62,23 @@
          offset="1"
          id="stop3759" />
     </linearGradient>
+    <filter
+       inkscape:collect="always"
+       id="filter4292">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0545667"
+         id="feGaussianBlur4294" />
+    </filter>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient4201"
-       id="linearGradient4207"
-       x1="50.645031"
-       y1="952.90753"
-       x2="50.645031"
-       y2="1051.5966"
+       xlink:href="#linearGradient4370"
+       id="linearGradient4376"
+       x1="48.075005"
+       y1="956.99567"
+       x2="48.075005"
+       y2="1043.7927"
        gradientUnits="userSpaceOnUse" />
-    <filter
-       inkscape:collect="always"
-       id="filter4229">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.87236721"
-         id="feGaussianBlur4231" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter4233">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.87236721"
-         id="feGaussianBlur4235" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter4237">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.87236721"
-         id="feGaussianBlur4239" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter4241">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.87236721"
-         id="feGaussianBlur4243" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       id="filter4245">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.87236721"
-         id="feGaussianBlur4247" />
-    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -108,16 +87,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.6697248"
-     inkscape:cx="43.110368"
-     inkscape:cy="40.000017"
+     inkscape:zoom="7.3394496"
+     inkscape:cx="32.873563"
+     inkscape:cy="50.900017"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1871"
+     inkscape:window-height="1056"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -137,89 +116,42 @@
      id="layer1"
      transform="translate(0,-952.3622)">
     <rect
-       style="fill:url(#linearGradient4207);fill-opacity:1;stroke:#343434;stroke-width:1.06409276000000010;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       rx="6.24683"
+       y="956.07501"
+       x="3.2931945"
+       height="95.725212"
+       width="96.106392"
+       id="rect4308"
+       style="fill:#7b5f2a;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:url(#linearGradient4376);fill-opacity:1;stroke:#9e8656;stroke-width:4.60752343999999958;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4033"
-       width="98.106697"
-       height="98.286842"
-       x="0.94868386"
-       y="953.31799"
-       rx="6.3768497" />
-    <rect
-       style="opacity:0.2;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.98759466;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.97518933, 0.98759467;stroke-dashoffset:0;filter:url(#filter4245)"
-       id="rect2985"
-       width="67.838264"
-       height="62.351326"
-       x="16.72242"
-       y="969.4068"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.91576195,0,0,0.91576195,4.5733721,85.000934)" />
-    <rect
-       y="972.89838"
-       x="20.214167"
-       height="62.351326"
-       width="67.838264"
-       id="rect3755"
-       style="opacity:0.4;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.98759466;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.97518933, 0.98759467;stroke-dashoffset:0;filter:url(#filter4241)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.91576195,0,0,0.91576195,4.5733721,85.000934)" />
-    <rect
-       style="opacity:0.6;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.98759466;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.97518933, 0.98759467;stroke-dashoffset:0;filter:url(#filter4237)"
-       id="rect3757"
-       width="67.838264"
-       height="62.351326"
-       x="24.164494"
-       y="976.84888"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.91576195,0,0,0.91576195,4.5733721,85.000934)" />
-    <rect
-       y="980.79919"
-       x="28.114901"
-       height="62.351326"
-       width="67.838264"
-       id="rect3759"
-       style="opacity:0.8;fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.98759466;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.97518933, 0.98759467;stroke-dashoffset:0;filter:url(#filter4233)"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.91576195,0,0,0.91576195,4.5733721,85.000934)" />
-    <rect
-       style="fill:#87a0c1;fill-opacity:1;fill-rule:evenodd;stroke:#f7dfbb;stroke-width:0.98759466;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.97518933, 0.98759467;stroke-dashoffset:0;filter:url(#filter4229)"
-       id="rect3761"
-       width="67.838264"
-       height="62.351326"
-       x="4.0817208"
-       y="960.54852"
-       inkscape:export-filename="/home/jasbur/Desktop/blog_logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.91576195,0,0,0.91576195,4.5733721,85.000934)" />
+       width="91.766838"
+       height="90.894371"
+       x="2.9181573"
+       y="955.14899"
+       rx="5.9647632" />
     <text
        xml:space="preserve"
-       style="font-size:26.52398109px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ebebeb;fill-opacity:1;stroke:#343434;stroke-width:0.60000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans"
-       x="48.917233"
-       y="984.14636"
+       style="font-size:18.6594696px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ebebeb;fill-opacity:0.87843137;stroke:none;font-family:Sans"
+       x="48.1185"
+       y="986.979"
        id="text4193"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
-         x="48.917233"
-         y="984.14636"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;stroke:#343434;stroke-width:0.60000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L"
-         id="tspan4849">Folder</tspan><tspan
+         x="48.1185"
+         y="986.979"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;fill:#ebebeb;fill-opacity:0.87843137;stroke:none;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L"
+         id="tspan4502">Folder</tspan><tspan
          sodipodi:role="line"
-         x="48.917233"
-         y="1010.6703"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;stroke:#343434;stroke-width:0.60000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L"
-         id="tspan6601">Usage</tspan><tspan
+         x="48.1185"
+         y="1005.6385"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;fill:#ebebeb;fill-opacity:0.87843137;stroke:none;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L"
+         id="tspan4563">Usage</tspan><tspan
          sodipodi:role="line"
-         x="48.917229"
-         y="1037.1943"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;stroke:#343434;stroke-width:0.60000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L"
-         id="tspan6603">Display</tspan></text>
+         x="48.1185"
+         y="1024.298"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;fill:#ebebeb;fill-opacity:0.87843137;stroke:none;font-family:URW Gothic L;-inkscape-font-specification:URW Gothic L"
+         id="tspan4565">Display</tspan></text>
   </g>
 </svg>
