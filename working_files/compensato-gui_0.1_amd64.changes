@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Mon, 19 Aug 2013 00:19:01 -0500
+Source: compensato-gui
+Binary: compensato-gui
+Architecture: source all
+Version: 0.1
+Distribution: saucy
+Urgency: low
+Maintainer: UNKNOWN <UNKNOWN>
+Changed-By: Jason Burgett <jasbur@jason-UbuntuVMLAP>
+Description: 
+ compensato-gui - UNKNOWN
+Changes: 
+ compensato-gui (0.1) saucy; urgency=low
+ .
+   * Initial release.
+Checksums-Sha1: 
+ cfa4aeb61f00f84728875f5d60b065cac72f7c35 562 compensato-gui_0.1.dsc
+ 7dce3e6ee1648b5fa5cdd726a5bd1e48f19b340c 26630 compensato-gui_0.1.tar.gz
+ fe7c3da44c4e564586fef06c6f8453d38c8bf57f 26364 compensato-gui_0.1_all.deb
+Checksums-Sha256: 
+ a8021c439c74040dc046bfcb3b6e58aac3354bc32be025b3a157e45b775470b4 562 compensato-gui_0.1.dsc
+ b931441bdc23d9934fbc8ad33b721b6e631b89a91ddf3213cdf22d0b6487f022 26630 compensato-gui_0.1.tar.gz
+ 068e36d9f7b969443996a1b07421ae6b5ec81ce575caac608c1ceb004f74c08d 26364 compensato-gui_0.1_all.deb
+Files: 
+ 94e822e05b3347ed39577d68d94e763b 562 python extra compensato-gui_0.1.dsc
+ 986f5be3927bf3c5a438e3ba95c43e85 26630 python extra compensato-gui_0.1.tar.gz
+ 23f73daabc131f83c86ed8dda2893536 26364 python extra compensato-gui_0.1_all.deb
