@@ -123,6 +123,7 @@ div#mainContent {
 .mainAction h1{
 	font-size: 31px;
 	margin: 0px 0px 48px 0px;
+	text-align: center;
 }
 
 .mainActionNav{
